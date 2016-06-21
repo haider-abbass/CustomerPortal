@@ -107,6 +107,7 @@
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>DBM.Designer.cs</LastGenOutput>
     </EntityDeploy>
+    <None Include="App.config" />
     <None Include="EntityModels\DBM.edmx.diagram">
       <DependentUpon>DBM.edmx</DependentUpon>
     </None>
