@@ -92,9 +92,9 @@
     <Reference Include="interfaces">
       <HintPath>..\packages\UmbracoCms.Core.7.4.3\lib\interfaces.dll</HintPath>
     </Reference>
-    <Reference Include="log4net, Version=1.2.11.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
+    <Reference Include="log4net, Version=1.2.15.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\log4net.2.0.0\lib\net40-full\log4net.dll</HintPath>
+      <HintPath>..\packages\log4net.2.0.5\lib\net45-full\log4net.dll</HintPath>
     </Reference>
     <Reference Include="Lucene.Net">
       <HintPath>..\packages\Lucene.Net.2.9.4.1\lib\net40\Lucene.Net.dll</HintPath>
@@ -4495,15 +4495,6 @@
     <Content Include="Umbraco_Client\Ui\ui-lightness\images\ui-icons_ffd27a_256x240.png" />
     <Content Include="Umbraco_Client\Ui\ui-lightness\images\ui-icons_ffffff_256x240.png" />
     <Content Include="Umbraco_Client\Ui\ui-lightness\jquery-ui.custom.css" />
-    <Content Include="Web.config">
-      <SubType>Designer</SubType>
-    </Content>
-    <Content Include="Web.Debug.config">
-      <DependentUpon>Web.config</DependentUpon>
-    </Content>
-    <Content Include="Web.Release.config">
-      <DependentUpon>Web.config</DependentUpon>
-    </Content>
     <Content Include="Views\Web.config" />
     <Content Include="Views\Error.cshtml" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
@@ -5208,6 +5199,13 @@
     <Content Include="Views\Partials\_Footer.cshtml" />
     <Content Include="Views\Partials\_Head.cshtml" />
     <Content Include="Views\KpHome.cshtml" />
+    <Content Include="Web.config" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\Logs\" />

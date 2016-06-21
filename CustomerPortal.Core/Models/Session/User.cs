@@ -11,16 +11,10 @@ namespace CustomerPortal.Core.Models.Session
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public string UserGuid { get; set; }
-        public int CompanyId { get; set; }
         public string WorksFor { get; set; }
         public List<UserAuthorization> UserAuthorizations { get; set; } 
         public List<UserJobs> JobNumbers { get; set; }
         public Enums.Department UserDepartment { get; set; }
-
-        public User()
-        {
-            UserAuthorizations = new List<UserAuthorization>();
-        }
     }
 
     public class UserJobs
