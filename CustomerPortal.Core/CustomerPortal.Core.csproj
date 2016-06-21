@@ -103,7 +103,6 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
-    <None Include="App.config" />
     <EntityDeploy Include="EntityModels\DBM.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>DBM.Designer.cs</LastGenOutput>
