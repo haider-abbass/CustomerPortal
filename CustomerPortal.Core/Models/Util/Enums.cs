@@ -5,7 +5,7 @@
         public enum UserRoles
         {
             WorkHoursManager = 1,
-            InvoiceManager = 2,
+            InvoicingManager = 2,
             PlanningManager = 3
         }
         public enum Department
