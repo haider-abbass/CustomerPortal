@@ -254,3 +254,6 @@ paket-files/
 web.config
 web.*.config
 app.config
+App.config
+Web.Debug.config
+Web.Release.config
