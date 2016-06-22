@@ -1,0 +1,968 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="db12054Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'db12054.dbo.invoice' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="invoice">
+          <Key>
+            <PropertyRef Name="invoice_id" />
+          </Key>
+          <Property Name="invoice_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="file_number" Type="int" />
+          <Property Name="job" Type="nvarchar" MaxLength="100" />
+          <Property Name="virksomhed" Type="nvarchar" MaxLength="80" />
+          <Property Name="hours" Type="decimal" Precision="6" Scale="2" />
+          <Property Name="salary" Type="decimal" Precision="9" Scale="2" />
+          <Property Name="amount" Type="decimal" Precision="9" Scale="2" />
+          <Property Name="diverse" Type="nvarchar" MaxLength="150" />
+          <Property Name="our_sales_person" Type="nvarchar" MaxLength="30" />
+          <Property Name="job_category" Type="nvarchar" MaxLength="30" />
+          <Property Name="hrm" Type="nvarchar" MaxLength="10" />
+          <Property Name="hrm2" Type="nvarchar" MaxLength="10" />
+          <Property Name="hrm_count" Type="int" />
+          <Property Name="invoice_month" Type="datetime" />
+          <Property Name="student_worked_month" Type="datetime" />
+          <Property Name="remarks" Type="nvarchar" MaxLength="150" />
+          <Property Name="created" Type="datetime" />
+        </EntityType>
+        <EntityType Name="JobToContactPerson">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="contact_person_id" Type="int" Nullable="false" />
+          <Property Name="jnr" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="company">
+          <Key>
+            <PropertyRef Name="company_id" />
+          </Key>
+          <Property Name="company_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="name" Type="nvarchar" MaxLength="120" />
+          <Property Name="phone" Type="nvarchar" MaxLength="20" />
+          <Property Name="fax" Type="nvarchar" MaxLength="15" />
+          <Property Name="comment" Type="nvarchar" MaxLength="1000" />
+          <Property Name="email" Type="varchar" MaxLength="40" />
+          <Property Name="website" Type="varchar" MaxLength="40" />
+          <Property Name="company_status" Type="tinyint" />
+          <Property Name="created_date" Type="datetime" />
+          <Property Name="name_second" Type="nvarchar" MaxLength="60" />
+          <Property Name="kob_no" Type="int" />
+          <Property Name="employees_no" Type="char" MaxLength="10" />
+          <Property Name="employees_no_code" Type="char" MaxLength="1" />
+          <Property Name="cvr_no" Type="int" />
+          <Property Name="p_no" Type="int" />
+          <Property Name="jur_se_no" Type="int" />
+          <Property Name="reg_no" Type="int" />
+          <Property Name="founding_year" Type="smallint" />
+          <Property Name="company_type_id" Type="tinyint" />
+          <Property Name="mother_company" Type="nvarchar" MaxLength="60" />
+          <Property Name="mother_country" Type="char" MaxLength="3" />
+          <Property Name="mother_company2" Type="nvarchar" MaxLength="60" />
+          <Property Name="mother_country2" Type="char" MaxLength="3" />
+          <Property Name="customercategory" Type="varchar" MaxLength="2" />
+          <Property Name="salesforce1_locked" Type="bit" Nullable="false" />
+          <Property Name="marked_as_primary" Type="bit" Nullable="false" />
+          <Property Name="reference" Type="text" />
+          <Property Name="career_partner_guid" Type="nvarchar" MaxLength="40" />
+          <Property Name="product_partner_guid" Type="nvarchar" MaxLength="40" />
+          <Property Name="parent_id" Type="int" />
+          <Property Name="cmpnTemplateSubstitutionConfirmation" Type="int" />
+          <Property Name="cmpnTemplateCoverLetterSingle" Type="int" />
+          <Property Name="cmpnTemplateCoverLetterBoth" Type="int" />
+          <Property Name="group_initial" Type="varchar" MaxLength="50" />
+          <Property Name="offentligt" Type="bit" />
+          <Property Name="ext_hrp_user" Type="varchar" MaxLength="50" />
+          <Property Name="ean" Type="varchar" MaxLength="20" />
+          <Property Name="agreement_id" Type="int" />
+          <Property Name="concern_id" Type="int" />
+          <Property Name="isupdated" Type="bit" />
+          <Property Name="import_date" Type="datetime" />
+        </EntityType>
+        <EntityType Name="contact_person">
+          <Key>
+            <PropertyRef Name="contact_person_id" />
+          </Key>
+          <Property Name="contact_person_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="title" Type="nvarchar" MaxLength="80" />
+          <Property Name="department" Type="nvarchar" MaxLength="40" />
+          <Property Name="comment" Type="text" />
+          <Property Name="person_id_delete" Type="int" />
+          <Property Name="company_id" Type="int" />
+          <Property Name="fundet_vha" Type="nvarchar" MaxLength="50" />
+          <Property Name="our_sales_person" Type="nvarchar" MaxLength="25" />
+          <Property Name="name" Type="nvarchar" MaxLength="25" />
+          <Property Name="surname" Type="nvarchar" MaxLength="50" />
+          <Property Name="email" Type="varchar" MaxLength="80" />
+          <Property Name="phone" Type="varchar" MaxLength="20" />
+          <Property Name="mobile" Type="varchar" MaxLength="20" />
+          <Property Name="julebrev" Type="bit" />
+          <Property Name="moment_abonnement" Type="tinyint" />
+          <Property Name="moment_startdato" Type="datetime" />
+          <Property Name="createdDate" Type="datetime" Nullable="false" />
+          <Property Name="our_meeting_booker" Type="nvarchar" MaxLength="25" />
+          <Property Name="karriere_partner_code" Type="int" Nullable="false" />
+          <Property Name="key_account_manager" Type="nvarchar" MaxLength="25" />
+          <Property Name="kmo" Type="nvarchar" MaxLength="50" />
+          <Property Name="active" Type="bit" />
+          <Property Name="sales_person_id" Type="int" />
+          <Property Name="nps_unsubscribe" Type="bit" Nullable="false" />
+          <Property Name="guid" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="password" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="nps_subscribe" Type="bit" Nullable="false" />
+          <Property Name="portal_hours" Type="bit" Nullable="false" />
+          <Property Name="portal_invoice" Type="bit" Nullable="false" />
+          <Property Name="portal_planning" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="job">
+          <Key>
+            <PropertyRef Name="job_id" />
+          </Key>
+          <Property Name="job_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="file_number" Type="int" Nullable="false" />
+          <Property Name="invoice_name" Type="varchar" MaxLength="150" />
+          <Property Name="name" Type="varchar" MaxLength="255" />
+          <Property Name="job_status" Type="tinyint" />
+          <Property Name="public_description" Type="text" />
+          <Property Name="internal_description" Type="text" />
+          <Property Name="active" Type="bit" Nullable="false" />
+          <Property Name="hours_per_week" Type="varchar" MaxLength="100" />
+          <Property Name="estimated_total_hours" Type="varchar" MaxLength="60" />
+          <Property Name="deadline" Type="varchar" MaxLength="50" />
+          <Property Name="negotiated_price" Type="float" Nullable="false" />
+          <Property Name="price_group" Type="varchar" MaxLength="50" />
+          <Property Name="recruitment_price" Type="int" />
+          <Property Name="job_location" Type="tinyint" />
+          <Property Name="created_date" Type="datetime" />
+          <Property Name="comments" Type="text" />
+          <Property Name="log_of_events" Type="text" />
+          <Property Name="company_id" Type="int" />
+          <Property Name="city" Type="varchar" MaxLength="50" />
+          <Property Name="show" Type="tinyint" />
+          <Property Name="contact_person_id" Type="int" />
+          <Property Name="expected_end_date" Type="datetime" />
+          <Property Name="our_consultant" Type="varchar" MaxLength="50" />
+          <Property Name="our_consultant2" Type="varchar" MaxLength="50" />
+          <Property Name="our_responsible" Type="varchar" MaxLength="50" />
+          <Property Name="department" Type="tinyint" />
+          <Property Name="ended_date" Type="datetime" />
+          <Property Name="daily_contact_person_id" Type="int" />
+          <Property Name="treasury_contact_person_id" Type="int" />
+          <Property Name="cc_contact_person_id" Type="int" />
+          <Property Name="job_category_single_id" Type="tinyint" />
+          <Property Name="bNeverEvaluate" Type="bit" Nullable="false" />
+          <Property Name="dNextEvaluation" Type="datetime" />
+          <Property Name="recipients" Type="int" Nullable="false" />
+          <Property Name="searchCriteria" Type="varbinary" MaxLength="1000" />
+          <Property Name="conditionsSent" Type="bit" Nullable="false" />
+          <Property Name="primarySalesPerson" Type="varchar" MaxLength="10" />
+          <Property Name="secondarySalesPerson" Type="varchar" MaxLength="10" />
+          <Property Name="meetingBooker" Type="varchar" MaxLength="10" />
+          <Property Name="keyAccountManager" Type="varchar" MaxLength="10" />
+          <Property Name="primarySalesPersonPercentage" Type="int" />
+          <Property Name="secondarySalesPersonPercentage" Type="int" />
+          <Property Name="meetingBookerPercentage" Type="int" />
+          <Property Name="keyAccountManagerPercentage" Type="int" />
+          <Property Name="applicationDeadline" Type="datetime" />
+          <Property Name="InvoiceAddress" Type="nvarchar" MaxLength="250" />
+          <Property Name="InvoiceAddressZipNumber" Type="int" />
+          <Property Name="InvoiceReference" Type="nvarchar" MaxLength="250" />
+          <Property Name="SalaryBase" Type="float" />
+          <Property Name="TimeregName" Type="nvarchar" MaxLength="200" />
+          <Property Name="jobCategoryNew" Type="int" />
+          <Property Name="ExposedOn" Type="nvarchar" MaxLength="500" />
+          <Property Name="MaleFemale" Type="int" />
+          <Property Name="OnKRFrontpage" Type="bit" />
+          <Property Name="ReportingLockedBefore" Type="datetime" />
+          <Property Name="LastCheckedDate" Type="datetime" />
+          <Property Name="TimeSpecMailSentDate" Type="datetime" />
+          <Property Name="InvoiceAddress2" Type="nvarchar" MaxLength="250" />
+          <Property Name="TeaserText" Type="nvarchar" MaxLength="240" />
+          <Property Name="JobMailSortCategoryID" Type="int" />
+          <Property Name="SpecialInvoice" Type="bit" Nullable="false" />
+          <Property Name="TermsOfSaleSent" Type="bit" />
+          <Property Name="ShowInHRP" Type="bit" Nullable="false" />
+          <Property Name="scanTag" Type="varchar" MaxLength="250" />
+          <Property Name="parent_id" Type="int" />
+          <Property Name="jobTemplateSubstitutionConfirmation" Type="int" />
+          <Property Name="jobTemplateCoverLetterSingle" Type="int" />
+          <Property Name="jobTemplateCoverLetterBoth" Type="int" />
+          <Property Name="workPeriod_id" Type="int" />
+          <Property Name="EarliestStart" Type="datetime" />
+          <Property Name="ApplicationEndDate" Type="datetime" />
+          <Property Name="heading" Type="varchar" MaxLength="50" />
+          <Property Name="JobNewsletterResetFrom" Type="datetime" />
+          <Property Name="Application_Startdate" Type="datetime" />
+          <Property Name="Zip_String" Type="varchar" MaxLength="100" />
+          <Property Name="Repost_Job_Id" Type="int" />
+          <Property Name="Reason_id" Type="int" />
+          <Property Name="product_id" Type="int" />
+          <Property Name="wage_type_id" Type="int" />
+          <Property Name="job_category_intern_id" Type="int" Nullable="false" />
+          <Property Name="invoice_id" Type="int" />
+          <Property Name="ean" Type="varchar" MaxLength="20" />
+          <Property Name="show_on_jobbanks" Type="bit" Nullable="false" />
+          <Property Name="unanonymous_date" Type="datetime" />
+          <Property Name="hirevue_id" Type="int" />
+          <Property Name="weOffer1" Type="varchar" MaxLength="80" />
+          <Property Name="weOffer2" Type="varchar" MaxLength="80" />
+          <Property Name="weOffer3" Type="varchar" MaxLength="80" />
+          <Property Name="workHoursAndSalary" Type="varchar" MaxLength="180" />
+          <Property Name="highlightId" Type="int" />
+          <Property Name="primaryCategoryId" Type="int" />
+          <Property Name="employeeCount" Type="int" />
+          <Property Name="hideInInternalTimeregOverview" Type="bit" Nullable="false" />
+          <Property Name="hideInDetailTabOnCostumerPortal" Type="bit" Nullable="false" />
+          <Property Name="autoBpBreakLimit" Type="int" Nullable="false" />
+          <Property Name="autoBpBreakLength" Type="int" Nullable="false" />
+          <Property Name="midterm_invoice" Type="bit" Nullable="false" />
+          <Property Name="applicationType" Type="int" />
+          <Property Name="superJobId" Type="int" />
+          <Property Name="hideInJoblist" Type="bit" />
+          <Property Name="motivationNeeded" Type="bit" />
+          <Property Name="extraInvoiceEmail" Type="varchar" MaxLength="250" Nullable="false" />
+          <Property Name="virksomheden" Type="text" />
+          <Property Name="jobcontractid" Type="int" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'db12054.dbo.vReportedHours' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="vReportedHours">
+          <Key>
+            <PropertyRef Name="reported_hours_id" />
+            <PropertyRef Name="jnr" />
+            <PropertyRef Name="student_id" />
+            <PropertyRef Name="SSN" />
+            <PropertyRef Name="worked_date" />
+            <PropertyRef Name="minutes" />
+            <PropertyRef Name="etc_id" />
+            <PropertyRef Name="status" />
+          </Key>
+          <Property Name="reported_hours_id" Type="int" Nullable="false" />
+          <Property Name="company_id" Type="int" />
+          <Property Name="company" Type="nvarchar" MaxLength="120" />
+          <Property Name="jnr" Type="int" Nullable="false" />
+          <Property Name="job_name" Type="varchar" MaxLength="150" />
+          <Property Name="student_id" Type="int" Nullable="false" />
+          <Property Name="SSN" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="worker" Type="nvarchar" MaxLength="81" />
+          <Property Name="worked_date" Type="datetime" Nullable="false" />
+          <Property Name="minutes" Type="int" Nullable="false" />
+          <Property Name="period" Type="nvarchar" MaxLength="180" />
+          <Property Name="etc_id" Type="int" Nullable="false" />
+          <Property Name="status" Type="int" Nullable="false" />
+          <Property Name="consultants" Type="varchar" MaxLength="101" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'db12054.dbo.vTask' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="vTask">
+          <Key>
+            <PropertyRef Name="jnr" />
+            <PropertyRef Name="student_id" />
+            <PropertyRef Name="state" />
+            <PropertyRef Name="oncall" />
+            <PropertyRef Name="task_id" />
+            <PropertyRef Name="job_attribute_id" />
+            <PropertyRef Name="job_id" />
+          </Key>
+          <Property Name="jnr" Type="int" Nullable="false" />
+          <Property Name="student_id" Type="int" Nullable="false" />
+          <Property Name="name" Type="nvarchar" MaxLength="81" />
+          <Property Name="start_time" Type="datetime" />
+          <Property Name="end_time" Type="datetime" />
+          <Property Name="state" Type="int" Nullable="false" />
+          <Property Name="oncall" Type="int" Nullable="false" />
+          <Property Name="vagttype" Type="varchar" MaxLength="50" />
+          <Property Name="phone" Type="varchar" MaxLength="50" />
+          <Property Name="mobile" Type="varchar" MaxLength="50" />
+          <Property Name="task_id" Type="int" Nullable="false" />
+          <Property Name="job_name" Type="varchar" MaxLength="255" />
+          <Property Name="CheckedIn" Type="bit" />
+          <Property Name="job_attribute_id" Type="int" Nullable="false" />
+          <Property Name="job_id" Type="int" Nullable="false" />
+        </EntityType>
+        <Association Name="fk_contact_person">
+          <End Role="company" Type="Self.company" Multiplicity="0..1" />
+          <End Role="contact_person" Type="Self.contact_person" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="company">
+              <PropertyRef Name="company_id" />
+            </Principal>
+            <Dependent Role="contact_person">
+              <PropertyRef Name="company_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="db12054ModelStoreContainer">
+          <EntitySet Name="JobToContactPerson" EntityType="Self.JobToContactPerson" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="company" EntityType="Self.company" Schema="f-302054" store:Type="Tables" />
+          <EntitySet Name="contact_person" EntityType="Self.contact_person" Schema="f-302054" store:Type="Tables" />
+          <EntitySet Name="job" EntityType="Self.job" Schema="f-302054" store:Type="Tables" />
+          <EntitySet Name="invoice" EntityType="Self.invoice" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [invoice].[invoice_id] AS [invoice_id], 
+    [invoice].[file_number] AS [file_number], 
+    [invoice].[job] AS [job], 
+    [invoice].[virksomhed] AS [virksomhed], 
+    [invoice].[hours] AS [hours], 
+    [invoice].[salary] AS [salary], 
+    [invoice].[amount] AS [amount], 
+    [invoice].[diverse] AS [diverse], 
+    [invoice].[our_sales_person] AS [our_sales_person], 
+    [invoice].[job_category] AS [job_category], 
+    [invoice].[hrm] AS [hrm], 
+    [invoice].[hrm2] AS [hrm2], 
+    [invoice].[hrm_count] AS [hrm_count], 
+    [invoice].[invoice_month] AS [invoice_month], 
+    [invoice].[student_worked_month] AS [student_worked_month], 
+    [invoice].[remarks] AS [remarks], 
+    [invoice].[created] AS [created]
+    FROM [dbo].[invoice] AS [invoice]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="vReportedHours" EntityType="Self.vReportedHours" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [vReportedHours].[reported_hours_id] AS [reported_hours_id], 
+    [vReportedHours].[company_id] AS [company_id], 
+    [vReportedHours].[company] AS [company], 
+    [vReportedHours].[jnr] AS [jnr], 
+    [vReportedHours].[job_name] AS [job_name], 
+    [vReportedHours].[student_id] AS [student_id], 
+    [vReportedHours].[SSN] AS [SSN], 
+    [vReportedHours].[worker] AS [worker], 
+    [vReportedHours].[worked_date] AS [worked_date], 
+    [vReportedHours].[minutes] AS [minutes], 
+    [vReportedHours].[period] AS [period], 
+    [vReportedHours].[etc_id] AS [etc_id], 
+    [vReportedHours].[status] AS [status], 
+    [vReportedHours].[consultants] AS [consultants]
+    FROM [dbo].[vReportedHours] AS [vReportedHours]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="vTask" EntityType="Self.vTask" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [vTask].[jnr] AS [jnr], 
+    [vTask].[student_id] AS [student_id], 
+    [vTask].[name] AS [name], 
+    [vTask].[start_time] AS [start_time], 
+    [vTask].[end_time] AS [end_time], 
+    [vTask].[state] AS [state], 
+    [vTask].[oncall] AS [oncall], 
+    [vTask].[vagttype] AS [vagttype], 
+    [vTask].[phone] AS [phone], 
+    [vTask].[mobile] AS [mobile], 
+    [vTask].[task_id] AS [task_id], 
+    [vTask].[job_name] AS [job_name], 
+    [vTask].[CheckedIn] AS [CheckedIn], 
+    [vTask].[job_attribute_id] AS [job_attribute_id], 
+    [vTask].[job_id] AS [job_id]
+    FROM [dbo].[vTask] AS [vTask]</DefiningQuery>
+          </EntitySet>
+          <AssociationSet Name="fk_contact_person" Association="Self.fk_contact_person">
+            <End Role="company" EntitySet="company" />
+            <End Role="contact_person" EntitySet="contact_person" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="db12054Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="JobToContactPerson">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="contact_person_id" Type="Int32" Nullable="false" />
+          <Property Name="jnr" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="company">
+          <Key>
+            <PropertyRef Name="company_id" />
+          </Key>
+          <Property Name="company_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="String" MaxLength="120" FixedLength="false" Unicode="true" />
+          <Property Name="phone" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="fax" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="comment" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+          <Property Name="email" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+          <Property Name="website" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+          <Property Name="company_status" Type="Byte" />
+          <Property Name="created_date" Type="DateTime" Precision="3" />
+          <Property Name="name_second" Type="String" MaxLength="60" FixedLength="false" Unicode="true" />
+          <Property Name="kob_no" Type="Int32" />
+          <Property Name="employees_no" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
+          <Property Name="employees_no_code" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="cvr_no" Type="Int32" />
+          <Property Name="p_no" Type="Int32" />
+          <Property Name="jur_se_no" Type="Int32" />
+          <Property Name="reg_no" Type="Int32" />
+          <Property Name="founding_year" Type="Int16" />
+          <Property Name="company_type_id" Type="Byte" />
+          <Property Name="mother_company" Type="String" MaxLength="60" FixedLength="false" Unicode="true" />
+          <Property Name="mother_country" Type="String" MaxLength="3" FixedLength="true" Unicode="false" />
+          <Property Name="mother_company2" Type="String" MaxLength="60" FixedLength="false" Unicode="true" />
+          <Property Name="mother_country2" Type="String" MaxLength="3" FixedLength="true" Unicode="false" />
+          <Property Name="customercategory" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+          <Property Name="salesforce1_locked" Type="Boolean" Nullable="false" />
+          <Property Name="marked_as_primary" Type="Boolean" Nullable="false" />
+          <Property Name="reference" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="career_partner_guid" Type="String" MaxLength="40" FixedLength="false" Unicode="true" />
+          <Property Name="product_partner_guid" Type="String" MaxLength="40" FixedLength="false" Unicode="true" />
+          <Property Name="parent_id" Type="Int32" />
+          <Property Name="cmpnTemplateSubstitutionConfirmation" Type="Int32" />
+          <Property Name="cmpnTemplateCoverLetterSingle" Type="Int32" />
+          <Property Name="cmpnTemplateCoverLetterBoth" Type="Int32" />
+          <Property Name="group_initial" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="offentligt" Type="Boolean" />
+          <Property Name="ext_hrp_user" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ean" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="agreement_id" Type="Int32" />
+          <Property Name="concern_id" Type="Int32" />
+          <Property Name="isupdated" Type="Boolean" />
+          <Property Name="import_date" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="contact_person" Relationship="Self.fk_contact_person" FromRole="company" ToRole="contact_person" />
+        </EntityType>
+        <EntityType Name="contact_person">
+          <Key>
+            <PropertyRef Name="contact_person_id" />
+          </Key>
+          <Property Name="contact_person_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="title" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+          <Property Name="department" Type="String" MaxLength="40" FixedLength="false" Unicode="true" />
+          <Property Name="comment" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="person_id_delete" Type="Int32" />
+          <Property Name="company_id" Type="Int32" />
+          <Property Name="fundet_vha" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="our_sales_person" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
+          <Property Name="name" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
+          <Property Name="surname" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="email" Type="String" MaxLength="80" FixedLength="false" Unicode="false" />
+          <Property Name="phone" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="mobile" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="julebrev" Type="Boolean" />
+          <Property Name="moment_abonnement" Type="Byte" />
+          <Property Name="moment_startdato" Type="DateTime" Precision="3" />
+          <Property Name="createdDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="our_meeting_booker" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
+          <Property Name="karriere_partner_code" Type="Int32" Nullable="false" />
+          <Property Name="key_account_manager" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
+          <Property Name="kmo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="active" Type="Boolean" />
+          <Property Name="sales_person_id" Type="Int32" />
+          <Property Name="nps_unsubscribe" Type="Boolean" Nullable="false" />
+          <Property Name="guid" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="password" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="nps_subscribe" Type="Boolean" Nullable="false" />
+          <Property Name="portal_hours" Type="Boolean" Nullable="false" />
+          <Property Name="portal_invoice" Type="Boolean" Nullable="false" />
+          <Property Name="portal_planning" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="company" Relationship="Self.fk_contact_person" FromRole="contact_person" ToRole="company" />
+        </EntityType>
+        <EntityType Name="job">
+          <Key>
+            <PropertyRef Name="job_id" />
+          </Key>
+          <Property Name="job_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="file_number" Type="Int32" Nullable="false" />
+          <Property Name="invoice_name" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="name" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="job_status" Type="Byte" />
+          <Property Name="public_description" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="internal_description" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="active" Type="Boolean" Nullable="false" />
+          <Property Name="hours_per_week" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="estimated_total_hours" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+          <Property Name="deadline" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="negotiated_price" Type="Double" Nullable="false" />
+          <Property Name="price_group" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="recruitment_price" Type="Int32" />
+          <Property Name="job_location" Type="Byte" />
+          <Property Name="created_date" Type="DateTime" Precision="3" />
+          <Property Name="comments" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="log_of_events" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="company_id" Type="Int32" />
+          <Property Name="city" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="show" Type="Byte" />
+          <Property Name="contact_person_id" Type="Int32" />
+          <Property Name="expected_end_date" Type="DateTime" Precision="3" />
+          <Property Name="our_consultant" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="our_consultant2" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="our_responsible" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="department" Type="Byte" />
+          <Property Name="ended_date" Type="DateTime" Precision="3" />
+          <Property Name="daily_contact_person_id" Type="Int32" />
+          <Property Name="treasury_contact_person_id" Type="Int32" />
+          <Property Name="cc_contact_person_id" Type="Int32" />
+          <Property Name="job_category_single_id" Type="Byte" />
+          <Property Name="bNeverEvaluate" Type="Boolean" Nullable="false" />
+          <Property Name="dNextEvaluation" Type="DateTime" Precision="3" />
+          <Property Name="recipients" Type="Int32" Nullable="false" />
+          <Property Name="searchCriteria" Type="Binary" MaxLength="1000" FixedLength="false" />
+          <Property Name="conditionsSent" Type="Boolean" Nullable="false" />
+          <Property Name="primarySalesPerson" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="secondarySalesPerson" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="meetingBooker" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="keyAccountManager" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="primarySalesPersonPercentage" Type="Int32" />
+          <Property Name="secondarySalesPersonPercentage" Type="Int32" />
+          <Property Name="meetingBookerPercentage" Type="Int32" />
+          <Property Name="keyAccountManagerPercentage" Type="Int32" />
+          <Property Name="applicationDeadline" Type="DateTime" Precision="3" />
+          <Property Name="InvoiceAddress" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="InvoiceAddressZipNumber" Type="Int32" />
+          <Property Name="InvoiceReference" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="SalaryBase" Type="Double" />
+          <Property Name="TimeregName" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="jobCategoryNew" Type="Int32" />
+          <Property Name="ExposedOn" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="MaleFemale" Type="Int32" />
+          <Property Name="OnKRFrontpage" Type="Boolean" />
+          <Property Name="ReportingLockedBefore" Type="DateTime" Precision="3" />
+          <Property Name="LastCheckedDate" Type="DateTime" Precision="3" />
+          <Property Name="TimeSpecMailSentDate" Type="DateTime" Precision="3" />
+          <Property Name="InvoiceAddress2" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="TeaserText" Type="String" MaxLength="240" FixedLength="false" Unicode="true" />
+          <Property Name="JobMailSortCategoryID" Type="Int32" />
+          <Property Name="SpecialInvoice" Type="Boolean" Nullable="false" />
+          <Property Name="TermsOfSaleSent" Type="Boolean" />
+          <Property Name="ShowInHRP" Type="Boolean" Nullable="false" />
+          <Property Name="scanTag" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="parent_id" Type="Int32" />
+          <Property Name="jobTemplateSubstitutionConfirmation" Type="Int32" />
+          <Property Name="jobTemplateCoverLetterSingle" Type="Int32" />
+          <Property Name="jobTemplateCoverLetterBoth" Type="Int32" />
+          <Property Name="workPeriod_id" Type="Int32" />
+          <Property Name="EarliestStart" Type="DateTime" Precision="3" />
+          <Property Name="ApplicationEndDate" Type="DateTime" Precision="3" />
+          <Property Name="heading" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="JobNewsletterResetFrom" Type="DateTime" Precision="3" />
+          <Property Name="Application_Startdate" Type="DateTime" Precision="3" />
+          <Property Name="Zip_String" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Repost_Job_Id" Type="Int32" />
+          <Property Name="Reason_id" Type="Int32" />
+          <Property Name="product_id" Type="Int32" />
+          <Property Name="wage_type_id" Type="Int32" />
+          <Property Name="job_category_intern_id" Type="Int32" Nullable="false" />
+          <Property Name="invoice_id" Type="Int32" />
+          <Property Name="ean" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="show_on_jobbanks" Type="Boolean" Nullable="false" />
+          <Property Name="unanonymous_date" Type="DateTime" Precision="3" />
+          <Property Name="hirevue_id" Type="Int32" />
+          <Property Name="weOffer1" Type="String" MaxLength="80" FixedLength="false" Unicode="false" />
+          <Property Name="weOffer2" Type="String" MaxLength="80" FixedLength="false" Unicode="false" />
+          <Property Name="weOffer3" Type="String" MaxLength="80" FixedLength="false" Unicode="false" />
+          <Property Name="workHoursAndSalary" Type="String" MaxLength="180" FixedLength="false" Unicode="false" />
+          <Property Name="highlightId" Type="Int32" />
+          <Property Name="primaryCategoryId" Type="Int32" />
+          <Property Name="employeeCount" Type="Int32" />
+          <Property Name="hideInInternalTimeregOverview" Type="Boolean" Nullable="false" />
+          <Property Name="hideInDetailTabOnCostumerPortal" Type="Boolean" Nullable="false" />
+          <Property Name="autoBpBreakLimit" Type="Int32" Nullable="false" />
+          <Property Name="autoBpBreakLength" Type="Int32" Nullable="false" />
+          <Property Name="midterm_invoice" Type="Boolean" Nullable="false" />
+          <Property Name="applicationType" Type="Int32" />
+          <Property Name="superJobId" Type="Int32" />
+          <Property Name="hideInJoblist" Type="Boolean" />
+          <Property Name="motivationNeeded" Type="Boolean" />
+          <Property Name="extraInvoiceEmail" Type="String" MaxLength="250" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="virksomheden" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="jobcontractid" Type="Int32" />
+        </EntityType>
+        <EntityType Name="invoice">
+          <Key>
+            <PropertyRef Name="invoice_id" />
+          </Key>
+          <Property Name="invoice_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="file_number" Type="Int32" />
+          <Property Name="job" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="virksomhed" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+          <Property Name="hours" Type="Decimal" Precision="6" Scale="2" />
+          <Property Name="salary" Type="Decimal" Precision="9" Scale="2" />
+          <Property Name="amount" Type="Decimal" Precision="9" Scale="2" />
+          <Property Name="diverse" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="our_sales_person" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="job_category" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="hrm" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="hrm2" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="hrm_count" Type="Int32" />
+          <Property Name="invoice_month" Type="DateTime" Precision="3" />
+          <Property Name="student_worked_month" Type="DateTime" Precision="3" />
+          <Property Name="remarks" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="created" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="vReportedHour">
+          <Key>
+            <PropertyRef Name="reported_hours_id" />
+            <PropertyRef Name="jnr" />
+            <PropertyRef Name="student_id" />
+            <PropertyRef Name="SSN" />
+            <PropertyRef Name="worked_date" />
+            <PropertyRef Name="minutes" />
+            <PropertyRef Name="etc_id" />
+            <PropertyRef Name="status" />
+          </Key>
+          <Property Name="reported_hours_id" Type="Int32" Nullable="false" />
+          <Property Name="company_id" Type="Int32" />
+          <Property Name="company" Type="String" MaxLength="120" FixedLength="false" Unicode="true" />
+          <Property Name="jnr" Type="Int32" Nullable="false" />
+          <Property Name="job_name" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="student_id" Type="Int32" Nullable="false" />
+          <Property Name="SSN" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="worker" Type="String" MaxLength="81" FixedLength="false" Unicode="true" />
+          <Property Name="worked_date" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="minutes" Type="Int32" Nullable="false" />
+          <Property Name="period" Type="String" MaxLength="180" FixedLength="false" Unicode="true" />
+          <Property Name="etc_id" Type="Int32" Nullable="false" />
+          <Property Name="status" Type="Int32" Nullable="false" />
+          <Property Name="consultants" Type="String" MaxLength="101" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="vTask">
+          <Key>
+            <PropertyRef Name="jnr" />
+            <PropertyRef Name="student_id" />
+            <PropertyRef Name="state" />
+            <PropertyRef Name="oncall" />
+            <PropertyRef Name="task_id" />
+            <PropertyRef Name="job_attribute_id" />
+            <PropertyRef Name="job_id" />
+          </Key>
+          <Property Name="jnr" Type="Int32" Nullable="false" />
+          <Property Name="student_id" Type="Int32" Nullable="false" />
+          <Property Name="name" Type="String" MaxLength="81" FixedLength="false" Unicode="true" />
+          <Property Name="start_time" Type="DateTime" Precision="3" />
+          <Property Name="end_time" Type="DateTime" Precision="3" />
+          <Property Name="state" Type="Int32" Nullable="false" />
+          <Property Name="oncall" Type="Int32" Nullable="false" />
+          <Property Name="vagttype" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="phone" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="mobile" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="task_id" Type="Int32" Nullable="false" />
+          <Property Name="job_name" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="CheckedIn" Type="Boolean" />
+          <Property Name="job_attribute_id" Type="Int32" Nullable="false" />
+          <Property Name="job_id" Type="Int32" Nullable="false" />
+        </EntityType>
+        <Association Name="fk_contact_person">
+          <End Role="company" Type="Self.company" Multiplicity="0..1" />
+          <End Role="contact_person" Type="Self.contact_person" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="company">
+              <PropertyRef Name="company_id" />
+            </Principal>
+            <Dependent Role="contact_person">
+              <PropertyRef Name="company_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="db12054Entities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="JobToContactPersons" EntityType="Self.JobToContactPerson" />
+          <EntitySet Name="companies" EntityType="Self.company" />
+          <EntitySet Name="contact_person" EntityType="Self.contact_person" />
+          <EntitySet Name="jobs" EntityType="Self.job" />
+          <EntitySet Name="invoices" EntityType="Self.invoice" />
+          <EntitySet Name="vReportedHours" EntityType="Self.vReportedHour" />
+          <EntitySet Name="vTasks" EntityType="Self.vTask" />
+          <AssociationSet Name="fk_contact_person" Association="Self.fk_contact_person">
+            <End Role="company" EntitySet="companies" />
+            <End Role="contact_person" EntitySet="contact_person" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="db12054ModelStoreContainer" CdmEntityContainer="db12054Entities">
+          <EntitySetMapping Name="JobToContactPersons">
+            <EntityTypeMapping TypeName="db12054Model.JobToContactPerson">
+              <MappingFragment StoreEntitySet="JobToContactPerson">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="contact_person_id" ColumnName="contact_person_id" />
+                <ScalarProperty Name="jnr" ColumnName="jnr" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="companies">
+            <EntityTypeMapping TypeName="db12054Model.company">
+              <MappingFragment StoreEntitySet="company">
+                <ScalarProperty Name="company_id" ColumnName="company_id" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="phone" ColumnName="phone" />
+                <ScalarProperty Name="fax" ColumnName="fax" />
+                <ScalarProperty Name="comment" ColumnName="comment" />
+                <ScalarProperty Name="email" ColumnName="email" />
+                <ScalarProperty Name="website" ColumnName="website" />
+                <ScalarProperty Name="company_status" ColumnName="company_status" />
+                <ScalarProperty Name="created_date" ColumnName="created_date" />
+                <ScalarProperty Name="name_second" ColumnName="name_second" />
+                <ScalarProperty Name="kob_no" ColumnName="kob_no" />
+                <ScalarProperty Name="employees_no" ColumnName="employees_no" />
+                <ScalarProperty Name="employees_no_code" ColumnName="employees_no_code" />
+                <ScalarProperty Name="cvr_no" ColumnName="cvr_no" />
+                <ScalarProperty Name="p_no" ColumnName="p_no" />
+                <ScalarProperty Name="jur_se_no" ColumnName="jur_se_no" />
+                <ScalarProperty Name="reg_no" ColumnName="reg_no" />
+                <ScalarProperty Name="founding_year" ColumnName="founding_year" />
+                <ScalarProperty Name="company_type_id" ColumnName="company_type_id" />
+                <ScalarProperty Name="mother_company" ColumnName="mother_company" />
+                <ScalarProperty Name="mother_country" ColumnName="mother_country" />
+                <ScalarProperty Name="mother_company2" ColumnName="mother_company2" />
+                <ScalarProperty Name="mother_country2" ColumnName="mother_country2" />
+                <ScalarProperty Name="customercategory" ColumnName="customercategory" />
+                <ScalarProperty Name="salesforce1_locked" ColumnName="salesforce1_locked" />
+                <ScalarProperty Name="marked_as_primary" ColumnName="marked_as_primary" />
+                <ScalarProperty Name="reference" ColumnName="reference" />
+                <ScalarProperty Name="career_partner_guid" ColumnName="career_partner_guid" />
+                <ScalarProperty Name="product_partner_guid" ColumnName="product_partner_guid" />
+                <ScalarProperty Name="parent_id" ColumnName="parent_id" />
+                <ScalarProperty Name="cmpnTemplateSubstitutionConfirmation" ColumnName="cmpnTemplateSubstitutionConfirmation" />
+                <ScalarProperty Name="cmpnTemplateCoverLetterSingle" ColumnName="cmpnTemplateCoverLetterSingle" />
+                <ScalarProperty Name="cmpnTemplateCoverLetterBoth" ColumnName="cmpnTemplateCoverLetterBoth" />
+                <ScalarProperty Name="group_initial" ColumnName="group_initial" />
+                <ScalarProperty Name="offentligt" ColumnName="offentligt" />
+                <ScalarProperty Name="ext_hrp_user" ColumnName="ext_hrp_user" />
+                <ScalarProperty Name="ean" ColumnName="ean" />
+                <ScalarProperty Name="agreement_id" ColumnName="agreement_id" />
+                <ScalarProperty Name="concern_id" ColumnName="concern_id" />
+                <ScalarProperty Name="isupdated" ColumnName="isupdated" />
+                <ScalarProperty Name="import_date" ColumnName="import_date" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="contact_person">
+            <EntityTypeMapping TypeName="db12054Model.contact_person">
+              <MappingFragment StoreEntitySet="contact_person">
+                <ScalarProperty Name="contact_person_id" ColumnName="contact_person_id" />
+                <ScalarProperty Name="title" ColumnName="title" />
+                <ScalarProperty Name="department" ColumnName="department" />
+                <ScalarProperty Name="comment" ColumnName="comment" />
+                <ScalarProperty Name="person_id_delete" ColumnName="person_id_delete" />
+                <ScalarProperty Name="company_id" ColumnName="company_id" />
+                <ScalarProperty Name="fundet_vha" ColumnName="fundet_vha" />
+                <ScalarProperty Name="our_sales_person" ColumnName="our_sales_person" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="surname" ColumnName="surname" />
+                <ScalarProperty Name="email" ColumnName="email" />
+                <ScalarProperty Name="phone" ColumnName="phone" />
+                <ScalarProperty Name="mobile" ColumnName="mobile" />
+                <ScalarProperty Name="julebrev" ColumnName="julebrev" />
+                <ScalarProperty Name="moment_abonnement" ColumnName="moment_abonnement" />
+                <ScalarProperty Name="moment_startdato" ColumnName="moment_startdato" />
+                <ScalarProperty Name="createdDate" ColumnName="createdDate" />
+                <ScalarProperty Name="our_meeting_booker" ColumnName="our_meeting_booker" />
+                <ScalarProperty Name="karriere_partner_code" ColumnName="karriere_partner_code" />
+                <ScalarProperty Name="key_account_manager" ColumnName="key_account_manager" />
+                <ScalarProperty Name="kmo" ColumnName="kmo" />
+                <ScalarProperty Name="active" ColumnName="active" />
+                <ScalarProperty Name="sales_person_id" ColumnName="sales_person_id" />
+                <ScalarProperty Name="nps_unsubscribe" ColumnName="nps_unsubscribe" />
+                <ScalarProperty Name="guid" ColumnName="guid" />
+                <ScalarProperty Name="password" ColumnName="password" />
+                <ScalarProperty Name="nps_subscribe" ColumnName="nps_subscribe" />
+                <ScalarProperty Name="portal_hours" ColumnName="portal_hours" />
+                <ScalarProperty Name="portal_invoice" ColumnName="portal_invoice" />
+                <ScalarProperty Name="portal_planning" ColumnName="portal_planning" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="jobs">
+            <EntityTypeMapping TypeName="db12054Model.job">
+              <MappingFragment StoreEntitySet="job">
+                <ScalarProperty Name="job_id" ColumnName="job_id" />
+                <ScalarProperty Name="file_number" ColumnName="file_number" />
+                <ScalarProperty Name="invoice_name" ColumnName="invoice_name" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="job_status" ColumnName="job_status" />
+                <ScalarProperty Name="public_description" ColumnName="public_description" />
+                <ScalarProperty Name="internal_description" ColumnName="internal_description" />
+                <ScalarProperty Name="active" ColumnName="active" />
+                <ScalarProperty Name="hours_per_week" ColumnName="hours_per_week" />
+                <ScalarProperty Name="estimated_total_hours" ColumnName="estimated_total_hours" />
+                <ScalarProperty Name="deadline" ColumnName="deadline" />
+                <ScalarProperty Name="negotiated_price" ColumnName="negotiated_price" />
+                <ScalarProperty Name="price_group" ColumnName="price_group" />
+                <ScalarProperty Name="recruitment_price" ColumnName="recruitment_price" />
+                <ScalarProperty Name="job_location" ColumnName="job_location" />
+                <ScalarProperty Name="created_date" ColumnName="created_date" />
+                <ScalarProperty Name="comments" ColumnName="comments" />
+                <ScalarProperty Name="log_of_events" ColumnName="log_of_events" />
+                <ScalarProperty Name="company_id" ColumnName="company_id" />
+                <ScalarProperty Name="city" ColumnName="city" />
+                <ScalarProperty Name="show" ColumnName="show" />
+                <ScalarProperty Name="contact_person_id" ColumnName="contact_person_id" />
+                <ScalarProperty Name="expected_end_date" ColumnName="expected_end_date" />
+                <ScalarProperty Name="our_consultant" ColumnName="our_consultant" />
+                <ScalarProperty Name="our_consultant2" ColumnName="our_consultant2" />
+                <ScalarProperty Name="our_responsible" ColumnName="our_responsible" />
+                <ScalarProperty Name="department" ColumnName="department" />
+                <ScalarProperty Name="ended_date" ColumnName="ended_date" />
+                <ScalarProperty Name="daily_contact_person_id" ColumnName="daily_contact_person_id" />
+                <ScalarProperty Name="treasury_contact_person_id" ColumnName="treasury_contact_person_id" />
+                <ScalarProperty Name="cc_contact_person_id" ColumnName="cc_contact_person_id" />
+                <ScalarProperty Name="job_category_single_id" ColumnName="job_category_single_id" />
+                <ScalarProperty Name="bNeverEvaluate" ColumnName="bNeverEvaluate" />
+                <ScalarProperty Name="dNextEvaluation" ColumnName="dNextEvaluation" />
+                <ScalarProperty Name="recipients" ColumnName="recipients" />
+                <ScalarProperty Name="searchCriteria" ColumnName="searchCriteria" />
+                <ScalarProperty Name="conditionsSent" ColumnName="conditionsSent" />
+                <ScalarProperty Name="primarySalesPerson" ColumnName="primarySalesPerson" />
+                <ScalarProperty Name="secondarySalesPerson" ColumnName="secondarySalesPerson" />
+                <ScalarProperty Name="meetingBooker" ColumnName="meetingBooker" />
+                <ScalarProperty Name="keyAccountManager" ColumnName="keyAccountManager" />
+                <ScalarProperty Name="primarySalesPersonPercentage" ColumnName="primarySalesPersonPercentage" />
+                <ScalarProperty Name="secondarySalesPersonPercentage" ColumnName="secondarySalesPersonPercentage" />
+                <ScalarProperty Name="meetingBookerPercentage" ColumnName="meetingBookerPercentage" />
+                <ScalarProperty Name="keyAccountManagerPercentage" ColumnName="keyAccountManagerPercentage" />
+                <ScalarProperty Name="applicationDeadline" ColumnName="applicationDeadline" />
+                <ScalarProperty Name="InvoiceAddress" ColumnName="InvoiceAddress" />
+                <ScalarProperty Name="InvoiceAddressZipNumber" ColumnName="InvoiceAddressZipNumber" />
+                <ScalarProperty Name="InvoiceReference" ColumnName="InvoiceReference" />
+                <ScalarProperty Name="SalaryBase" ColumnName="SalaryBase" />
+                <ScalarProperty Name="TimeregName" ColumnName="TimeregName" />
+                <ScalarProperty Name="jobCategoryNew" ColumnName="jobCategoryNew" />
+                <ScalarProperty Name="ExposedOn" ColumnName="ExposedOn" />
+                <ScalarProperty Name="MaleFemale" ColumnName="MaleFemale" />
+                <ScalarProperty Name="OnKRFrontpage" ColumnName="OnKRFrontpage" />
+                <ScalarProperty Name="ReportingLockedBefore" ColumnName="ReportingLockedBefore" />
+                <ScalarProperty Name="LastCheckedDate" ColumnName="LastCheckedDate" />
+                <ScalarProperty Name="TimeSpecMailSentDate" ColumnName="TimeSpecMailSentDate" />
+                <ScalarProperty Name="InvoiceAddress2" ColumnName="InvoiceAddress2" />
+                <ScalarProperty Name="TeaserText" ColumnName="TeaserText" />
+                <ScalarProperty Name="JobMailSortCategoryID" ColumnName="JobMailSortCategoryID" />
+                <ScalarProperty Name="SpecialInvoice" ColumnName="SpecialInvoice" />
+                <ScalarProperty Name="TermsOfSaleSent" ColumnName="TermsOfSaleSent" />
+                <ScalarProperty Name="ShowInHRP" ColumnName="ShowInHRP" />
+                <ScalarProperty Name="scanTag" ColumnName="scanTag" />
+                <ScalarProperty Name="parent_id" ColumnName="parent_id" />
+                <ScalarProperty Name="jobTemplateSubstitutionConfirmation" ColumnName="jobTemplateSubstitutionConfirmation" />
+                <ScalarProperty Name="jobTemplateCoverLetterSingle" ColumnName="jobTemplateCoverLetterSingle" />
+                <ScalarProperty Name="jobTemplateCoverLetterBoth" ColumnName="jobTemplateCoverLetterBoth" />
+                <ScalarProperty Name="workPeriod_id" ColumnName="workPeriod_id" />
+                <ScalarProperty Name="EarliestStart" ColumnName="EarliestStart" />
+                <ScalarProperty Name="ApplicationEndDate" ColumnName="ApplicationEndDate" />
+                <ScalarProperty Name="heading" ColumnName="heading" />
+                <ScalarProperty Name="JobNewsletterResetFrom" ColumnName="JobNewsletterResetFrom" />
+                <ScalarProperty Name="Application_Startdate" ColumnName="Application_Startdate" />
+                <ScalarProperty Name="Zip_String" ColumnName="Zip_String" />
+                <ScalarProperty Name="Repost_Job_Id" ColumnName="Repost_Job_Id" />
+                <ScalarProperty Name="Reason_id" ColumnName="Reason_id" />
+                <ScalarProperty Name="product_id" ColumnName="product_id" />
+                <ScalarProperty Name="wage_type_id" ColumnName="wage_type_id" />
+                <ScalarProperty Name="job_category_intern_id" ColumnName="job_category_intern_id" />
+                <ScalarProperty Name="invoice_id" ColumnName="invoice_id" />
+                <ScalarProperty Name="ean" ColumnName="ean" />
+                <ScalarProperty Name="show_on_jobbanks" ColumnName="show_on_jobbanks" />
+                <ScalarProperty Name="unanonymous_date" ColumnName="unanonymous_date" />
+                <ScalarProperty Name="hirevue_id" ColumnName="hirevue_id" />
+                <ScalarProperty Name="weOffer1" ColumnName="weOffer1" />
+                <ScalarProperty Name="weOffer2" ColumnName="weOffer2" />
+                <ScalarProperty Name="weOffer3" ColumnName="weOffer3" />
+                <ScalarProperty Name="workHoursAndSalary" ColumnName="workHoursAndSalary" />
+                <ScalarProperty Name="highlightId" ColumnName="highlightId" />
+                <ScalarProperty Name="primaryCategoryId" ColumnName="primaryCategoryId" />
+                <ScalarProperty Name="employeeCount" ColumnName="employeeCount" />
+                <ScalarProperty Name="hideInInternalTimeregOverview" ColumnName="hideInInternalTimeregOverview" />
+                <ScalarProperty Name="hideInDetailTabOnCostumerPortal" ColumnName="hideInDetailTabOnCostumerPortal" />
+                <ScalarProperty Name="autoBpBreakLimit" ColumnName="autoBpBreakLimit" />
+                <ScalarProperty Name="autoBpBreakLength" ColumnName="autoBpBreakLength" />
+                <ScalarProperty Name="midterm_invoice" ColumnName="midterm_invoice" />
+                <ScalarProperty Name="applicationType" ColumnName="applicationType" />
+                <ScalarProperty Name="superJobId" ColumnName="superJobId" />
+                <ScalarProperty Name="hideInJoblist" ColumnName="hideInJoblist" />
+                <ScalarProperty Name="motivationNeeded" ColumnName="motivationNeeded" />
+                <ScalarProperty Name="extraInvoiceEmail" ColumnName="extraInvoiceEmail" />
+                <ScalarProperty Name="virksomheden" ColumnName="virksomheden" />
+                <ScalarProperty Name="jobcontractid" ColumnName="jobcontractid" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="invoices">
+            <EntityTypeMapping TypeName="db12054Model.invoice">
+              <MappingFragment StoreEntitySet="invoice">
+                <ScalarProperty Name="invoice_id" ColumnName="invoice_id" />
+                <ScalarProperty Name="file_number" ColumnName="file_number" />
+                <ScalarProperty Name="job" ColumnName="job" />
+                <ScalarProperty Name="virksomhed" ColumnName="virksomhed" />
+                <ScalarProperty Name="hours" ColumnName="hours" />
+                <ScalarProperty Name="salary" ColumnName="salary" />
+                <ScalarProperty Name="amount" ColumnName="amount" />
+                <ScalarProperty Name="diverse" ColumnName="diverse" />
+                <ScalarProperty Name="our_sales_person" ColumnName="our_sales_person" />
+                <ScalarProperty Name="job_category" ColumnName="job_category" />
+                <ScalarProperty Name="hrm" ColumnName="hrm" />
+                <ScalarProperty Name="hrm2" ColumnName="hrm2" />
+                <ScalarProperty Name="hrm_count" ColumnName="hrm_count" />
+                <ScalarProperty Name="invoice_month" ColumnName="invoice_month" />
+                <ScalarProperty Name="student_worked_month" ColumnName="student_worked_month" />
+                <ScalarProperty Name="remarks" ColumnName="remarks" />
+                <ScalarProperty Name="created" ColumnName="created" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="vReportedHours">
+            <EntityTypeMapping TypeName="db12054Model.vReportedHour">
+              <MappingFragment StoreEntitySet="vReportedHours">
+                <ScalarProperty Name="reported_hours_id" ColumnName="reported_hours_id" />
+                <ScalarProperty Name="company_id" ColumnName="company_id" />
+                <ScalarProperty Name="company" ColumnName="company" />
+                <ScalarProperty Name="jnr" ColumnName="jnr" />
+                <ScalarProperty Name="job_name" ColumnName="job_name" />
+                <ScalarProperty Name="student_id" ColumnName="student_id" />
+                <ScalarProperty Name="SSN" ColumnName="SSN" />
+                <ScalarProperty Name="worker" ColumnName="worker" />
+                <ScalarProperty Name="worked_date" ColumnName="worked_date" />
+                <ScalarProperty Name="minutes" ColumnName="minutes" />
+                <ScalarProperty Name="period" ColumnName="period" />
+                <ScalarProperty Name="etc_id" ColumnName="etc_id" />
+                <ScalarProperty Name="status" ColumnName="status" />
+                <ScalarProperty Name="consultants" ColumnName="consultants" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="vTasks">
+            <EntityTypeMapping TypeName="db12054Model.vTask">
+              <MappingFragment StoreEntitySet="vTask">
+                <ScalarProperty Name="jnr" ColumnName="jnr" />
+                <ScalarProperty Name="student_id" ColumnName="student_id" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="start_time" ColumnName="start_time" />
+                <ScalarProperty Name="end_time" ColumnName="end_time" />
+                <ScalarProperty Name="state" ColumnName="state" />
+                <ScalarProperty Name="oncall" ColumnName="oncall" />
+                <ScalarProperty Name="vagttype" ColumnName="vagttype" />
+                <ScalarProperty Name="phone" ColumnName="phone" />
+                <ScalarProperty Name="mobile" ColumnName="mobile" />
+                <ScalarProperty Name="task_id" ColumnName="task_id" />
+                <ScalarProperty Name="job_name" ColumnName="job_name" />
+                <ScalarProperty Name="CheckedIn" ColumnName="CheckedIn" />
+                <ScalarProperty Name="job_attribute_id" ColumnName="job_attribute_id" />
+                <ScalarProperty Name="job_id" ColumnName="job_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

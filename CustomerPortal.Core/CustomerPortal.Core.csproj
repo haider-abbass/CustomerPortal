@@ -58,6 +58,42 @@
     <Compile Include="Business\Base\BaseLogic.cs" />
     <Compile Include="DataAccess\Authentication\AuthenticationProvider.cs" />
     <Compile Include="DataAccess\Base\BaseFactory.cs" />
+    <Compile Include="EntityModels\company.cs">
+      <DependentUpon>DBM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityModels\contact_person.cs">
+      <DependentUpon>DBM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityModels\DBM.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DBM.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityModels\DBM.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DBM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityModels\DBM.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DBM.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="EntityModels\invoice.cs">
+      <DependentUpon>DBM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityModels\job.cs">
+      <DependentUpon>DBM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityModels\JobToContactPerson.cs">
+      <DependentUpon>DBM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityModels\vReportedHour.cs">
+      <DependentUpon>DBM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityModels\vTask.cs">
+      <DependentUpon>DBM.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\Authentication\SignInModel.cs" />
     <Compile Include="Models\Authentication\SignUpModel.cs" />
     <Compile Include="Models\Session\User.cs" />
@@ -65,15 +101,32 @@
     <Compile Include="Models\Util\ValidationFactory.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="EntityModels\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <None Include="App.config" />
+    <EntityDeploy Include="EntityModels\DBM.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>DBM.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="EntityModels\DBM.edmx.diagram">
+      <DependentUpon>DBM.edmx</DependentUpon>
+    </None>
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="EntityModels\DBM.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>DBM.edmx</DependentUpon>
+      <LastGenOutput>DBM.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="EntityModels\DBM.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>DBM.edmx</DependentUpon>
+      <LastGenOutput>DBM.cs</LastGenOutput>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
