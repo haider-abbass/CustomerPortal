@@ -9,7 +9,7 @@ using CustomerPortal.Core.Models.Util;
 namespace CustomerPortal.Core.DataAccess.Authentication
 {
 
-    public class AuthenticationProvider: BaseFactory
+    public class AuthenticationProvider: BaseFactory,IAuthenticationProvider
     {
         /// <summary>
         /// Authenticates the user.

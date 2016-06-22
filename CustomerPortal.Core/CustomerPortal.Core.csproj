@@ -57,6 +57,7 @@
     <Compile Include="Business\Authorization\AuthorizationLogic.cs" />
     <Compile Include="Business\Base\BaseLogic.cs" />
     <Compile Include="DataAccess\Authentication\AuthenticationProvider.cs" />
+    <Compile Include="DataAccess\Authentication\IAuthenticationProvider.cs" />
     <Compile Include="DataAccess\Base\BaseFactory.cs" />
     <Compile Include="EntityModels\company.cs">
       <DependentUpon>DBM.tt</DependentUpon>

@@ -9,12 +9,17 @@ namespace CustomerPortal.Web.Controllers
     /// </summary>
     public class AuthenticationController : BaseController
     {
-        // GET: Authentication
-        public ActionResult Index()
-        {
-            return View();           
-        }
+        private readonly IAuthenticationProvider _iAuth;
 
+        /// <summary>
+        /// Constructor.
+        /// </summary>
+        /// <param name="iAuthentication">The i athentication.</param>
+        public AuthenticationController(IAuthenticationProvider iAuthentication)
+        {
+            _iAuth = iAuthentication;
+        }
+        
         [HttpGet]
         public ActionResult Login()
         {
@@ -23,7 +28,7 @@ namespace CustomerPortal.Web.Controllers
                 UserName = "ps@moment.dk",
                 Password = "123456"
             };
-            var sessionObject = new AuthenticationProvider().AuthenticateUser(model);
+            var sessionObject = _iAuth.AuthenticateUser(model);
             return null;
         }
     }
