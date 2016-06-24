@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Reflection;
+using System.Text;
 using log4net;
 
 namespace CustomerPortal.Core.DataAccess.Base
@@ -18,8 +19,13 @@ namespace CustomerPortal.Core.DataAccess.Base
 
         protected void LogError(Exception exception, dynamic inputModel)
         {
-            var inModel =  inputModel.ToString();
-            Log.Error(string.Format("Error in Method: {0}, Error Message : {1}, Stack Trace : {2}, Input Parameters : {3}", exception.TargetSite, exception.Message, exception.StackTrace,inModel));
+            var inModel = new StringBuilder();
+
+            //foreach (var entry in inputModel)
+            //{
+            //    inModel.Append(entry.ToString()+" , ");
+            //}
+            Log.Error(string.Format("Error in Method: {0}, Error Message : {1}, Stack Trace : {2}, Input Parameters : {3}", exception.TargetSite, exception.Message, exception.StackTrace,inModel.ToString()));
         }
     }
 }

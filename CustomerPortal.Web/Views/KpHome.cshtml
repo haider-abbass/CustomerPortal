@@ -1,4 +1,5 @@
-﻿@inherits UmbracoTemplatePage
+﻿@using CustomerPortal.Core.Models.Authentication
+@inherits UmbracoTemplatePage
 @{
 	Layout = "SiteMaster.cshtml";
     //ViewBag.Title = "Home Page";
@@ -10,45 +11,4 @@
 
 <p>@Umbraco.Field("htmlContent")</p>*@
 
-
-<form method="post" action="/" onsubmit="" id="form1">
-    <div class="aspNetHidden">
-
-    </div>
-
-    <div id="loginForm">
-        <div>
-            <p>
-                Log ind og få adgang til&nbsp;dine personlige oplysninger hos
-                Moment.
-            </p>
-        </div>
-        <br>
-
-        <table id="ContentPlaceHolderDefault_wrapper_LoginView1_Login1" cellspacing="0" cellpadding="0" style="border-collapse:collapse;">
-            <tbody>
-                <tr>
-                    <td>
-                        <h3><label for="ContentPlaceHolderDefault_wrapper_LoginView1_Login1_UserName" id="ContentPlaceHolderDefault_wrapper_LoginView1_Login1_UserNameLabel">E-mail:</label> </h3>
-
-                        <input name="ctl00$ctl00$ctl00$ContentPlaceHolderDefault$wrapper$LoginView1$Login1$UserName" type="text" id="ContentPlaceHolderDefault_wrapper_LoginView1_Login1_UserName" class="text">
-                        <span id="ContentPlaceHolderDefault_wrapper_LoginView1_Login1_UserNameRequired" title="E-mail skal indtastes." style="visibility:hidden;">*</span>
-                        <br>
-
-                        <h3><label for="ContentPlaceHolderDefault_wrapper_LoginView1_Login1_Password" id="ContentPlaceHolderDefault_wrapper_LoginView1_Login1_PasswordLabel">Kodeord:</label></h3>
-
-                        <input name="ctl00$ctl00$ctl00$ContentPlaceHolderDefault$wrapper$LoginView1$Login1$Password" type="password" id="ContentPlaceHolderDefault_wrapper_LoginView1_Login1_Password" class="password">
-                        <span id="ContentPlaceHolderDefault_wrapper_LoginView1_Login1_PasswordRequired" title="Kodeord skal indtastes." style="visibility:hidden;">*</span>
-                        <br>
-
-                        <div class="button" id="uniform-ContentPlaceHolderDefault_wrapper_LoginView1_Login1_LoginButton"><span>Log ind<input type="submit" name="ctl00$ctl00$ctl00$ContentPlaceHolderDefault$wrapper$LoginView1$Login1$LoginButton" value="Log ind" onclick="" id="ContentPlaceHolderDefault_wrapper_LoginView1_Login1_LoginButton" style="opacity: 0;"></span></div>
-                        <a href="">Ny bruger / Glemt adgangskode</a>
-
-                        <div style="color:Red;"></div>
-
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-    </div>  
-</form>
+@Html.Partial("_Login", new SignInModel())

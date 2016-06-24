@@ -1,6 +1,11 @@
-﻿using System.Web.Mvc;
+﻿using System.Security.Principal;
+using System.Web.Mvc;
+using System.Web.Security;
 using CustomerPortal.Core.DataAccess.Authentication;
 using CustomerPortal.Core.Models.Authentication;
+using CustomerPortal.Core.Models.Validation;
+using CustomerPortal.Core.Util;
+using CustomerPortal.Web.Util;
 
 namespace CustomerPortal.Web.Controllers
 {
@@ -21,14 +26,43 @@ namespace CustomerPortal.Web.Controllers
         }
         
         [HttpGet]
-        public ActionResult Login()
+        public ActionResult LoginUser(SignInModel signInModel)
         {
-            var model = new SignInModel
+            //Check if the session already exists
+            if (!HttpContext.User.Identity.IsAuthenticated) return CurrentUmbracoPage();
+
+            //var signInModel = new SignInModel
+            //{
+            //    UserName = "ps@moment.dk",
+            //    Password = "123456"
+            //};
+            
+            //Validate input model
+            if (!ValidationFactory.ValidateLoginInput(signInModel).IsValid)return null;
+            
+            //Authenticate user from database
+            var user = _iAuth.AuthenticateUser(signInModel);
+
+            if (user != null)
             {
-                UserName = "ps@moment.dk",
-                Password = "123456"
-            };
-            var sessionObject = _iAuth.AuthenticateUser(model);
+                //Set Authentication Cookie
+                FormsAuthentication.SetAuthCookie(user.UserGuid, signInModel.RememberMe);
+                var cookie = System.Web.HttpContext.Current.Response.Cookies[FormsAuthentication.FormsCookieName];
+                if (cookie != null)
+                {
+                    var ticket = FormsAuthentication.Decrypt(cookie.Value);
+                    if (ticket != null && !ticket.Expired)
+                    {
+                        var roles = (ticket.UserData ?? "").Split(',');
+                        System.Web.HttpContext.Current.User = new GenericPrincipal(new FormsIdentity(ticket), roles);
+                    }
+                }
+                //Set current user data to the Session
+                SessionUtil.User = user;
+            }
+
+            //Log Entry
+            SessionUtil.KillSession();
             return null;
         }
     }

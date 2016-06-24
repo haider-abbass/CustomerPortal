@@ -98,11 +98,16 @@
     <Compile Include="Models\Authentication\SignInModel.cs" />
     <Compile Include="Models\Authentication\SignUpModel.cs" />
     <Compile Include="Models\Session\User.cs" />
-    <Compile Include="Models\Util\Enums.cs" />
-    <Compile Include="Models\Util\ValidationFactory.cs" />
+    <Compile Include="Models\Validation\Validity.cs" />
+    <Compile Include="Resources\Messages.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Messages.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Util\Enums.cs" />
+    <Compile Include="Util\ValidationFactory.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
     <None Include="App.config" />
     <EntityDeploy Include="EntityModels\DBM.edmx">
@@ -128,6 +133,12 @@
       <DependentUpon>DBM.edmx</DependentUpon>
       <LastGenOutput>DBM.cs</LastGenOutput>
     </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\Messages.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Messages.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

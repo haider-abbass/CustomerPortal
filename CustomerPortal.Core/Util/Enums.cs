@@ -1,4 +1,4 @@
-﻿namespace CustomerPortal.Core.Models.Util
+﻿namespace CustomerPortal.Core.Util
 {
     public class Enums
     {

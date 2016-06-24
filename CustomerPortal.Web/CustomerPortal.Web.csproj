@@ -396,6 +396,7 @@
     <Content Include="Config\Lang\ru-RU.user.xml" />
     <Content Include="Config\Lang\sv-SE.user.xml" />
     <Content Include="Config\Lang\zh-CN.user.xml" />
+    <Content Include="Content\animate.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\font-awesome.css" />
@@ -1044,6 +1045,8 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\common.css" />
+    <Content Include="Scripts\Authentication\authentication.min.js" />
+    <Content Include="Scripts\Authentication\authentication.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="App_Plugins\ModelsBuilder\package.manifest" />
@@ -5223,6 +5226,9 @@
     <Content Include="Views\Partials\_Footer.cshtml" />
     <Content Include="Views\Partials\_Head.cshtml" />
     <Content Include="Views\KpHome.cshtml" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Partials\_Login.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\Logs\" />
