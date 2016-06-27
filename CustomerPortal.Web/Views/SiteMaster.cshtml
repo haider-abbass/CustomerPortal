@@ -2,6 +2,7 @@
 @{
     Layout = null;
 }
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -13,36 +14,31 @@
     @* Render the data from child pages into the head tag *@
     @RenderSection("HeadSection", false)
 </head>
-<body>
-    <div class="navbar navbar-inverse navbar-fixed-top">
-        @*<div class="container">
-                <div class="navbar-header">
-                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                     @Html.ActionLink("Application name", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
-                </div>
-                <div class="navbar-collapse collapse">
-                    <ul class="nav navbar-nav">
-                        <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                            <li>@Html.ActionLink("About", "About", "Home")</li>
-                            <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
-                    </ul>
-                    @Html.Partial("_LoginPartial")
-                </div>
-            </div>*@
+
+<body class="homepage">
+    @* Top Nav *@
+    <div class="container">
+        @Html.Partial("_Header")
     </div>
-    <div class="container body-content">
+    @* Body *@
+    <div class="container">
         @RenderBody()
-        <hr />
+    </div>
+    @* Login Form *@
+    <div>
+        @Html.Partial("_Login")
+    </div>
+    <div class="container">
+        @* Footer *@
         @Html.Partial("_Footer")
     </div>
-
-
-    @*@Scripts.Render("~/bundles/jquery")*@
-
+    @* Scripts *@
+    <script src="~/scripts/bootstrap.min.js"></script>
+    <script src="~/scripts/jquery.prettyPhoto.js"></script>
+    <script src="~/scripts/jquery.isotope.min.js"></script>
+    <script src="~/scripts/common-methods.js"></script>
+    <script src="~/scripts/wow.min.js"></script>
+    <script src="~/scripts/jquery.backstretch.min.js"></script>
     @* Place scripts in separate section named scripts and they would be rendered here *@
     @RenderSection("scripts", false)
 </body>
