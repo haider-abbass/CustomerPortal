@@ -56,17 +56,17 @@ namespace CustomerPortal.Core.DataAccess.Authentication
                     user.UserAuthorizations.Add(new UserAuthorization
                     {
                         IsAuthorized = dbUser.HoursManagement,
-                        Role = Enums.UserRoles.WorkHoursManager
+                        Role = Enums.UserRole.WorkHoursManager
                     });
                     user.UserAuthorizations.Add(new UserAuthorization
                     {
                         IsAuthorized = dbUser.Invoicing,
-                        Role = Enums.UserRoles.InvoicingManager
+                        Role = Enums.UserRole.InvoicingManager
                     });
                     user.UserAuthorizations.Add(new UserAuthorization
                     {
                         IsAuthorized = dbUser.ResourcePlanning,
-                        Role = Enums.UserRoles.PlanningManager
+                        Role = Enums.UserRole.PlanningManager
                     });
 
                     //2) Get the Job Numbers

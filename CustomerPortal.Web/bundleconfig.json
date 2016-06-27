@@ -1,0 +1,24 @@
+[
+  {
+    "outputFileName": "Scripts/Authentication/model.min.js",
+    "inputFiles": [
+      "Scripts/Authentication/model.js"
+    ]
+  },
+  {
+    "outputFileName": "Scripts/Authentication/controller.min.js",
+    "inputFiles": [
+      "Scripts/Authentication/controller.js"
+    ]
+  },
+  {
+    "outputFileName": "Scripts/Authentication/bundle.js",
+    "inputFiles": [
+      "Scripts/knockout-3.4.0.js",
+      "Scripts/jquery.validate.min.js",
+      "Scripts/jquery.validate-messages_da-DK.js",
+      "Scripts/Authentication/model.js",
+      "Scripts/Authentication/controller.js"
+    ]
+  }
+]

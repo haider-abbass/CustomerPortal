@@ -25,17 +25,11 @@ namespace CustomerPortal.Web.Controllers
             _iAuth = iAuthentication;
         }
         
-        [HttpGet]
+        [HttpPost]
         public ActionResult LoginUser(SignInModel signInModel)
         {
             //Check if the session already exists
-            if (!HttpContext.User.Identity.IsAuthenticated) return CurrentUmbracoPage();
-
-            //var signInModel = new SignInModel
-            //{
-            //    UserName = "ps@moment.dk",
-            //    Password = "123456"
-            //};
+            if (HttpContext.User.Identity.IsAuthenticated) return CurrentUmbracoPage();
             
             //Validate input model
             if (!ValidationFactory.ValidateLoginInput(signInModel).IsValid)return null;
@@ -62,8 +56,20 @@ namespace CustomerPortal.Web.Controllers
             }
 
             //Log Entry
-            SessionUtil.KillSession();
-            return null;
+            return Json(new { success = true }, JsonRequestBehavior.AllowGet);
+        }
+
+        [HttpGet]
+        public ActionResult LogoutUser()
+        {
+            var redirectPage = 1068;            
+            if (HttpContext.Session != null)
+            {
+                SessionUtil.KillSession();
+            }
+            FormsAuthentication.SignOut();
+            Roles.DeleteCookie();
+            return RedirectToUmbracoPage(redirectPage);
         }
     }
 }

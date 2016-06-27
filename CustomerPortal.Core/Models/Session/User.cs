@@ -32,7 +32,14 @@ namespace CustomerPortal.Core.Models.Session
     public class UserAuthorization
     {
         public bool IsAuthorized { get; set; }
-        public Enums.UserRoles Role { get; set; }
+        public Enums.UserRole Role { get; set; }
+        public AuthorizationType AuthorizationType { get; set; }
+    }
+
+    public class AuthorizationType
+    {
+        public Enums.AuthorizationLevel AuthorizationLevel { get; set; } = Enums.AuthorizationLevel.Executive;
+
     }
 
 }

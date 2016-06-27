@@ -1,4 +1,5 @@
-﻿<header id="header">
+﻿@using CustomerPortal.Core.Resources
+<header id="header">
     <div class="top-bar">
         <div class="container">
             <div class="row">
@@ -50,19 +51,11 @@
                     <li><a href="portfolio.html">Kontakt</a></li>
                     <li><a href="portfolio.html">Forretningsbetingelser</a></li>
                     <li class="active">
-                        <a href="" class="launch-modal" data-modal-id="modal-login">Log ind</a>
+                        <a href="" class="launch-modal" data-modal-id="modal-login" id="nav-Login">@Resources.LabelLogin</a>
                     </li>
-                    @*<li class="dropdown">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Pages <i class="fa fa-angle-down"></i></a>
-                <ul class="dropdown-menu">
-                    <li><a href="blog-item.html">Blog Single</a></li>
-                    <li><a href="pricing.html">Pricing</a></li>
-                    <li><a href="404.html">404</a></li>
-                    <li><a href="shortcodes.html">Shortcodes</a></li>
-                </ul>
-            </li>*@
-                    @*<li><a href="blog.html">Blog</a></li>
-            <li><a href="contact-us.html">Contact</a></li>*@
+                    <li>
+                        <a href="/umbraco/surface/authentication/logoutuser/" id="nav-Logout" class="hidden">@Resources.LabelLogout</a>
+                    </li>                  
                 </ul>
             </div>
         </div>

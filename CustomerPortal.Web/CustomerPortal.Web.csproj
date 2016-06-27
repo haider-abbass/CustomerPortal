@@ -1,5 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.Net.Compilers.1.2.2\build\Microsoft.Net.Compilers.props" Condition="Exists('..\packages\Microsoft.Net.Compilers.1.2.2\build\Microsoft.Net.Compilers.props')" />
   <Import Project="..\packages\UmbracoCms.7.4.3\build\UmbracoCms.props" Condition="Exists('..\packages\UmbracoCms.7.4.3\build\UmbracoCms.props')" />
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
@@ -21,7 +22,7 @@
     <IISExpressAnonymousAuthentication />
     <IISExpressWindowsAuthentication />
     <IISExpressUseClassicPipelineMode />
-    <NuGetPackageImportStamp>9bb1c1a3</NuGetPackageImportStamp>
+    <NuGetPackageImportStamp>11c953a6</NuGetPackageImportStamp>
     <UseGlobalApplicationHostFile />
     <TargetFrameworkProfile />
   </PropertyGroup>
@@ -444,12 +445,7 @@
     <Content Include="Content\images\gallery\gallery4.jpg" />
     <Content Include="Content\images\gallery\gallery5.jpg" />
     <Content Include="Content\images\gallery\gallery6.jpg" />
-    <Content Include="Content\images\ico\apple-touch-icon-114-precomposed.png" />
-    <Content Include="Content\images\ico\apple-touch-icon-144-precomposed.png" />
-    <Content Include="Content\images\ico\apple-touch-icon-57-precomposed.png" />
-    <Content Include="Content\images\ico\apple-touch-icon-72-precomposed.png" />
     <Content Include="Content\images\ico\favicon-students.png" />
-    <Content Include="Content\images\ico\favicon.ico" />
     <Content Include="Content\images\image_bg.png" />
     <Content Include="Content\images\logo_transparent.png" />
     <Content Include="Content\images\man1.jpg" />
@@ -559,6 +555,10 @@
     <Content Include="Content\images\slider\img2.png" />
     <Content Include="Content\images\slider\img3.png" />
     <Content Include="Content\images\slider_one.jpg" />
+    <Content Include="Content\images\spinner\ellipsis.gif" />
+    <Content Include="Content\images\spinner\facebook.gif" />
+    <Content Include="Content\images\spinner\ring.gif" />
+    <Content Include="Content\images\spinner\ripple.gif" />
     <Content Include="Content\images\tab1.png" />
     <Content Include="Content\images\tab2.png" />
     <Content Include="Content\images\team-member.jpg" />
@@ -1199,12 +1199,21 @@
     <Content Include="Content\kendo\2016.2.504\Uniform\sprite_kpi_2x.png" />
     <Content Include="default.aspx" />
     <Content Include="dependencies\log4net.dll" />
-    <Content Include="favicon.ico" />
     <Content Include="fonts\fontawesome-webfont.svg" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
-    <Content Include="Scripts\Authentication\authentication.min.js" />
-    <Content Include="Scripts\Authentication\authentication.js" />
+    <Content Include="Scripts\Authentication\bundle.js" />
+    <Content Include="Scripts\Authentication\bundle.min.js">
+      <DependentUpon>bundle.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\Authentication\controller.min.js">
+      <DependentUpon>controller.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\Authentication\model.js" />
+    <Content Include="Scripts\Authentication\controller.js" />
+    <Content Include="Scripts\Authentication\model.min.js">
+      <DependentUpon>model.js</DependentUpon>
+    </Content>
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="App_Plugins\ModelsBuilder\package.manifest" />
@@ -1667,12 +1676,10 @@
     <Content Include="Content\fonts\glyphicons-halflings-regular.woff" />
     <Content Include="Content\images\404.xcf" />
     <Content Include="Content\fonts\fontawesome-webfont.woff2" />
-    <Content Include="Scripts\Authentication\authentication.min.js.map">
-      <DependentUpon>authentication.min.js</DependentUpon>
-    </Content>
     <Content Include="Scripts\common-methods.min.js.map">
       <DependentUpon>common-methods.min.js</DependentUpon>
     </Content>
+    <None Include="bundleconfig.json" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\common-methods.min.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
@@ -1682,6 +1689,7 @@
     <Content Include="Scripts\jquery.backstretch.min.js" />
     <Content Include="Scripts\jquery.isotope.min.js" />
     <Content Include="Scripts\jquery.prettyPhoto.js" />
+    <Content Include="Scripts\jquery.validate-messages_da-DK.js" />
     <Content Include="Scripts\jquery.validate.js" />
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
@@ -2245,7 +2253,10 @@
     <Content Include="Scripts\kendo\2016.2.504\messages\kendo.messages.zh-HK.min.js" />
     <Content Include="Scripts\kendo\2016.2.504\messages\kendo.messages.zh-TW.min.js" />
     <Content Include="Scripts\common-methods.js" />
+    <Content Include="Scripts\knockout-3.4.0.debug.js" />
+    <Content Include="Scripts\knockout-3.4.0.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
+    <Content Include="Scripts\spinner.js" />
     <Content Include="Scripts\wow.min.js" />
     <Content Include="Scripts\_references.js" />
     <Content Include="Umbraco\Actions\delete.aspx" />
@@ -5408,6 +5419,7 @@
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Partials\_Login.cshtml" />
     <Content Include="Views\Partials\_Header.cshtml" />
+    <Content Include="Views\Partials\_Spinner.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\Logs\" />
@@ -5462,6 +5474,7 @@
     </PropertyGroup>
     <Error Condition="!Exists('..\packages\UmbracoCms.7.4.3\build\UmbracoCms.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\UmbracoCms.7.4.3\build\UmbracoCms.props'))" />
     <Error Condition="!Exists('..\packages\UmbracoCms.7.4.3\build\UmbracoCms.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\UmbracoCms.7.4.3\build\UmbracoCms.targets'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.Net.Compilers.1.2.2\build\Microsoft.Net.Compilers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Net.Compilers.1.2.2\build\Microsoft.Net.Compilers.props'))" />
   </Target>
   <Import Project="..\packages\UmbracoCms.7.4.3\build\UmbracoCms.targets" Condition="Exists('..\packages\UmbracoCms.7.4.3\build\UmbracoCms.targets')" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
