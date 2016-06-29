@@ -1,0 +1,23 @@
+﻿@inherits UmbracoTemplatePage
+@{
+    Layout = "SiteMaster.cshtml";
+}
+<section style="background: #fff; color: #000; padding: 0;">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h1 style="color: #000">@Umbraco.Field("Title")</h1>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <h3 style="color: #000">@Umbraco.Field("subtitle")</h3>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                @Umbraco.Field("htmlcontent")
+            </div>
+        </div>
+    </div>
+</section>

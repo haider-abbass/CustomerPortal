@@ -25,7 +25,7 @@ namespace CustomerPortal.Web.Controllers
             _iAuth = iAuthentication;
         }
         
-        [HttpPost]
+        [HttpPost]                
         public ActionResult LoginUser(SignInModel signInModel)
         {
             //Check if the session already exists

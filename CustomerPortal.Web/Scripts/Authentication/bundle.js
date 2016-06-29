@@ -193,6 +193,33 @@ $("#frmLogin").validate({
 });
 
 
+//apply MVVM bindings
+$(document).ready(function() {
+    ko.applyBindings(ViewModel);
+    //focus first element
+    $("#userName").focus();
+});
+
+    
+    /* Form validation */
+ /*   $('.login-form input[type="text"], .login-form input[type="password"], .login-form textarea').on('focus', function () {
+        $(this).removeClass('input-error');
+    });
+
+    $('.login-form').on('submit', function (e) {
+        $(this).find('input[type="text"], input[type="password"], textarea').each(function () {
+            if ($(this).val() == "") {
+                e.preventDefault();
+                $(this).addClass('input-error');
+            }
+            else {
+                $(this).removeClass('input-error');
+            }
+        });
+    });
+}); */
+
+
 //Service Call
 $("#btnLogin").click(function () {
     debugger;
@@ -216,33 +243,3 @@ $("#btnLogin").click(function () {
         });
     }
 });
-
-
-
-
-//apply MVVM bindings
-$(document).ready(function() {
-    ko.applyBindings(ViewModel);
-    //focus first element
-    $("#password").focus();
-});
-
-    
-    /* Form validation */
- /*   $('.login-form input[type="text"], .login-form input[type="password"], .login-form textarea').on('focus', function () {
-        $(this).removeClass('input-error');
-    });
-
-    $('.login-form').on('submit', function (e) {
-        $(this).find('input[type="text"], input[type="password"], textarea').each(function () {
-            if ($(this).val() == "") {
-                e.preventDefault();
-                $(this).addClass('input-error');
-            }
-            else {
-                $(this).removeClass('input-error');
-            }
-        });
-    });
-}); */
-

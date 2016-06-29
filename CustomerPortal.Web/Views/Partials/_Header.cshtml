@@ -1,4 +1,5 @@
 ﻿@using CustomerPortal.Core.Resources
+@using CustomerPortal.Web.Util
 <header id="header">
     <div class="top-bar">
         <div class="container">
@@ -39,23 +40,23 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" ><img src="~/content/images/logo_transparent.png" alt="logo"></a>
+                <a href="/" class="navbar-brand"><img src="~/content/images/logo_transparent.png" alt="logo"></a>
             </div>
 
             <div class="collapse navbar-collapse navbar-right">
                 <ul class="nav navbar-nav">
-                    <li><a href="index.html">Forside</a></li>
-                    <li><a href="about-us.html">Bright Planning</a></li>
-                    <li><a href="services.html">Timeoversigt</a></li>
-                    <li><a href="portfolio.html">Faktura</a></li>
-                    <li><a href="portfolio.html">Kontakt</a></li>
-                    <li><a href="portfolio.html">Forretningsbetingelser</a></li>
+                    @*<li><a href="index.html">Forside</a></li>*@
+                    <li><a href="/bright-planning/">Bright Planning</a></li>
+                    <li><a href="/timeoversigt/" onclick="verifyLogin();">Timeoversigt</a></li>
+                    <li><a href="/faktura/">Faktura</a></li>
+                    <li><a href="/kontakt/">Kontakt</a></li>
+                    <li><a href="/forretningsbetingelser/">Forretningsbetingelser</a></li>
                     <li class="active">
                         <a href="" class="launch-modal" data-modal-id="modal-login" id="nav-Login">@Resources.LabelLogin</a>
                     </li>
                     <li>
                         <a href="/umbraco/surface/authentication/logoutuser/" id="nav-Logout" class="hidden">@Resources.LabelLogout</a>
-                    </li>                  
+                    </li>
                 </ul>
             </div>
         </div>

@@ -6,7 +6,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>@(string.IsNullOrEmpty(Umbraco.Field("pageTitle").ToString()) ? (ViewBag.Title == null ? "Kunde Portal" : ViewBag.Title + " - Kunde Portal") : Umbraco.Field("pageTitle").ToString())</title>
+    <title>@(string.IsNullOrEmpty(Umbraco.Field("pageTitle").ToString()) ? (ViewBag.Title == null ? "Kunde Portal" : ViewBag.Title + " | Kunde Portal") : Umbraco.Field("pageTitle").ToString() + " | Kunde Portal")</title>
 
     @* Meta tags, stylesheets etc. *@
     @Html.Partial("_Head")

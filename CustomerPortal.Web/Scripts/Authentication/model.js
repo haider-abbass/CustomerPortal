@@ -23,8 +23,8 @@ $("#frmLogin").validate({
         },
         password: {
             required: true,
-            minLength: 4,
-            maxLength: 20
+            minlength: 4,
+            maxlength: 20
         }
     }
 });

@@ -149,6 +149,10 @@ body section {
     height: 102px; /*hight of the spinner gif +2px to fix IE8 issue */
 }
 
+.text-error {
+    color: #FFF;
+}
+
 .transparent-bg {
   background-color: transparent !important;
   margin-bottom: 0;
