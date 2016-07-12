@@ -15,7 +15,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>CustomerPortal.Web</RootNamespace>
     <AssemblyName>CustomerPortal.Web</AssemblyName>
-    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <MvcBuildViews>false</MvcBuildViews>
     <UseIISExpress>true</UseIISExpress>
     <IISExpressSSLPort />
@@ -337,9 +337,6 @@
     <Compile Include="Util\SessionUtil.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="App_Data\TEMP\ClientDependency\HAIDER-ABBAS-267f6424c97d86fa41f21c5361c79b25-map.xml" />
-    <Content Include="App_Data\TEMP\DistCache\HAIDER-ABBAS\LMW3SVC4ROOT-lastsynced.txt" />
-    <Content Include="App_Data\TEMP\DistCache\HAIDER-ABBAS\LMW3SVC7ROOT-lastsynced.txt" />
     <Content Include="App_Plugins\DocTypeMixins\Images\docTypeMixin.png" />
     <Content Include="App_Plugins\DocTypeMixins\Images\docTypeMixinApply.png" />
     <Content Include="App_Plugins\DocTypeMixins\Images\docTypeMixinMaster.png" />
@@ -1236,14 +1233,6 @@
     <Content Include="Config\applications.config" />
     <Content Include="Config\404handlers.config" />
     <Content Include="App_Data\umbraco.config" />
-    <Content Include="App_Data\TEMP\ExamineIndexes\HAIDER-ABBAS\External\Index\segments.gen" />
-    <Content Include="App_Data\TEMP\ExamineIndexes\HAIDER-ABBAS\External\Index\segments_3" />
-    <Content Include="App_Data\TEMP\ExamineIndexes\HAIDER-ABBAS\InternalMember\Index\segments.gen" />
-    <Content Include="App_Data\TEMP\ExamineIndexes\HAIDER-ABBAS\InternalMember\Index\segments_3" />
-    <Content Include="App_Data\TEMP\ExamineIndexes\HAIDER-ABBAS\Internal\Index\segments.gen" />
-    <Content Include="App_Data\TEMP\ExamineIndexes\HAIDER-ABBAS\Internal\Index\segments_3" />
-    <Content Include="App_Data\TEMP\PluginCache\umbraco-plugins.HAIDER-ABBAS.hash" />
-    <Content Include="App_Data\TEMP\PluginCache\umbraco-plugins.HAIDER-ABBAS.list" />
     <Content Include="App_Data\packages\installed\installedPackages.config" />
     <Content Include="Content\kendo\2016.2.504-source\web\type-office365.less" />
     <Content Include="Content\kendo\2016.2.504-source\web\type-nova.less" />
@@ -1681,6 +1670,7 @@
       <DependentUpon>common-methods.min.js</DependentUpon>
     </Content>
     <None Include="bundleconfig.json" />
+    <None Include="Properties\PublishProfiles\kp-staging-filesystem.pubxml" />
     <None Include="Properties\PublishProfiles\kp-staging.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\common-methods.min.js" />
@@ -5430,7 +5420,6 @@
   <ItemGroup>
     <Folder Include="App_Data\Logs\" />
     <Folder Include="App_Data\packages\created\" />
-    <Folder Include="App_Data\TEMP\Install\" />
     <Folder Include="Views\Authentication\" />
     <Folder Include="Views\Base\" />
   </ItemGroup>

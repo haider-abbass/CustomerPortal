@@ -38,7 +38,7 @@ namespace CustomerPortal.Core.Models.Session
 
     public class AuthorizationType
     {
-        public Enums.AuthorizationLevel AuthorizationLevel { get; set; } = Enums.AuthorizationLevel.Executive;
+        public Enums.AuthorizationLevel AuthorizationLevel { get; set; } //= Enums.AuthorizationLevel.Executive;
 
     }
 

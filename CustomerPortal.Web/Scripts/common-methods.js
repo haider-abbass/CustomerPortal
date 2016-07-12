@@ -93,7 +93,7 @@ function showLoginPopup() {
 
 //Hide Login Button and show Logout Button
 function LoggedIn() {
-    $("#nav-Login").addClass("hidden");
+    $("#nav-Login").addClass("hidden").removeClass("active");
     $("#nav-Logout").removeClass("hidden");
     $("#modal-login").modal("hide");
 }
