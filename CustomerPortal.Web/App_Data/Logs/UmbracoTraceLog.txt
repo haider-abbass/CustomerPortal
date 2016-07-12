@@ -1,146 +1,81 @@
-﻿ 2016-06-14 14:10:02,857 [P6812/D2/T7] INFO  Umbraco.Core.CoreBootManager - Umbraco 7.4.3 application starting on HAIDER-ABBAS
- 2016-06-14 14:10:03,077 [P6812/D2/T7] INFO  Umbraco.Core.PluginManager - Determining hash of code files on disk
- 2016-06-14 14:10:03,158 [P6812/D2/T7] INFO  Umbraco.Core.PluginManager - Hash determined (took 80ms)
- 2016-06-14 14:10:04,654 [P6812/D2/T7] INFO  Umbraco.Core.PluginManager - Starting resolution types of umbraco.interfaces.IApplicationStartupHandler
- 2016-06-14 14:10:04,781 [P6812/D2/T7] INFO  Umbraco.Core.PluginManager - Completed resolution of types of umbraco.interfaces.IApplicationStartupHandler, found 0 (took 127ms)
- 2016-06-14 14:10:05,265 [P6812/D2/T7] INFO  Umbraco.Core.PluginManager - Starting resolution types of Umbraco.Core.PropertyEditors.IPropertyEditorValueConverter
- 2016-06-14 14:10:05,268 [P6812/D2/T7] INFO  Umbraco.Core.PluginManager - Completed resolution of types of Umbraco.Core.PropertyEditors.IPropertyEditorValueConverter, found 0 (took 2ms)
- 2016-06-14 14:10:05,269 [P6812/D2/T7] INFO  Umbraco.Core.PluginManager - Starting resolution types of Umbraco.Core.PropertyEditors.IPropertyValueConverter
- 2016-06-14 14:10:05,271 [P6812/D2/T7] INFO  Umbraco.Core.PluginManager - Completed resolution of types of Umbraco.Core.PropertyEditors.IPropertyValueConverter, found 0 (took 2ms)
- 2016-06-14 14:10:05,521 [P6812/D2/T7] INFO  Umbraco.Core.PluginManager - Starting resolution types of Umbraco.Web.Mvc.SurfaceController
- 2016-06-14 14:10:05,524 [P6812/D2/T7] INFO  Umbraco.Core.PluginManager - Completed resolution of types of Umbraco.Web.Mvc.SurfaceController, found 0 (took 2ms)
- 2016-06-14 14:10:05,525 [P6812/D2/T7] INFO  Umbraco.Core.PluginManager - Starting resolution types of Umbraco.Web.WebApi.UmbracoApiController
- 2016-06-14 14:10:05,534 [P6812/D2/T7] INFO  Umbraco.Core.PluginManager - Completed resolution of types of Umbraco.Web.WebApi.UmbracoApiController, found 0 (took 8ms)
- 2016-06-14 14:10:06,317 [P6812/D2/T7] INFO  Umbraco.Core.PluginManager - Starting resolution types of Umbraco.Core.Media.IThumbnailProvider
- 2016-06-14 14:10:06,318 [P6812/D2/T7] INFO  Umbraco.Core.PluginManager - Completed resolution of types of Umbraco.Core.Media.IThumbnailProvider, found 0 (took 1ms)
- 2016-06-14 14:10:06,319 [P6812/D2/T7] INFO  Umbraco.Core.PluginManager - Starting resolution types of Umbraco.Core.Media.IImageUrlProvider
- 2016-06-14 14:10:06,320 [P6812/D2/T7] INFO  Umbraco.Core.PluginManager - Completed resolution of types of Umbraco.Core.Media.IImageUrlProvider, found 0 (took 1ms)
- 2016-06-14 14:10:31,795 [P6812/D2/T7] WARN  System.Data.IDbConnection - Configured database is reporting as not being available!. Exception: System.Data.SqlClient.SqlException (0x80131904): A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: Named Pipes Provider, error: 40 - Could not open a connection to SQL Server) ---> System.ComponentModel.Win32Exception (0x80004005): The network path was not found
-   at System.Data.SqlClient.SqlInternalConnectionTds..ctor(DbConnectionPoolIdentity identity, SqlConnectionString connectionOptions, SqlCredential credential, Object providerInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString userConnectionOptions, SessionData reconnectSessionData, DbConnectionPool pool, String accessToken, Boolean applyTransientFaultHandling)
-   at System.Data.SqlClient.SqlConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
-   at System.Data.ProviderBase.DbConnectionFactory.CreatePooledConnection(DbConnectionPool pool, DbConnection owningObject, DbConnectionOptions options, DbConnectionPoolKey poolKey, DbConnectionOptions userOptions)
-   at System.Data.ProviderBase.DbConnectionPool.CreateObject(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
-   at System.Data.ProviderBase.DbConnectionPool.UserCreateRequest(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
-   at System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
-   at System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal& connection)
-   at System.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
-   at System.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
-   at System.Data.SqlClient.SqlConnection.TryOpenInner(TaskCompletionSource`1 retry)
-   at System.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry)
-   at System.Data.SqlClient.SqlConnection.Open()
-   at Umbraco.Core.Persistence.DbConnectionExtensions.IsAvailable(IDbConnection connection)
-ClientConnectionId:00000000-0000-0000-0000-000000000000
-Error Number:53,State:0,Class:20
- 2016-06-14 14:10:31,795 [P6812/D2/T7] INFO  Umbraco.Core.DatabaseContext - CanConnect = False
- 2016-06-14 14:10:33,771 [P6812/D2/T7] WARN  System.Data.IDbConnection - Configured database is reporting as not being available!. Exception: System.Data.SqlClient.SqlException (0x80131904): A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: Named Pipes Provider, error: 40 - Could not open a connection to SQL Server) ---> System.ComponentModel.Win32Exception (0x80004005): The network path was not found
-   at System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
-   at System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal& connection)
-   at System.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
-   at System.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
-   at System.Data.SqlClient.SqlConnection.TryOpenInner(TaskCompletionSource`1 retry)
-   at System.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry)
-   at System.Data.SqlClient.SqlConnection.Open()
-   at Umbraco.Core.Persistence.DbConnectionExtensions.IsAvailable(IDbConnection connection)
-ClientConnectionId:00000000-0000-0000-0000-000000000000
-Error Number:53,State:0,Class:20
- 2016-06-14 14:10:33,771 [P6812/D2/T7] INFO  Umbraco.Core.DatabaseContext - CanConnect = False
- 2016-06-14 14:10:34,772 [P6812/D2/T7] WARN  System.Data.IDbConnection - Configured database is reporting as not being available!. Exception: System.Data.SqlClient.SqlException (0x80131904): A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: Named Pipes Provider, error: 40 - Could not open a connection to SQL Server) ---> System.ComponentModel.Win32Exception (0x80004005): The network path was not found
-   at System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
-   at System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal& connection)
-   at System.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
-   at System.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
-   at System.Data.SqlClient.SqlConnection.TryOpenInner(TaskCompletionSource`1 retry)
-   at System.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry)
-   at System.Data.SqlClient.SqlConnection.Open()
-   at Umbraco.Core.Persistence.DbConnectionExtensions.IsAvailable(IDbConnection connection)
-ClientConnectionId:00000000-0000-0000-0000-000000000000
-Error Number:53,State:0,Class:20
- 2016-06-14 14:10:34,772 [P6812/D2/T7] INFO  Umbraco.Core.DatabaseContext - CanConnect = False
- 2016-06-14 14:10:35,772 [P6812/D2/T7] WARN  System.Data.IDbConnection - Configured database is reporting as not being available!. Exception: System.Data.SqlClient.SqlException (0x80131904): A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: Named Pipes Provider, error: 40 - Could not open a connection to SQL Server) ---> System.ComponentModel.Win32Exception (0x80004005): The network path was not found
-   at System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
-   at System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal& connection)
-   at System.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
-   at System.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
-   at System.Data.SqlClient.SqlConnection.TryOpenInner(TaskCompletionSource`1 retry)
-   at System.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry)
-   at System.Data.SqlClient.SqlConnection.Open()
-   at Umbraco.Core.Persistence.DbConnectionExtensions.IsAvailable(IDbConnection connection)
-ClientConnectionId:00000000-0000-0000-0000-000000000000
-Error Number:53,State:0,Class:20
- 2016-06-14 14:10:35,772 [P6812/D2/T7] INFO  Umbraco.Core.DatabaseContext - CanConnect = False
- 2016-06-14 14:10:51,771 [P6812/D2/T7] WARN  System.Data.IDbConnection - Configured database is reporting as not being available!. Exception: System.Data.SqlClient.SqlException (0x80131904): A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: Named Pipes Provider, error: 40 - Could not open a connection to SQL Server) ---> System.ComponentModel.Win32Exception (0x80004005): The network path was not found
-   at System.Data.SqlClient.SqlInternalConnectionTds..ctor(DbConnectionPoolIdentity identity, SqlConnectionString connectionOptions, SqlCredential credential, Object providerInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString userConnectionOptions, SessionData reconnectSessionData, DbConnectionPool pool, String accessToken, Boolean applyTransientFaultHandling)
-   at System.Data.SqlClient.SqlConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
-   at System.Data.ProviderBase.DbConnectionFactory.CreatePooledConnection(DbConnectionPool pool, DbConnection owningObject, DbConnectionOptions options, DbConnectionPoolKey poolKey, DbConnectionOptions userOptions)
-   at System.Data.ProviderBase.DbConnectionPool.CreateObject(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
-   at System.Data.ProviderBase.DbConnectionPool.UserCreateRequest(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
-   at System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
-   at System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal& connection)
-   at System.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
-   at System.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
-   at System.Data.SqlClient.SqlConnection.TryOpenInner(TaskCompletionSource`1 retry)
-   at System.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry)
-   at System.Data.SqlClient.SqlConnection.Open()
-   at Umbraco.Core.Persistence.DbConnectionExtensions.IsAvailable(IDbConnection connection)
-ClientConnectionId:00000000-0000-0000-0000-000000000000
-Error Number:53,State:0,Class:20
- 2016-06-14 14:10:51,771 [P6812/D2/T7] INFO  Umbraco.Core.DatabaseContext - CanConnect = False
- 2016-06-14 14:10:52,772 [P6812/D2/T7] WARN  System.Data.IDbConnection - Configured database is reporting as not being available!. Exception: System.Data.SqlClient.SqlException (0x80131904): A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: Named Pipes Provider, error: 40 - Could not open a connection to SQL Server) ---> System.ComponentModel.Win32Exception (0x80004005): The network path was not found
-   at System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
-   at System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal& connection)
-   at System.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
-   at System.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
-   at System.Data.SqlClient.SqlConnection.TryOpenInner(TaskCompletionSource`1 retry)
-   at System.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry)
-   at System.Data.SqlClient.SqlConnection.Open()
-   at Umbraco.Core.Persistence.DbConnectionExtensions.IsAvailable(IDbConnection connection)
-ClientConnectionId:00000000-0000-0000-0000-000000000000
-Error Number:53,State:0,Class:20
- 2016-06-14 14:10:52,772 [P6812/D2/T7] INFO  Umbraco.Core.DatabaseContext - CanConnect = False
- 2016-06-14 14:10:53,774 [P6812/D2/T7] WARN  System.Data.IDbConnection - Configured database is reporting as not being available!. Exception: System.Data.SqlClient.SqlException (0x80131904): A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: Named Pipes Provider, error: 40 - Could not open a connection to SQL Server) ---> System.ComponentModel.Win32Exception (0x80004005): The network path was not found
-   at System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
-   at System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal& connection)
-   at System.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
-   at System.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
-   at System.Data.SqlClient.SqlConnection.TryOpenInner(TaskCompletionSource`1 retry)
-   at System.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry)
-   at System.Data.SqlClient.SqlConnection.Open()
-   at Umbraco.Core.Persistence.DbConnectionExtensions.IsAvailable(IDbConnection connection)
-ClientConnectionId:00000000-0000-0000-0000-000000000000
-Error Number:53,State:0,Class:20
- 2016-06-14 14:10:53,774 [P6812/D2/T7] INFO  Umbraco.Core.DatabaseContext - CanConnect = False
- 2016-06-14 14:10:53,847 [P6812/D2/T7] ERROR Umbraco.Core.UmbracoApplicationBase - An unhandled exception occurred
-Umbraco.Core.Exceptions.UmbracoStartupFailedException: Umbraco cannot start. A connection string is configured but the Umbraco cannot connect to the database.
-   at Umbraco.Core.CoreBootManager.EnsureDatabaseConnection()
-   at Umbraco.Core.CoreBootManager.Complete(Action`1 afterComplete)
-   at Umbraco.Web.WebBootManager.Complete(Action`1 afterComplete)
-   at Umbraco.Core.UmbracoApplicationBase.StartApplication(Object sender, EventArgs e)
- 2016-06-14 14:11:25,719 [P6812/D2/T16] ERROR UmbracoExamine.DataServices.UmbracoContentService - EXCEPTION OCCURRED reading GetAllUserPropertyNames
-System.Data.SqlClient.SqlException (0x80131904): A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: Named Pipes Provider, error: 40 - Could not open a connection to SQL Server) ---> System.ComponentModel.Win32Exception (0x80004005): The network path was not found
-   at System.Data.SqlClient.SqlInternalConnectionTds..ctor(DbConnectionPoolIdentity identity, SqlConnectionString connectionOptions, SqlCredential credential, Object providerInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString userConnectionOptions, SessionData reconnectSessionData, DbConnectionPool pool, String accessToken, Boolean applyTransientFaultHandling)
-   at System.Data.SqlClient.SqlConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
-   at System.Data.ProviderBase.DbConnectionFactory.CreatePooledConnection(DbConnectionPool pool, DbConnection owningObject, DbConnectionOptions options, DbConnectionPoolKey poolKey, DbConnectionOptions userOptions)
-   at System.Data.ProviderBase.DbConnectionPool.CreateObject(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
-   at System.Data.ProviderBase.DbConnectionPool.UserCreateRequest(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
-   at System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
-   at System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal& connection)
-   at System.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
-   at System.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
-   at System.Data.SqlClient.SqlConnection.TryOpenInner(TaskCompletionSource`1 retry)
-   at System.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry)
-   at System.Data.SqlClient.SqlConnection.Open()
-   at Umbraco.Core.Persistence.FaultHandling.RetryPolicy.<>c__DisplayClass1.<ExecuteAction>b__0()
-   at Umbraco.Core.Persistence.FaultHandling.RetryPolicy.ExecuteAction[TResult](Func`1 func)
-   at Umbraco.Core.Persistence.Database.OpenSharedConnection()
-   at Umbraco.Core.Persistence.Database.<Query>d__7`1.MoveNext()
-   at System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)
-   at System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
-   at UmbracoExamine.DataServices.UmbracoContentService.GetAllUserPropertyNames()
-ClientConnectionId:00000000-0000-0000-0000-000000000000
-Error Number:53,State:0,Class:20
- 2016-06-14 14:11:56,323 [P6812/D2/T13] INFO  Umbraco.Core.UmbracoApplicationBase - Application shutdown. Details: InitializationError
+﻿ 2016-07-12 10:25:55,468 [P13404/D3/T45] INFO  Umbraco.Core.CoreBootManager - Umbraco 7.4.3 application starting on HAIDER-ABBAS
+ 2016-07-12 10:25:55,586 [P13404/D3/T45] INFO  Umbraco.Core.PluginManager - Determining hash of code files on disk
+ 2016-07-12 10:25:55,643 [P13404/D3/T45] INFO  Umbraco.Core.PluginManager - Hash determined (took 57ms)
+ 2016-07-12 10:25:56,322 [P13404/D3/T45] INFO  Umbraco.Core.PluginManager - Starting resolution types of umbraco.interfaces.IApplicationStartupHandler
+ 2016-07-12 10:25:56,382 [P13404/D3/T45] INFO  Umbraco.Core.PluginManager - Completed resolution of types of umbraco.interfaces.IApplicationStartupHandler, found 0 (took 60ms)
+ 2016-07-12 10:25:57,053 [P13404/D3/T45] INFO  Umbraco.Core.PluginManager - Starting resolution types of Umbraco.Core.PropertyEditors.IPropertyEditorValueConverter
+ 2016-07-12 10:25:57,055 [P13404/D3/T45] INFO  Umbraco.Core.PluginManager - Completed resolution of types of Umbraco.Core.PropertyEditors.IPropertyEditorValueConverter, found 0 (took 2ms)
+ 2016-07-12 10:25:57,056 [P13404/D3/T45] INFO  Umbraco.Core.PluginManager - Starting resolution types of Umbraco.Core.PropertyEditors.IPropertyValueConverter
+ 2016-07-12 10:25:57,106 [P13404/D3/T45] INFO  Umbraco.Core.PluginManager - Completed resolution of types of Umbraco.Core.PropertyEditors.IPropertyValueConverter, found 0 (took 49ms)
+ 2016-07-12 10:25:57,128 [P13404/D3/T45] INFO  Umbraco.Core.PluginManager - Starting resolution types of Umbraco.Web.Mvc.SurfaceController
+ 2016-07-12 10:25:57,130 [P13404/D3/T45] INFO  Umbraco.Core.PluginManager - Completed resolution of types of Umbraco.Web.Mvc.SurfaceController, found 0 (took 1ms)
+ 2016-07-12 10:25:57,131 [P13404/D3/T45] INFO  Umbraco.Core.PluginManager - Starting resolution types of Umbraco.Web.WebApi.UmbracoApiController
+ 2016-07-12 10:25:57,137 [P13404/D3/T45] INFO  Umbraco.Core.PluginManager - Completed resolution of types of Umbraco.Web.WebApi.UmbracoApiController, found 0 (took 6ms)
+ 2016-07-12 10:25:57,528 [P13404/D3/T45] INFO  Umbraco.Core.PluginManager - Starting resolution types of Umbraco.Core.Media.IThumbnailProvider
+ 2016-07-12 10:25:57,529 [P13404/D3/T45] INFO  Umbraco.Core.PluginManager - Completed resolution of types of Umbraco.Core.Media.IThumbnailProvider, found 0 (took 1ms)
+ 2016-07-12 10:25:57,529 [P13404/D3/T45] INFO  Umbraco.Core.PluginManager - Starting resolution types of Umbraco.Core.Media.IImageUrlProvider
+ 2016-07-12 10:25:57,530 [P13404/D3/T45] INFO  Umbraco.Core.PluginManager - Completed resolution of types of Umbraco.Core.Media.IImageUrlProvider, found 0 (took 0ms)
+ 2016-07-12 10:26:02,393 [P13404/D3/T45] INFO  Umbraco.Core.DatabaseContext - CanConnect = True
+ 2016-07-12 10:26:05,145 [P13404/D3/T45] INFO  Umbraco.Core.DatabaseContext - CanConnect = True
+ 2016-07-12 10:26:05,147 [P13404/D3/T45] INFO  Umbraco.Core.DatabaseContext - CanConnect = True
+ 2016-07-12 10:26:07,048 [P13404/D3/T45] INFO  Umbraco.Web.Cache.CacheRefresherEventHandler - Initializing Umbraco internal event handlers for cache refreshing
+ 2016-07-12 10:26:07,190 [P13404/D3/T45] INFO  Umbraco.Web.Search.ExamineEvents - Initializing Examine and binding to business logic events
+ 2016-07-12 10:26:09,211 [P13404/D3/T45] INFO  Umbraco.Web.Search.ExamineEvents - Adding examine event handlers for index providers: 3
+ 2016-07-12 10:26:09,829 [P13404/D3/T45] INFO  Umbraco.Core.CoreBootManager - Umbraco application startup complete (took 14537ms)
+ 2016-07-12 10:26:15,970 [P13404/D3/T42] INFO  Umbraco.Core.Sync.ApplicationUrlHelper - ApplicationUrl: http://dev.kundeportal.moment.dk:80/umbraco (UmbracoModule request)
+ 2016-07-12 10:26:20,465 [P13404/D3/T42] INFO  umbraco.content - Load Xml from file...
+ 2016-07-12 10:26:20,466 [P13404/D3/T42] INFO  umbraco.content - Loaded Xml from file.
+ 2016-07-12 10:26:25,156 [P13404/D3/T42] INFO  Umbraco.Core.PluginManager - Starting resolution types of Umbraco.Core.PropertyEditors.IParameterEditor
+ 2016-07-12 10:26:25,158 [P13404/D3/T42] INFO  Umbraco.Core.PluginManager - Completed resolution of types of Umbraco.Core.PropertyEditors.IParameterEditor, found 0 (took 2ms)
+ 2016-07-12 10:26:25,192 [P13404/D3/T37] INFO  Umbraco.Core.Manifest.ManifestWatcher - manifest has changed, app pool is restarting (D:\LocalSites\GitHub\Repositories\CustomerPortal\CustomerPortal.Web\App_Plugins\ModelsBuilder\package.manifest)
+ 2016-07-12 10:26:27,929 [P13404/D3/T36] ERROR Umbraco.Core.MainDom - Error while running callback, remaining callbacks will not run.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at Umbraco.Web.Scheduling.BackgroundTaskRunner`1.Shutdown(Boolean force, Boolean wait)
+   at umbraco.content.<>c__DisplayClass2.<.ctor>b__1()
+   at Umbraco.Core.MainDom.OnSignal(String source)
+ 2016-07-12 10:26:27,938 [P13404/D3/T36] INFO  Umbraco.Web.Scheduling.BackgroundTaskRunner - [KeepAlive] Terminating
+ 2016-07-12 10:26:27,938 [P13404/D3/T36] INFO  Umbraco.Web.Scheduling.BackgroundTaskRunner - [KeepAlive] Waiting for tasks to complete
+ 2016-07-12 10:26:27,938 [P13404/D3/T36] INFO  Umbraco.Web.Scheduling.BackgroundTaskRunner - [LogScrubber] Terminating
+ 2016-07-12 10:26:27,938 [P13404/D3/T36] INFO  Umbraco.Web.Scheduling.BackgroundTaskRunner - [LogScrubber] Waiting for tasks to complete
+ 2016-07-12 10:26:27,942 [P13404/D3/T44] INFO  Umbraco.Web.Scheduling.BackgroundTaskRunner - [KeepAlive] Tasks completed, terminated
+ 2016-07-12 10:26:27,953 [P13404/D3/T35] INFO  Umbraco.Web.Scheduling.BackgroundTaskRunner - [LogScrubber] Tasks completed, terminated
+ 2016-07-12 10:26:28,340 [P13404/D3/T36] INFO  Umbraco.Web.Scheduling.BackgroundTaskRunner - [ScheduledPublishing] Terminating
+ 2016-07-12 10:26:28,340 [P13404/D3/T36] INFO  Umbraco.Web.Scheduling.BackgroundTaskRunner - [ScheduledPublishing] Waiting for tasks to complete
+ 2016-07-12 10:26:28,340 [P13404/D3/T36] INFO  Umbraco.Web.Scheduling.BackgroundTaskRunner - [Umbraco.Web.Scheduling.IBackgroundTask] Terminating
+ 2016-07-12 10:26:28,340 [P13404/D3/T36] INFO  Umbraco.Web.Scheduling.BackgroundTaskRunner - [Umbraco.Web.Scheduling.IBackgroundTask] Waiting for tasks to complete
+ 2016-07-12 10:26:28,340 [P13404/D3/T29] INFO  Umbraco.Web.Scheduling.BackgroundTaskRunner - [ScheduledPublishing] Tasks completed, terminated
+ 2016-07-12 10:26:28,341 [P13404/D3/T34] INFO  Umbraco.Web.Scheduling.BackgroundTaskRunner - [Umbraco.Web.Scheduling.IBackgroundTask] Tasks completed, terminated
+ 2016-07-12 10:26:28,348 [P13404/D3/T36] INFO  Umbraco.Web.Scheduling.BackgroundTaskRunner - [ScheduledTasks] Terminating
+ 2016-07-12 10:26:28,348 [P13404/D3/T36] INFO  Umbraco.Web.Scheduling.BackgroundTaskRunner - [ScheduledTasks] Waiting for tasks to complete
+ 2016-07-12 10:26:28,348 [P13404/D3/T36] INFO  Umbraco.Web.Scheduling.BackgroundTaskRunner - [ScheduledTasks] Tasks completed, terminated
+ 2016-07-12 10:26:30,614 [P13404/D5/T32] INFO  Umbraco.Core.CoreBootManager - Umbraco 7.4.3 application starting on HAIDER-ABBAS
+ 2016-07-12 10:26:30,719 [P13404/D5/T32] INFO  Umbraco.Core.PluginManager - Determining hash of code files on disk
+ 2016-07-12 10:26:30,734 [P13404/D5/T32] INFO  Umbraco.Core.PluginManager - Hash determined (took 15ms)
+ 2016-07-12 10:26:31,052 [P13404/D5/T32] INFO  Umbraco.Core.PluginManager - Starting resolution types of umbraco.interfaces.IApplicationStartupHandler
+ 2016-07-12 10:26:31,102 [P13404/D5/T32] INFO  Umbraco.Core.PluginManager - Completed resolution of types of umbraco.interfaces.IApplicationStartupHandler, found 0 (took 50ms)
+ 2016-07-12 10:26:31,146 [P13404/D5/T32] INFO  Umbraco.Core.PluginManager - Starting resolution types of Umbraco.Core.PropertyEditors.IPropertyEditorValueConverter
+ 2016-07-12 10:26:31,149 [P13404/D5/T32] INFO  Umbraco.Core.PluginManager - Completed resolution of types of Umbraco.Core.PropertyEditors.IPropertyEditorValueConverter, found 0 (took 2ms)
+ 2016-07-12 10:26:31,149 [P13404/D5/T32] INFO  Umbraco.Core.PluginManager - Starting resolution types of Umbraco.Core.PropertyEditors.IPropertyValueConverter
+ 2016-07-12 10:26:31,152 [P13404/D5/T32] INFO  Umbraco.Core.PluginManager - Completed resolution of types of Umbraco.Core.PropertyEditors.IPropertyValueConverter, found 0 (took 2ms)
+ 2016-07-12 10:26:31,183 [P13404/D5/T32] INFO  Umbraco.Core.PluginManager - Starting resolution types of Umbraco.Web.Mvc.SurfaceController
+ 2016-07-12 10:26:31,185 [P13404/D5/T32] INFO  Umbraco.Core.PluginManager - Completed resolution of types of Umbraco.Web.Mvc.SurfaceController, found 0 (took 2ms)
+ 2016-07-12 10:26:31,186 [P13404/D5/T32] INFO  Umbraco.Core.PluginManager - Starting resolution types of Umbraco.Web.WebApi.UmbracoApiController
+ 2016-07-12 10:26:31,192 [P13404/D5/T32] INFO  Umbraco.Core.PluginManager - Completed resolution of types of Umbraco.Web.WebApi.UmbracoApiController, found 0 (took 5ms)
+ 2016-07-12 10:26:31,276 [P13404/D5/T32] INFO  Umbraco.Core.PluginManager - Starting resolution types of Umbraco.Core.Media.IThumbnailProvider
+ 2016-07-12 10:26:31,279 [P13404/D5/T32] INFO  Umbraco.Core.PluginManager - Completed resolution of types of Umbraco.Core.Media.IThumbnailProvider, found 0 (took 3ms)
+ 2016-07-12 10:26:31,290 [P13404/D5/T32] INFO  Umbraco.Core.PluginManager - Starting resolution types of Umbraco.Core.Media.IImageUrlProvider
+ 2016-07-12 10:26:31,294 [P13404/D5/T32] INFO  Umbraco.Core.PluginManager - Completed resolution of types of Umbraco.Core.Media.IImageUrlProvider, found 0 (took 3ms)
+ 2016-07-12 10:26:35,299 [P13404/D5/T32] INFO  Umbraco.Core.DatabaseContext - CanConnect = True
+ 2016-07-12 10:26:36,405 [P13404/D5/T32] INFO  Umbraco.Core.DatabaseContext - CanConnect = True
+ 2016-07-12 10:26:36,410 [P13404/D5/T32] INFO  Umbraco.Core.DatabaseContext - CanConnect = True
+ 2016-07-12 10:26:37,485 [P13404/D5/T32] INFO  Umbraco.Web.Cache.CacheRefresherEventHandler - Initializing Umbraco internal event handlers for cache refreshing
+ 2016-07-12 10:26:37,521 [P13404/D5/T32] INFO  Umbraco.Web.Search.ExamineEvents - Initializing Examine and binding to business logic events
+ 2016-07-12 10:26:38,185 [P13404/D5/T32] INFO  Umbraco.Web.Search.ExamineEvents - Adding examine event handlers for index providers: 3
+ 2016-07-12 10:26:38,229 [P13404/D5/T32] INFO  Umbraco.Core.CoreBootManager - Umbraco application startup complete (took 7779ms)
+ 2016-07-12 10:26:42,240 [P13404/D5/T29] INFO  Umbraco.Core.Sync.ApplicationUrlHelper - ApplicationUrl: http://dev.kundeportal.moment.dk:80/umbraco (UmbracoModule request)
+ 2016-07-12 10:26:58,430 [P13404/D3/T29] INFO  Umbraco.Core.UmbracoApplicationBase - Application shutdown. Details: UnloadAppDomainCalled
 
-_shutDownMessage=Initialization Error
+_shutDownMessage=User code called UnloadAppDomain
 HostingEnvironment initiated shutdown
 HostingEnvironment caused shutdown
 
@@ -149,690 +84,50 @@ _shutDownStack=   at System.Environment.GetStackTrace(Exception e, Boolean needF
    at System.Web.Hosting.HostingEnvironment.InitiateShutdownInternal()
    at System.Web.Hosting.HostingEnvironment.InitiateShutdownWithoutDemand()
    at System.Web.HttpRuntime.ShutdownAppDomain(String stackTrace)
-   at System.Web.HttpRuntime.AppDomainShutdownTimerCallback(Object state)
-   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state, Boolean preserveSyncCtx)
-   at System.Threading.ExecutionContext.Run(ExecutionContext executionContext, ContextCallback callback, Object state, Boolean preserveSyncCtx)
-   at System.Threading.TimerQueueTimer.CallCallback()
-   at System.Threading.TimerQueueTimer.Fire()
-   at System.Threading.TimerQueue.FireNextTimers()
- 2016-06-14 14:20:09,110 [P6812/D4/T1] INFO  Umbraco.Core.CoreBootManager - Umbraco 7.4.3 application starting on HAIDER-ABBAS
- 2016-06-14 14:20:09,149 [P6812/D4/T1] INFO  Umbraco.Core.PluginManager - Determining hash of code files on disk
- 2016-06-14 14:20:09,158 [P6812/D4/T1] INFO  Umbraco.Core.PluginManager - Hash determined (took 8ms)
- 2016-06-14 14:20:09,278 [P6812/D4/T1] INFO  Umbraco.Core.PluginManager - Starting resolution types of umbraco.interfaces.IApplicationStartupHandler
- 2016-06-14 14:20:09,291 [P6812/D4/T1] INFO  Umbraco.Core.PluginManager - Completed resolution of types of umbraco.interfaces.IApplicationStartupHandler, found 0 (took 12ms)
- 2016-06-14 14:20:09,317 [P6812/D4/T1] INFO  Umbraco.Core.PluginManager - Starting resolution types of Umbraco.Core.PropertyEditors.IPropertyEditorValueConverter
- 2016-06-14 14:20:09,318 [P6812/D4/T1] INFO  Umbraco.Core.PluginManager - Completed resolution of types of Umbraco.Core.PropertyEditors.IPropertyEditorValueConverter, found 0 (took 1ms)
- 2016-06-14 14:20:09,320 [P6812/D4/T1] INFO  Umbraco.Core.PluginManager - Starting resolution types of Umbraco.Core.PropertyEditors.IPropertyValueConverter
- 2016-06-14 14:20:09,321 [P6812/D4/T1] INFO  Umbraco.Core.PluginManager - Completed resolution of types of Umbraco.Core.PropertyEditors.IPropertyValueConverter, found 0 (took 1ms)
- 2016-06-14 14:20:09,341 [P6812/D4/T1] INFO  Umbraco.Core.PluginManager - Starting resolution types of Umbraco.Web.Mvc.SurfaceController
- 2016-06-14 14:20:09,342 [P6812/D4/T1] INFO  Umbraco.Core.PluginManager - Completed resolution of types of Umbraco.Web.Mvc.SurfaceController, found 0 (took 1ms)
- 2016-06-14 14:20:09,343 [P6812/D4/T1] INFO  Umbraco.Core.PluginManager - Starting resolution types of Umbraco.Web.WebApi.UmbracoApiController
- 2016-06-14 14:20:09,348 [P6812/D4/T1] INFO  Umbraco.Core.PluginManager - Completed resolution of types of Umbraco.Web.WebApi.UmbracoApiController, found 0 (took 5ms)
- 2016-06-14 14:20:09,386 [P6812/D4/T1] INFO  Umbraco.Core.PluginManager - Starting resolution types of Umbraco.Core.Media.IThumbnailProvider
- 2016-06-14 14:20:09,388 [P6812/D4/T1] INFO  Umbraco.Core.PluginManager - Completed resolution of types of Umbraco.Core.Media.IThumbnailProvider, found 0 (took 2ms)
- 2016-06-14 14:20:09,388 [P6812/D4/T1] INFO  Umbraco.Core.PluginManager - Starting resolution types of Umbraco.Core.Media.IImageUrlProvider
- 2016-06-14 14:20:09,389 [P6812/D4/T1] INFO  Umbraco.Core.PluginManager - Completed resolution of types of Umbraco.Core.Media.IImageUrlProvider, found 0 (took 0ms)
- 2016-06-14 14:20:31,971 [P6812/D4/T1] WARN  System.Data.IDbConnection - Configured database is reporting as not being available!. Exception: System.Data.SqlClient.SqlException (0x80131904): A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: Named Pipes Provider, error: 40 - Could not open a connection to SQL Server) ---> System.ComponentModel.Win32Exception (0x80004005): The network path was not found
-   at System.Data.SqlClient.SqlInternalConnectionTds..ctor(DbConnectionPoolIdentity identity, SqlConnectionString connectionOptions, SqlCredential credential, Object providerInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString userConnectionOptions, SessionData reconnectSessionData, DbConnectionPool pool, String accessToken, Boolean applyTransientFaultHandling)
-   at System.Data.SqlClient.SqlConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
-   at System.Data.ProviderBase.DbConnectionFactory.CreatePooledConnection(DbConnectionPool pool, DbConnection owningObject, DbConnectionOptions options, DbConnectionPoolKey poolKey, DbConnectionOptions userOptions)
-   at System.Data.ProviderBase.DbConnectionPool.CreateObject(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
-   at System.Data.ProviderBase.DbConnectionPool.UserCreateRequest(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
-   at System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
-   at System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal& connection)
-   at System.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
-   at System.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
-   at System.Data.SqlClient.SqlConnection.TryOpenInner(TaskCompletionSource`1 retry)
-   at System.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry)
-   at System.Data.SqlClient.SqlConnection.Open()
-   at Umbraco.Core.Persistence.DbConnectionExtensions.IsAvailable(IDbConnection connection)
-ClientConnectionId:00000000-0000-0000-0000-000000000000
-Error Number:53,State:0,Class:20
- 2016-06-14 14:20:31,971 [P6812/D4/T1] INFO  Umbraco.Core.DatabaseContext - CanConnect = False
- 2016-06-14 14:20:32,109 [P6812/D4/T1] WARN  System.Data.IDbConnection - Configured database is reporting as not being available!. Exception: System.Data.SqlClient.SqlException (0x80131904): A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: Named Pipes Provider, error: 40 - Could not open a connection to SQL Server) ---> System.ComponentModel.Win32Exception (0x80004005): The network path was not found
-   at System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
-   at System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal& connection)
-   at System.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
-   at System.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
-   at System.Data.SqlClient.SqlConnection.TryOpenInner(TaskCompletionSource`1 retry)
-   at System.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry)
-   at System.Data.SqlClient.SqlConnection.Open()
-   at Umbraco.Core.Persistence.DbConnectionExtensions.IsAvailable(IDbConnection connection)
-ClientConnectionId:00000000-0000-0000-0000-000000000000
-Error Number:53,State:0,Class:20
- 2016-06-14 14:20:32,109 [P6812/D4/T1] INFO  Umbraco.Core.DatabaseContext - CanConnect = False
- 2016-06-14 14:20:33,127 [P6812/D4/T1] WARN  System.Data.IDbConnection - Configured database is reporting as not being available!. Exception: System.Data.SqlClient.SqlException (0x80131904): A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: Named Pipes Provider, error: 40 - Could not open a connection to SQL Server) ---> System.ComponentModel.Win32Exception (0x80004005): The network path was not found
-   at System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
-   at System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal& connection)
-   at System.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
-   at System.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
-   at System.Data.SqlClient.SqlConnection.TryOpenInner(TaskCompletionSource`1 retry)
-   at System.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry)
-   at System.Data.SqlClient.SqlConnection.Open()
-   at Umbraco.Core.Persistence.DbConnectionExtensions.IsAvailable(IDbConnection connection)
-ClientConnectionId:00000000-0000-0000-0000-000000000000
-Error Number:53,State:0,Class:20
- 2016-06-14 14:20:33,127 [P6812/D4/T1] INFO  Umbraco.Core.DatabaseContext - CanConnect = False
- 2016-06-14 14:20:34,130 [P6812/D4/T1] WARN  System.Data.IDbConnection - Configured database is reporting as not being available!. Exception: System.Data.SqlClient.SqlException (0x80131904): A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: Named Pipes Provider, error: 40 - Could not open a connection to SQL Server) ---> System.ComponentModel.Win32Exception (0x80004005): The network path was not found
-   at System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
-   at System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal& connection)
-   at System.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
-   at System.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
-   at System.Data.SqlClient.SqlConnection.TryOpenInner(TaskCompletionSource`1 retry)
-   at System.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry)
-   at System.Data.SqlClient.SqlConnection.Open()
-   at Umbraco.Core.Persistence.DbConnectionExtensions.IsAvailable(IDbConnection connection)
-ClientConnectionId:00000000-0000-0000-0000-000000000000
-Error Number:53,State:0,Class:20
- 2016-06-14 14:20:34,130 [P6812/D4/T1] INFO  Umbraco.Core.DatabaseContext - CanConnect = False
- 2016-06-14 14:20:35,131 [P6812/D4/T1] WARN  System.Data.IDbConnection - Configured database is reporting as not being available!. Exception: System.Data.SqlClient.SqlException (0x80131904): A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: Named Pipes Provider, error: 40 - Could not open a connection to SQL Server) ---> System.ComponentModel.Win32Exception (0x80004005): The network path was not found
-   at System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
-   at System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal& connection)
-   at System.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
-   at System.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
-   at System.Data.SqlClient.SqlConnection.TryOpenInner(TaskCompletionSource`1 retry)
-   at System.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry)
-   at System.Data.SqlClient.SqlConnection.Open()
-   at Umbraco.Core.Persistence.DbConnectionExtensions.IsAvailable(IDbConnection connection)
-ClientConnectionId:00000000-0000-0000-0000-000000000000
-Error Number:53,State:0,Class:20
- 2016-06-14 14:20:35,131 [P6812/D4/T1] INFO  Umbraco.Core.DatabaseContext - CanConnect = False
- 2016-06-14 14:20:36,134 [P6812/D4/T1] WARN  System.Data.IDbConnection - Configured database is reporting as not being available!. Exception: System.Data.SqlClient.SqlException (0x80131904): A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: Named Pipes Provider, error: 40 - Could not open a connection to SQL Server) ---> System.ComponentModel.Win32Exception (0x80004005): The network path was not found
-   at System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
-   at System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal& connection)
-   at System.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
-   at System.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
-   at System.Data.SqlClient.SqlConnection.TryOpenInner(TaskCompletionSource`1 retry)
-   at System.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry)
-   at System.Data.SqlClient.SqlConnection.Open()
-   at Umbraco.Core.Persistence.DbConnectionExtensions.IsAvailable(IDbConnection connection)
-ClientConnectionId:00000000-0000-0000-0000-000000000000
-Error Number:53,State:0,Class:20
- 2016-06-14 14:20:36,134 [P6812/D4/T1] INFO  Umbraco.Core.DatabaseContext - CanConnect = False
- 2016-06-14 14:20:41,208 [P6812/D4/T1] INFO  Umbraco.Core.DatabaseContext - CanConnect = True
- 2016-06-14 14:20:41,247 [P6812/D4/T1] INFO  Umbraco.Core.DatabaseContext - CanConnect = True
- 2016-06-14 14:20:42,564 [P6812/D4/T1] INFO  Umbraco.Web.Cache.CacheRefresherEventHandler - Initializing Umbraco internal event handlers for cache refreshing
- 2016-06-14 14:20:42,595 [P6812/D4/T1] INFO  Umbraco.Web.Search.ExamineEvents - Initializing Examine and binding to business logic events
- 2016-06-14 14:20:43,266 [P6812/D4/T1] INFO  Umbraco.Web.Search.ExamineEvents - Adding examine event handlers for index providers: 3
- 2016-06-14 14:20:43,313 [P6812/D4/T1] INFO  Umbraco.Core.CoreBootManager - Umbraco application startup complete (took 34294ms)
- 2016-06-14 14:20:46,882 [P6812/D4/T26] INFO  Umbraco.Core.Sync.ApplicationUrlHelper - ApplicationUrl: http://dev.kundeportal.moment.dk:80/umbraco (UmbracoModule request)
- 2016-06-14 14:20:47,746 [P6812/D4/T26] INFO  umbraco.content - Load Xml from file...
- 2016-06-14 14:20:47,746 [P6812/D4/T26] INFO  umbraco.content - Loaded Xml from file.
- 2016-06-14 14:20:53,896 [P6812/D4/T26] INFO  Umbraco.Core.PluginManager - Starting resolution types of Umbraco.Core.PropertyEditors.IParameterEditor
- 2016-06-14 14:20:53,912 [P6812/D4/T26] INFO  Umbraco.Core.PluginManager - Completed resolution of types of Umbraco.Core.PropertyEditors.IParameterEditor, found 0 (took 4ms)
- 2016-06-14 14:21:48,547 [P6812/D4/T21] INFO  umbraco.BusinessLogic.Log - Log scrubbed.  Removed all items older than 2016-06-13 14:21:48
- 2016-06-14 14:21:51,188 [P6812/D4/T4] INFO  Umbraco.Core.PluginManager - Starting resolution types of Umbraco.Core.Persistence.Mappers.BaseMapper
- 2016-06-14 14:21:51,189 [P6812/D4/T4] INFO  Umbraco.Core.PluginManager - Completed resolution of types of Umbraco.Core.Persistence.Mappers.BaseMapper, found 0 (took 1ms)
- 2016-06-14 15:03:42,836 [P6812/D4/T59] ERROR Umbraco.Web.Strategies.ServerRegistrationEventHandler - Failed to update server record in database.
-System.InvalidOperationException: Timeout expired.  The timeout period elapsed prior to obtaining a connection from the pool.  This may have occurred because all pooled connections were in use and max pool size was reached.
-   at System.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
-   at System.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
-   at System.Data.SqlClient.SqlConnection.TryOpenInner(TaskCompletionSource`1 retry)
-   at System.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry)
-   at System.Data.SqlClient.SqlConnection.Open()
-   at Umbraco.Core.Persistence.FaultHandling.RetryPolicy.<>c__DisplayClass1.<ExecuteAction>b__0()
-   at Umbraco.Core.Persistence.FaultHandling.RetryPolicy.ExecuteAction[TResult](Func`1 func)
-   at Umbraco.Core.Persistence.Database.OpenSharedConnection()
-   at Umbraco.Core.Persistence.Database.BeginTransaction(IsolationLevel isolationLevel)
-   at Umbraco.Core.Persistence.LockingRepository`1.WithWriteLocked(Action`1 action, Boolean autoCommit)
-   at Umbraco.Core.Services.ServerRegistrationService.TouchServer(String serverAddress, String serverIdentity, TimeSpan staleTimeout)
-   at Umbraco.Web.Strategies.ServerRegistrationEventHandler.TouchServerTask.PerformRun()
- 2016-06-14 15:03:46,859 [P6812/D4/T64] ERROR Umbraco.Core.UmbracoApplicationBase - An unhandled exception occurred
-System.Data.SqlClient.SqlException (0x80131904): A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: Named Pipes Provider, error: 40 - Could not open a connection to SQL Server) ---> System.ComponentModel.Win32Exception (0x80004005): The network path was not found
-   at System.Data.SqlClient.SqlInternalConnectionTds..ctor(DbConnectionPoolIdentity identity, SqlConnectionString connectionOptions, SqlCredential credential, Object providerInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString userConnectionOptions, SessionData reconnectSessionData, DbConnectionPool pool, String accessToken, Boolean applyTransientFaultHandling)
-   at System.Data.SqlClient.SqlConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
-   at System.Data.ProviderBase.DbConnectionFactory.CreatePooledConnection(DbConnectionPool pool, DbConnection owningObject, DbConnectionOptions options, DbConnectionPoolKey poolKey, DbConnectionOptions userOptions)
-   at System.Data.ProviderBase.DbConnectionPool.CreateObject(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
-   at System.Data.ProviderBase.DbConnectionPool.UserCreateRequest(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
-   at System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
-   at System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal& connection)
-   at System.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
-   at System.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
-   at System.Data.SqlClient.SqlConnection.TryOpenInner(TaskCompletionSource`1 retry)
-   at System.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry)
-   at System.Data.SqlClient.SqlConnection.Open()
-   at Umbraco.Core.Persistence.FaultHandling.RetryPolicy.<>c__DisplayClass1.<ExecuteAction>b__0()
-   at Umbraco.Core.Persistence.FaultHandling.RetryPolicy.ExecuteAction[TResult](Func`1 func)
-   at Umbraco.Core.Persistence.Database.OpenSharedConnection()
-   at Umbraco.Core.Persistence.Database.<Query>d__7`1.MoveNext()
-   at System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)
-   at System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
-   at Umbraco.Core.Sync.DatabaseServerMessenger.ProcessDatabaseInstructions()
-   at Umbraco.Core.Sync.DatabaseServerMessenger.Sync()
-   at Umbraco.Web.UmbracoModule.OnRouteAttempt(RoutableAttemptEventArgs args)
-   at Umbraco.Web.UmbracoModule.ProcessRequest(HttpContextBase httpContext)
-   at System.Web.HttpApplication.SyncEventExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
-   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
-ClientConnectionId:00000000-0000-0000-0000-000000000000
-Error Number:53,State:0,Class:20
- 2016-06-14 15:12:21,652 [P6812/D4/T120] ERROR Umbraco.Web.WebServices.ScheduledPublishController - Error executing scheduled task
-System.Data.SqlClient.SqlException (0x80131904): Connection Timeout Expired.  The timeout period elapsed while attempting to consume the pre-login handshake acknowledgement.  This could be because the pre-login handshake failed or the server was unable to respond back in time.  The duration spent while attempting to connect to this server was - [Pre-Login] initialization=4270; handshake=13017;  ---> System.ComponentModel.Win32Exception (0x80004005): The wait operation timed out
-   at System.Data.SqlClient.SqlInternalConnectionTds..ctor(DbConnectionPoolIdentity identity, SqlConnectionString connectionOptions, SqlCredential credential, Object providerInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString userConnectionOptions, SessionData reconnectSessionData, DbConnectionPool pool, String accessToken, Boolean applyTransientFaultHandling)
-   at System.Data.SqlClient.SqlConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
-   at System.Data.ProviderBase.DbConnectionFactory.CreatePooledConnection(DbConnectionPool pool, DbConnection owningObject, DbConnectionOptions options, DbConnectionPoolKey poolKey, DbConnectionOptions userOptions)
-   at System.Data.ProviderBase.DbConnectionPool.CreateObject(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
-   at System.Data.ProviderBase.DbConnectionPool.UserCreateRequest(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
-   at System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
-   at System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal& connection)
-   at System.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
-   at System.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
-   at System.Data.SqlClient.SqlConnection.TryOpenInner(TaskCompletionSource`1 retry)
-   at System.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry)
-   at System.Data.SqlClient.SqlConnection.Open()
-   at Umbraco.Core.Persistence.FaultHandling.RetryPolicy.<>c__DisplayClass1.<ExecuteAction>b__0()
-   at Umbraco.Core.Persistence.FaultHandling.RetryPolicy.ExecuteAction[TResult](Func`1 func)
-   at Umbraco.Core.Persistence.Database.OpenSharedConnection()
-   at Umbraco.Core.Persistence.Database.<Query>d__1c`1.MoveNext()
-   at System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)
-   at System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
-   at Umbraco.Core.Persistence.Repositories.ContentRepository.ProcessQuery(Sql sql)
-   at Umbraco.Core.Persistence.Repositories.RepositoryBase`2.GetByQuery(IQuery`1 query)
-   at Umbraco.Core.Services.ContentService.GetContentForRelease()
-   at Umbraco.Core.Publishing.ScheduledPublisher.CheckPendingAndProcess()
-   at Umbraco.Web.WebServices.ScheduledPublishController.Index()
-ClientConnectionId:3d4260e2-7ab9-4269-b08d-714d81d872c6
-Error Number:-2,State:0,Class:11
- 2016-06-14 23:25:48,765 [P6812/D4/T82] ERROR Umbraco.Web.Scheduling.ScheduledPublishing - Failed (at "http://dev.kundeportal.moment.dk:80/umbraco").
-System.Data.SqlClient.SqlException (0x80131904): A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: Named Pipes Provider, error: 40 - Could not open a connection to SQL Server) ---> System.ComponentModel.Win32Exception (0x80004005): The network path was not found
-   at System.Data.SqlClient.SqlInternalConnectionTds..ctor(DbConnectionPoolIdentity identity, SqlConnectionString connectionOptions, SqlCredential credential, Object providerInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString userConnectionOptions, SessionData reconnectSessionData, DbConnectionPool pool, String accessToken, Boolean applyTransientFaultHandling)
-   at System.Data.SqlClient.SqlConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
-   at System.Data.ProviderBase.DbConnectionFactory.CreatePooledConnection(DbConnectionPool pool, DbConnection owningObject, DbConnectionOptions options, DbConnectionPoolKey poolKey, DbConnectionOptions userOptions)
-   at System.Data.ProviderBase.DbConnectionPool.CreateObject(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
-   at System.Data.ProviderBase.DbConnectionPool.UserCreateRequest(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
-   at System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
-   at System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal& connection)
-   at System.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
-   at System.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
-   at System.Data.SqlClient.SqlConnection.TryOpenInner(TaskCompletionSource`1 retry)
-   at System.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry)
-   at System.Data.SqlClient.SqlConnection.Open()
-   at Umbraco.Core.Persistence.FaultHandling.RetryPolicy.<>c__DisplayClass1.<ExecuteAction>b__0()
-   at Umbraco.Core.Persistence.FaultHandling.RetryPolicy.ExecuteAction[TResult](Func`1 func)
-   at Umbraco.Core.Persistence.Database.OpenSharedConnection()
-   at Umbraco.Core.Persistence.Database.<Query>d__1c`1.MoveNext()
-   at System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)
-   at System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
-   at Umbraco.Core.Persistence.Repositories.UserRepository.PerformGet(Int32 id)
-   at Umbraco.Core.Cache.DefaultRepositoryCachePolicy`2.Get(TId id, Func`2 getFromRepo)
-   at Umbraco.Core.Persistence.Repositories.RepositoryBase`2.Get(TId id)
-   at Umbraco.Core.Services.UserService.GetUserById(Int32 id)
-   at Umbraco.Web.Mvc.AdminTokenAuthorizeAttribute.GetAuthHeaderVal(ApplicationContext appContext)
-   at Umbraco.Web.Mvc.AdminTokenAuthorizeAttribute.GetAuthenticationHeaderValue(ApplicationContext appContext)
-   at Umbraco.Web.Scheduling.ScheduledPublishing.<PerformRunAsync>d__5.MoveNext()
-ClientConnectionId:00000000-0000-0000-0000-000000000000
-Error Number:53,State:0,Class:20
- 2016-06-14 23:27:15,907 [P6812/D4/T79] ERROR Umbraco.Web.Scheduling.ScheduledPublishing - Failed (at "http://dev.kundeportal.moment.dk:80/umbraco").
-System.Data.SqlClient.SqlException (0x80131904): A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: Named Pipes Provider, error: 40 - Could not open a connection to SQL Server) ---> System.ComponentModel.Win32Exception (0x80004005): The network path was not found
-   at System.Data.SqlClient.SqlInternalConnectionTds..ctor(DbConnectionPoolIdentity identity, SqlConnectionString connectionOptions, SqlCredential credential, Object providerInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString userConnectionOptions, SessionData reconnectSessionData, DbConnectionPool pool, String accessToken, Boolean applyTransientFaultHandling)
-   at System.Data.SqlClient.SqlConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
-   at System.Data.ProviderBase.DbConnectionFactory.CreatePooledConnection(DbConnectionPool pool, DbConnection owningObject, DbConnectionOptions options, DbConnectionPoolKey poolKey, DbConnectionOptions userOptions)
-   at System.Data.ProviderBase.DbConnectionPool.CreateObject(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
-   at System.Data.ProviderBase.DbConnectionPool.UserCreateRequest(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
-   at System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
-   at System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal& connection)
-   at System.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
-   at System.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
-   at System.Data.SqlClient.SqlConnection.TryOpenInner(TaskCompletionSource`1 retry)
-   at System.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry)
-   at System.Data.SqlClient.SqlConnection.Open()
-   at Umbraco.Core.Persistence.FaultHandling.RetryPolicy.<>c__DisplayClass1.<ExecuteAction>b__0()
-   at Umbraco.Core.Persistence.FaultHandling.RetryPolicy.ExecuteAction[TResult](Func`1 func)
-   at Umbraco.Core.Persistence.Database.OpenSharedConnection()
-   at Umbraco.Core.Persistence.Database.<Query>d__1c`1.MoveNext()
-   at System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)
-   at System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
-   at Umbraco.Core.Persistence.Repositories.UserRepository.PerformGet(Int32 id)
-   at Umbraco.Core.Cache.DefaultRepositoryCachePolicy`2.Get(TId id, Func`2 getFromRepo)
-   at Umbraco.Core.Persistence.Repositories.RepositoryBase`2.Get(TId id)
-   at Umbraco.Core.Services.UserService.GetUserById(Int32 id)
-   at Umbraco.Web.Mvc.AdminTokenAuthorizeAttribute.GetAuthHeaderVal(ApplicationContext appContext)
-   at Umbraco.Web.Mvc.AdminTokenAuthorizeAttribute.GetAuthenticationHeaderValue(ApplicationContext appContext)
-   at Umbraco.Web.Scheduling.ScheduledPublishing.<PerformRunAsync>d__5.MoveNext()
-ClientConnectionId:00000000-0000-0000-0000-000000000000
-Error Number:53,State:0,Class:20
- 2016-06-14 23:28:29,752 [P6812/D4/T219] ERROR Umbraco.Web.Scheduling.KeepAlive - Failed (at "http://dev.kundeportal.moment.dk:80/umbraco").
-System.Net.Http.HttpRequestException: An error occurred while sending the request. ---> System.Net.WebException: Unable to connect to the remote server ---> System.Net.Sockets.SocketException: A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.222.77:80
-   at System.Net.Sockets.Socket.EndConnect(IAsyncResult asyncResult)
-   at System.Net.ServicePoint.ConnectSocketInternal(Boolean connectFailure, Socket s4, Socket s6, Socket& socket, IPAddress& address, ConnectSocketState state, IAsyncResult asyncResult, Exception& exception)
-   --- End of inner exception stack trace ---
-   at System.Net.HttpWebRequest.EndGetResponse(IAsyncResult asyncResult)
-   at System.Net.Http.HttpClientHandler.GetResponseCallback(IAsyncResult ar)
-   --- End of inner exception stack trace ---
-   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
-   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
-   at Umbraco.Web.Scheduling.KeepAlive.<PerformRunAsync>d__4.MoveNext()
- 2016-06-14 23:28:43,018 [P6812/D4/T76] ERROR Umbraco.Web.Scheduling.ScheduledPublishing - Failed (at "http://dev.kundeportal.moment.dk:80/umbraco").
-System.Data.SqlClient.SqlException (0x80131904): A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: Named Pipes Provider, error: 40 - Could not open a connection to SQL Server) ---> System.ComponentModel.Win32Exception (0x80004005): The network path was not found
-   at System.Data.SqlClient.SqlInternalConnectionTds..ctor(DbConnectionPoolIdentity identity, SqlConnectionString connectionOptions, SqlCredential credential, Object providerInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString userConnectionOptions, SessionData reconnectSessionData, DbConnectionPool pool, String accessToken, Boolean applyTransientFaultHandling)
-   at System.Data.SqlClient.SqlConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
-   at System.Data.ProviderBase.DbConnectionFactory.CreatePooledConnection(DbConnectionPool pool, DbConnection owningObject, DbConnectionOptions options, DbConnectionPoolKey poolKey, DbConnectionOptions userOptions)
-   at System.Data.ProviderBase.DbConnectionPool.CreateObject(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
-   at System.Data.ProviderBase.DbConnectionPool.UserCreateRequest(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
-   at System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
-   at System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal& connection)
-   at System.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
-   at System.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
-   at System.Data.SqlClient.SqlConnection.TryOpenInner(TaskCompletionSource`1 retry)
-   at System.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry)
-   at System.Data.SqlClient.SqlConnection.Open()
-   at Umbraco.Core.Persistence.FaultHandling.RetryPolicy.<>c__DisplayClass1.<ExecuteAction>b__0()
-   at Umbraco.Core.Persistence.FaultHandling.RetryPolicy.ExecuteAction[TResult](Func`1 func)
-   at Umbraco.Core.Persistence.Database.OpenSharedConnection()
-   at Umbraco.Core.Persistence.Database.<Query>d__1c`1.MoveNext()
-   at System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)
-   at System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
-   at Umbraco.Core.Persistence.Repositories.UserRepository.PerformGet(Int32 id)
-   at Umbraco.Core.Cache.DefaultRepositoryCachePolicy`2.Get(TId id, Func`2 getFromRepo)
-   at Umbraco.Core.Persistence.Repositories.RepositoryBase`2.Get(TId id)
-   at Umbraco.Core.Services.UserService.GetUserById(Int32 id)
-   at Umbraco.Web.Mvc.AdminTokenAuthorizeAttribute.GetAuthHeaderVal(ApplicationContext appContext)
-   at Umbraco.Web.Mvc.AdminTokenAuthorizeAttribute.GetAuthenticationHeaderValue(ApplicationContext appContext)
-   at Umbraco.Web.Scheduling.ScheduledPublishing.<PerformRunAsync>d__5.MoveNext()
-ClientConnectionId:00000000-0000-0000-0000-000000000000
-Error Number:53,State:0,Class:20
- 2016-06-14 23:30:10,144 [P6812/D4/T82] ERROR Umbraco.Web.Scheduling.ScheduledPublishing - Failed (at "http://dev.kundeportal.moment.dk:80/umbraco").
-System.Data.SqlClient.SqlException (0x80131904): A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: Named Pipes Provider, error: 40 - Could not open a connection to SQL Server) ---> System.ComponentModel.Win32Exception (0x80004005): The network path was not found
-   at System.Data.SqlClient.SqlInternalConnectionTds..ctor(DbConnectionPoolIdentity identity, SqlConnectionString connectionOptions, SqlCredential credential, Object providerInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString userConnectionOptions, SessionData reconnectSessionData, DbConnectionPool pool, String accessToken, Boolean applyTransientFaultHandling)
-   at System.Data.SqlClient.SqlConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
-   at System.Data.ProviderBase.DbConnectionFactory.CreatePooledConnection(DbConnectionPool pool, DbConnection owningObject, DbConnectionOptions options, DbConnectionPoolKey poolKey, DbConnectionOptions userOptions)
-   at System.Data.ProviderBase.DbConnectionPool.CreateObject(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
-   at System.Data.ProviderBase.DbConnectionPool.UserCreateRequest(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
-   at System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
-   at System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal& connection)
-   at System.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
-   at System.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
-   at System.Data.SqlClient.SqlConnection.TryOpenInner(TaskCompletionSource`1 retry)
-   at System.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry)
-   at System.Data.SqlClient.SqlConnection.Open()
-   at Umbraco.Core.Persistence.FaultHandling.RetryPolicy.<>c__DisplayClass1.<ExecuteAction>b__0()
-   at Umbraco.Core.Persistence.FaultHandling.RetryPolicy.ExecuteAction[TResult](Func`1 func)
-   at Umbraco.Core.Persistence.Database.OpenSharedConnection()
-   at Umbraco.Core.Persistence.Database.<Query>d__1c`1.MoveNext()
-   at System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)
-   at System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
-   at Umbraco.Core.Persistence.Repositories.UserRepository.PerformGet(Int32 id)
-   at Umbraco.Core.Cache.DefaultRepositoryCachePolicy`2.Get(TId id, Func`2 getFromRepo)
-   at Umbraco.Core.Persistence.Repositories.RepositoryBase`2.Get(TId id)
-   at Umbraco.Core.Services.UserService.GetUserById(Int32 id)
-   at Umbraco.Web.Mvc.AdminTokenAuthorizeAttribute.GetAuthHeaderVal(ApplicationContext appContext)
-   at Umbraco.Web.Mvc.AdminTokenAuthorizeAttribute.GetAuthenticationHeaderValue(ApplicationContext appContext)
-   at Umbraco.Web.Scheduling.ScheduledPublishing.<PerformRunAsync>d__5.MoveNext()
-ClientConnectionId:00000000-0000-0000-0000-000000000000
-Error Number:53,State:0,Class:20
- 2016-06-14 23:31:37,270 [P6812/D4/T78] ERROR Umbraco.Web.Scheduling.ScheduledPublishing - Failed (at "http://dev.kundeportal.moment.dk:80/umbraco").
-System.Data.SqlClient.SqlException (0x80131904): A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: Named Pipes Provider, error: 40 - Could not open a connection to SQL Server) ---> System.ComponentModel.Win32Exception (0x80004005): The network path was not found
-   at System.Data.SqlClient.SqlInternalConnectionTds..ctor(DbConnectionPoolIdentity identity, SqlConnectionString connectionOptions, SqlCredential credential, Object providerInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString userConnectionOptions, SessionData reconnectSessionData, DbConnectionPool pool, String accessToken, Boolean applyTransientFaultHandling)
-   at System.Data.SqlClient.SqlConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
-   at System.Data.ProviderBase.DbConnectionFactory.CreatePooledConnection(DbConnectionPool pool, DbConnection owningObject, DbConnectionOptions options, DbConnectionPoolKey poolKey, DbConnectionOptions userOptions)
-   at System.Data.ProviderBase.DbConnectionPool.CreateObject(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
-   at System.Data.ProviderBase.DbConnectionPool.UserCreateRequest(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
-   at System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
-   at System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal& connection)
-   at System.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
-   at System.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
-   at System.Data.SqlClient.SqlConnection.TryOpenInner(TaskCompletionSource`1 retry)
-   at System.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry)
-   at System.Data.SqlClient.SqlConnection.Open()
-   at Umbraco.Core.Persistence.FaultHandling.RetryPolicy.<>c__DisplayClass1.<ExecuteAction>b__0()
-   at Umbraco.Core.Persistence.FaultHandling.RetryPolicy.ExecuteAction[TResult](Func`1 func)
-   at Umbraco.Core.Persistence.Database.OpenSharedConnection()
-   at Umbraco.Core.Persistence.Database.<Query>d__1c`1.MoveNext()
-   at System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)
-   at System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
-   at Umbraco.Core.Persistence.Repositories.UserRepository.PerformGet(Int32 id)
-   at Umbraco.Core.Cache.DefaultRepositoryCachePolicy`2.Get(TId id, Func`2 getFromRepo)
-   at Umbraco.Core.Persistence.Repositories.RepositoryBase`2.Get(TId id)
-   at Umbraco.Core.Services.UserService.GetUserById(Int32 id)
-   at Umbraco.Web.Mvc.AdminTokenAuthorizeAttribute.GetAuthHeaderVal(ApplicationContext appContext)
-   at Umbraco.Web.Mvc.AdminTokenAuthorizeAttribute.GetAuthenticationHeaderValue(ApplicationContext appContext)
-   at Umbraco.Web.Scheduling.ScheduledPublishing.<PerformRunAsync>d__5.MoveNext()
-ClientConnectionId:00000000-0000-0000-0000-000000000000
-Error Number:53,State:0,Class:20
- 2016-06-14 23:33:04,308 [P6812/D4/T223] ERROR Umbraco.Web.Scheduling.ScheduledPublishing - Failed (at "http://dev.kundeportal.moment.dk:80/umbraco").
-System.Data.SqlClient.SqlException (0x80131904): A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: Named Pipes Provider, error: 40 - Could not open a connection to SQL Server) ---> System.ComponentModel.Win32Exception (0x80004005): The network path was not found
-   at System.Data.SqlClient.SqlInternalConnectionTds..ctor(DbConnectionPoolIdentity identity, SqlConnectionString connectionOptions, SqlCredential credential, Object providerInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString userConnectionOptions, SessionData reconnectSessionData, DbConnectionPool pool, String accessToken, Boolean applyTransientFaultHandling)
-   at System.Data.SqlClient.SqlConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
-   at System.Data.ProviderBase.DbConnectionFactory.CreatePooledConnection(DbConnectionPool pool, DbConnection owningObject, DbConnectionOptions options, DbConnectionPoolKey poolKey, DbConnectionOptions userOptions)
-   at System.Data.ProviderBase.DbConnectionPool.CreateObject(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
-   at System.Data.ProviderBase.DbConnectionPool.UserCreateRequest(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
-   at System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
-   at System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal& connection)
-   at System.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
-   at System.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
-   at System.Data.SqlClient.SqlConnection.TryOpenInner(TaskCompletionSource`1 retry)
-   at System.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry)
-   at System.Data.SqlClient.SqlConnection.Open()
-   at Umbraco.Core.Persistence.FaultHandling.RetryPolicy.<>c__DisplayClass1.<ExecuteAction>b__0()
-   at Umbraco.Core.Persistence.FaultHandling.RetryPolicy.ExecuteAction[TResult](Func`1 func)
-   at Umbraco.Core.Persistence.Database.OpenSharedConnection()
-   at Umbraco.Core.Persistence.Database.<Query>d__1c`1.MoveNext()
-   at System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)
-   at System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
-   at Umbraco.Core.Persistence.Repositories.UserRepository.PerformGet(Int32 id)
-   at Umbraco.Core.Cache.DefaultRepositoryCachePolicy`2.Get(TId id, Func`2 getFromRepo)
-   at Umbraco.Core.Persistence.Repositories.RepositoryBase`2.Get(TId id)
-   at Umbraco.Core.Services.UserService.GetUserById(Int32 id)
-   at Umbraco.Web.Mvc.AdminTokenAuthorizeAttribute.GetAuthHeaderVal(ApplicationContext appContext)
-   at Umbraco.Web.Mvc.AdminTokenAuthorizeAttribute.GetAuthenticationHeaderValue(ApplicationContext appContext)
-   at Umbraco.Web.Scheduling.ScheduledPublishing.<PerformRunAsync>d__5.MoveNext()
-ClientConnectionId:00000000-0000-0000-0000-000000000000
-Error Number:53,State:0,Class:20
- 2016-06-14 23:33:50,858 [P6812/D4/T227] ERROR Umbraco.Web.Scheduling.KeepAlive - Failed (at "http://dev.kundeportal.moment.dk:80/umbraco").
-System.Net.Http.HttpRequestException: An error occurred while sending the request. ---> System.Net.WebException: Unable to connect to the remote server ---> System.Net.Sockets.SocketException: A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.222.77:80
-   at System.Net.Sockets.Socket.EndConnect(IAsyncResult asyncResult)
-   at System.Net.ServicePoint.ConnectSocketInternal(Boolean connectFailure, Socket s4, Socket s6, Socket& socket, IPAddress& address, ConnectSocketState state, IAsyncResult asyncResult, Exception& exception)
-   --- End of inner exception stack trace ---
-   at System.Net.HttpWebRequest.EndGetResponse(IAsyncResult asyncResult)
-   at System.Net.Http.HttpClientHandler.GetResponseCallback(IAsyncResult ar)
-   --- End of inner exception stack trace ---
-   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
-   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
-   at Umbraco.Web.Scheduling.KeepAlive.<PerformRunAsync>d__4.MoveNext()
- 2016-06-14 23:34:31,354 [P6812/D4/T77] ERROR Umbraco.Web.Scheduling.ScheduledPublishing - Failed (at "http://dev.kundeportal.moment.dk:80/umbraco").
-System.Data.SqlClient.SqlException (0x80131904): A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: Named Pipes Provider, error: 40 - Could not open a connection to SQL Server) ---> System.ComponentModel.Win32Exception (0x80004005): The network path was not found
-   at System.Data.SqlClient.SqlInternalConnectionTds..ctor(DbConnectionPoolIdentity identity, SqlConnectionString connectionOptions, SqlCredential credential, Object providerInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString userConnectionOptions, SessionData reconnectSessionData, DbConnectionPool pool, String accessToken, Boolean applyTransientFaultHandling)
-   at System.Data.SqlClient.SqlConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
-   at System.Data.ProviderBase.DbConnectionFactory.CreatePooledConnection(DbConnectionPool pool, DbConnection owningObject, DbConnectionOptions options, DbConnectionPoolKey poolKey, DbConnectionOptions userOptions)
-   at System.Data.ProviderBase.DbConnectionPool.CreateObject(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
-   at System.Data.ProviderBase.DbConnectionPool.UserCreateRequest(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
-   at System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
-   at System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal& connection)
-   at System.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
-   at System.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
-   at System.Data.SqlClient.SqlConnection.TryOpenInner(TaskCompletionSource`1 retry)
-   at System.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry)
-   at System.Data.SqlClient.SqlConnection.Open()
-   at Umbraco.Core.Persistence.FaultHandling.RetryPolicy.<>c__DisplayClass1.<ExecuteAction>b__0()
-   at Umbraco.Core.Persistence.FaultHandling.RetryPolicy.ExecuteAction[TResult](Func`1 func)
-   at Umbraco.Core.Persistence.Database.OpenSharedConnection()
-   at Umbraco.Core.Persistence.Database.<Query>d__1c`1.MoveNext()
-   at System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)
-   at System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
-   at Umbraco.Core.Persistence.Repositories.UserRepository.PerformGet(Int32 id)
-   at Umbraco.Core.Cache.DefaultRepositoryCachePolicy`2.Get(TId id, Func`2 getFromRepo)
-   at Umbraco.Core.Persistence.Repositories.RepositoryBase`2.Get(TId id)
-   at Umbraco.Core.Services.UserService.GetUserById(Int32 id)
-   at Umbraco.Web.Mvc.AdminTokenAuthorizeAttribute.GetAuthHeaderVal(ApplicationContext appContext)
-   at Umbraco.Web.Mvc.AdminTokenAuthorizeAttribute.GetAuthenticationHeaderValue(ApplicationContext appContext)
-   at Umbraco.Web.Scheduling.ScheduledPublishing.<PerformRunAsync>d__5.MoveNext()
-ClientConnectionId:00000000-0000-0000-0000-000000000000
-Error Number:53,State:0,Class:20
- 2016-06-14 23:35:58,384 [P6812/D4/T25] ERROR Umbraco.Web.Scheduling.ScheduledPublishing - Failed (at "http://dev.kundeportal.moment.dk:80/umbraco").
-System.Data.SqlClient.SqlException (0x80131904): A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: Named Pipes Provider, error: 40 - Could not open a connection to SQL Server) ---> System.ComponentModel.Win32Exception (0x80004005): The network path was not found
-   at System.Data.SqlClient.SqlInternalConnectionTds..ctor(DbConnectionPoolIdentity identity, SqlConnectionString connectionOptions, SqlCredential credential, Object providerInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString userConnectionOptions, SessionData reconnectSessionData, DbConnectionPool pool, String accessToken, Boolean applyTransientFaultHandling)
-   at System.Data.SqlClient.SqlConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
-   at System.Data.ProviderBase.DbConnectionFactory.CreatePooledConnection(DbConnectionPool pool, DbConnection owningObject, DbConnectionOptions options, DbConnectionPoolKey poolKey, DbConnectionOptions userOptions)
-   at System.Data.ProviderBase.DbConnectionPool.CreateObject(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
-   at System.Data.ProviderBase.DbConnectionPool.UserCreateRequest(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
-   at System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
-   at System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal& connection)
-   at System.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
-   at System.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
-   at System.Data.SqlClient.SqlConnection.TryOpenInner(TaskCompletionSource`1 retry)
-   at System.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry)
-   at System.Data.SqlClient.SqlConnection.Open()
-   at Umbraco.Core.Persistence.FaultHandling.RetryPolicy.<>c__DisplayClass1.<ExecuteAction>b__0()
-   at Umbraco.Core.Persistence.FaultHandling.RetryPolicy.ExecuteAction[TResult](Func`1 func)
-   at Umbraco.Core.Persistence.Database.OpenSharedConnection()
-   at Umbraco.Core.Persistence.Database.<Query>d__1c`1.MoveNext()
-   at System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)
-   at System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
-   at Umbraco.Core.Persistence.Repositories.UserRepository.PerformGet(Int32 id)
-   at Umbraco.Core.Cache.DefaultRepositoryCachePolicy`2.Get(TId id, Func`2 getFromRepo)
-   at Umbraco.Core.Persistence.Repositories.RepositoryBase`2.Get(TId id)
-   at Umbraco.Core.Services.UserService.GetUserById(Int32 id)
-   at Umbraco.Web.Mvc.AdminTokenAuthorizeAttribute.GetAuthHeaderVal(ApplicationContext appContext)
-   at Umbraco.Web.Mvc.AdminTokenAuthorizeAttribute.GetAuthenticationHeaderValue(ApplicationContext appContext)
-   at Umbraco.Web.Scheduling.ScheduledPublishing.<PerformRunAsync>d__5.MoveNext()
-ClientConnectionId:00000000-0000-0000-0000-000000000000
-Error Number:53,State:0,Class:20
- 2016-06-14 23:37:25,455 [P6812/D4/T80] ERROR Umbraco.Web.Scheduling.ScheduledPublishing - Failed (at "http://dev.kundeportal.moment.dk:80/umbraco").
-System.Data.SqlClient.SqlException (0x80131904): A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: Named Pipes Provider, error: 40 - Could not open a connection to SQL Server) ---> System.ComponentModel.Win32Exception (0x80004005): The network path was not found
-   at System.Data.SqlClient.SqlInternalConnectionTds..ctor(DbConnectionPoolIdentity identity, SqlConnectionString connectionOptions, SqlCredential credential, Object providerInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString userConnectionOptions, SessionData reconnectSessionData, DbConnectionPool pool, String accessToken, Boolean applyTransientFaultHandling)
-   at System.Data.SqlClient.SqlConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
-   at System.Data.ProviderBase.DbConnectionFactory.CreatePooledConnection(DbConnectionPool pool, DbConnection owningObject, DbConnectionOptions options, DbConnectionPoolKey poolKey, DbConnectionOptions userOptions)
-   at System.Data.ProviderBase.DbConnectionPool.CreateObject(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
-   at System.Data.ProviderBase.DbConnectionPool.UserCreateRequest(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
-   at System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
-   at System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal& connection)
-   at System.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
-   at System.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
-   at System.Data.SqlClient.SqlConnection.TryOpenInner(TaskCompletionSource`1 retry)
-   at System.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry)
-   at System.Data.SqlClient.SqlConnection.Open()
-   at Umbraco.Core.Persistence.FaultHandling.RetryPolicy.<>c__DisplayClass1.<ExecuteAction>b__0()
-   at Umbraco.Core.Persistence.FaultHandling.RetryPolicy.ExecuteAction[TResult](Func`1 func)
-   at Umbraco.Core.Persistence.Database.OpenSharedConnection()
-   at Umbraco.Core.Persistence.Database.<Query>d__1c`1.MoveNext()
-   at System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)
-   at System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
-   at Umbraco.Core.Persistence.Repositories.UserRepository.PerformGet(Int32 id)
-   at Umbraco.Core.Cache.DefaultRepositoryCachePolicy`2.Get(TId id, Func`2 getFromRepo)
-   at Umbraco.Core.Persistence.Repositories.RepositoryBase`2.Get(TId id)
-   at Umbraco.Core.Services.UserService.GetUserById(Int32 id)
-   at Umbraco.Web.Mvc.AdminTokenAuthorizeAttribute.GetAuthHeaderVal(ApplicationContext appContext)
-   at Umbraco.Web.Mvc.AdminTokenAuthorizeAttribute.GetAuthenticationHeaderValue(ApplicationContext appContext)
-   at Umbraco.Web.Scheduling.ScheduledPublishing.<PerformRunAsync>d__5.MoveNext()
-ClientConnectionId:00000000-0000-0000-0000-000000000000
-Error Number:53,State:0,Class:20
- 2016-06-14 23:38:52,526 [P6812/D4/T76] ERROR Umbraco.Web.Scheduling.ScheduledPublishing - Failed (at "http://dev.kundeportal.moment.dk:80/umbraco").
-System.Data.SqlClient.SqlException (0x80131904): A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: Named Pipes Provider, error: 40 - Could not open a connection to SQL Server) ---> System.ComponentModel.Win32Exception (0x80004005): The network path was not found
-   at System.Data.SqlClient.SqlInternalConnectionTds..ctor(DbConnectionPoolIdentity identity, SqlConnectionString connectionOptions, SqlCredential credential, Object providerInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString userConnectionOptions, SessionData reconnectSessionData, DbConnectionPool pool, String accessToken, Boolean applyTransientFaultHandling)
-   at System.Data.SqlClient.SqlConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
-   at System.Data.ProviderBase.DbConnectionFactory.CreatePooledConnection(DbConnectionPool pool, DbConnection owningObject, DbConnectionOptions options, DbConnectionPoolKey poolKey, DbConnectionOptions userOptions)
-   at System.Data.ProviderBase.DbConnectionPool.CreateObject(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
-   at System.Data.ProviderBase.DbConnectionPool.UserCreateRequest(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
-   at System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
-   at System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal& connection)
-   at System.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
-   at System.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
-   at System.Data.SqlClient.SqlConnection.TryOpenInner(TaskCompletionSource`1 retry)
-   at System.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry)
-   at System.Data.SqlClient.SqlConnection.Open()
-   at Umbraco.Core.Persistence.FaultHandling.RetryPolicy.<>c__DisplayClass1.<ExecuteAction>b__0()
-   at Umbraco.Core.Persistence.FaultHandling.RetryPolicy.ExecuteAction[TResult](Func`1 func)
-   at Umbraco.Core.Persistence.Database.OpenSharedConnection()
-   at Umbraco.Core.Persistence.Database.<Query>d__1c`1.MoveNext()
-   at System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)
-   at System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
-   at Umbraco.Core.Persistence.Repositories.UserRepository.PerformGet(Int32 id)
-   at Umbraco.Core.Cache.DefaultRepositoryCachePolicy`2.Get(TId id, Func`2 getFromRepo)
-   at Umbraco.Core.Persistence.Repositories.RepositoryBase`2.Get(TId id)
-   at Umbraco.Core.Services.UserService.GetUserById(Int32 id)
-   at Umbraco.Web.Mvc.AdminTokenAuthorizeAttribute.GetAuthHeaderVal(ApplicationContext appContext)
-   at Umbraco.Web.Mvc.AdminTokenAuthorizeAttribute.GetAuthenticationHeaderValue(ApplicationContext appContext)
-   at Umbraco.Web.Scheduling.ScheduledPublishing.<PerformRunAsync>d__5.MoveNext()
-ClientConnectionId:00000000-0000-0000-0000-000000000000
-Error Number:53,State:0,Class:20
- 2016-06-14 23:39:11,879 [P6812/D4/T225] ERROR Umbraco.Web.Scheduling.KeepAlive - Failed (at "http://dev.kundeportal.moment.dk:80/umbraco").
-System.Net.Http.HttpRequestException: An error occurred while sending the request. ---> System.Net.WebException: Unable to connect to the remote server ---> System.Net.Sockets.SocketException: A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.222.77:80
-   at System.Net.Sockets.Socket.EndConnect(IAsyncResult asyncResult)
-   at System.Net.ServicePoint.ConnectSocketInternal(Boolean connectFailure, Socket s4, Socket s6, Socket& socket, IPAddress& address, ConnectSocketState state, IAsyncResult asyncResult, Exception& exception)
-   --- End of inner exception stack trace ---
-   at System.Net.HttpWebRequest.EndGetResponse(IAsyncResult asyncResult)
-   at System.Net.Http.HttpClientHandler.GetResponseCallback(IAsyncResult ar)
-   --- End of inner exception stack trace ---
-   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
-   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
-   at Umbraco.Web.Scheduling.KeepAlive.<PerformRunAsync>d__4.MoveNext()
- 2016-06-14 23:40:19,608 [P6812/D4/T82] ERROR Umbraco.Web.Scheduling.ScheduledPublishing - Failed (at "http://dev.kundeportal.moment.dk:80/umbraco").
-System.Data.SqlClient.SqlException (0x80131904): A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: Named Pipes Provider, error: 40 - Could not open a connection to SQL Server) ---> System.ComponentModel.Win32Exception (0x80004005): The network path was not found
-   at System.Data.SqlClient.SqlInternalConnectionTds..ctor(DbConnectionPoolIdentity identity, SqlConnectionString connectionOptions, SqlCredential credential, Object providerInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString userConnectionOptions, SessionData reconnectSessionData, DbConnectionPool pool, String accessToken, Boolean applyTransientFaultHandling)
-   at System.Data.SqlClient.SqlConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
-   at System.Data.ProviderBase.DbConnectionFactory.CreatePooledConnection(DbConnectionPool pool, DbConnection owningObject, DbConnectionOptions options, DbConnectionPoolKey poolKey, DbConnectionOptions userOptions)
-   at System.Data.ProviderBase.DbConnectionPool.CreateObject(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
-   at System.Data.ProviderBase.DbConnectionPool.UserCreateRequest(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
-   at System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
-   at System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal& connection)
-   at System.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
-   at System.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
-   at System.Data.SqlClient.SqlConnection.TryOpenInner(TaskCompletionSource`1 retry)
-   at System.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry)
-   at System.Data.SqlClient.SqlConnection.Open()
-   at Umbraco.Core.Persistence.FaultHandling.RetryPolicy.<>c__DisplayClass1.<ExecuteAction>b__0()
-   at Umbraco.Core.Persistence.FaultHandling.RetryPolicy.ExecuteAction[TResult](Func`1 func)
-   at Umbraco.Core.Persistence.Database.OpenSharedConnection()
-   at Umbraco.Core.Persistence.Database.<Query>d__1c`1.MoveNext()
-   at System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)
-   at System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
-   at Umbraco.Core.Persistence.Repositories.UserRepository.PerformGet(Int32 id)
-   at Umbraco.Core.Cache.DefaultRepositoryCachePolicy`2.Get(TId id, Func`2 getFromRepo)
-   at Umbraco.Core.Persistence.Repositories.RepositoryBase`2.Get(TId id)
-   at Umbraco.Core.Services.UserService.GetUserById(Int32 id)
-   at Umbraco.Web.Mvc.AdminTokenAuthorizeAttribute.GetAuthHeaderVal(ApplicationContext appContext)
-   at Umbraco.Web.Mvc.AdminTokenAuthorizeAttribute.GetAuthenticationHeaderValue(ApplicationContext appContext)
-   at Umbraco.Web.Scheduling.ScheduledPublishing.<PerformRunAsync>d__5.MoveNext()
-ClientConnectionId:00000000-0000-0000-0000-000000000000
-Error Number:53,State:0,Class:20
- 2016-06-14 23:41:46,646 [P6812/D4/T79] ERROR Umbraco.Web.Scheduling.ScheduledPublishing - Failed (at "http://dev.kundeportal.moment.dk:80/umbraco").
-System.Data.SqlClient.SqlException (0x80131904): A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: Named Pipes Provider, error: 40 - Could not open a connection to SQL Server) ---> System.ComponentModel.Win32Exception (0x80004005): The network path was not found
-   at System.Data.SqlClient.SqlInternalConnectionTds..ctor(DbConnectionPoolIdentity identity, SqlConnectionString connectionOptions, SqlCredential credential, Object providerInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString userConnectionOptions, SessionData reconnectSessionData, DbConnectionPool pool, String accessToken, Boolean applyTransientFaultHandling)
-   at System.Data.SqlClient.SqlConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
-   at System.Data.ProviderBase.DbConnectionFactory.CreatePooledConnection(DbConnectionPool pool, DbConnection owningObject, DbConnectionOptions options, DbConnectionPoolKey poolKey, DbConnectionOptions userOptions)
-   at System.Data.ProviderBase.DbConnectionPool.CreateObject(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
-   at System.Data.ProviderBase.DbConnectionPool.UserCreateRequest(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
-   at System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
-   at System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal& connection)
-   at System.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
-   at System.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
-   at System.Data.SqlClient.SqlConnection.TryOpenInner(TaskCompletionSource`1 retry)
-   at System.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry)
-   at System.Data.SqlClient.SqlConnection.Open()
-   at Umbraco.Core.Persistence.FaultHandling.RetryPolicy.<>c__DisplayClass1.<ExecuteAction>b__0()
-   at Umbraco.Core.Persistence.FaultHandling.RetryPolicy.ExecuteAction[TResult](Func`1 func)
-   at Umbraco.Core.Persistence.Database.OpenSharedConnection()
-   at Umbraco.Core.Persistence.Database.<Query>d__1c`1.MoveNext()
-   at System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)
-   at System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
-   at Umbraco.Core.Persistence.Repositories.UserRepository.PerformGet(Int32 id)
-   at Umbraco.Core.Cache.DefaultRepositoryCachePolicy`2.Get(TId id, Func`2 getFromRepo)
-   at Umbraco.Core.Persistence.Repositories.RepositoryBase`2.Get(TId id)
-   at Umbraco.Core.Services.UserService.GetUserById(Int32 id)
-   at Umbraco.Web.Mvc.AdminTokenAuthorizeAttribute.GetAuthHeaderVal(ApplicationContext appContext)
-   at Umbraco.Web.Mvc.AdminTokenAuthorizeAttribute.GetAuthenticationHeaderValue(ApplicationContext appContext)
-   at Umbraco.Web.Scheduling.ScheduledPublishing.<PerformRunAsync>d__5.MoveNext()
-ClientConnectionId:00000000-0000-0000-0000-000000000000
-Error Number:53,State:0,Class:20
- 2016-06-14 23:43:13,687 [P6812/D4/T77] ERROR Umbraco.Web.Scheduling.ScheduledPublishing - Failed (at "http://dev.kundeportal.moment.dk:80/umbraco").
-System.Data.SqlClient.SqlException (0x80131904): A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: Named Pipes Provider, error: 40 - Could not open a connection to SQL Server) ---> System.ComponentModel.Win32Exception (0x80004005): The network path was not found
-   at System.Data.SqlClient.SqlInternalConnectionTds..ctor(DbConnectionPoolIdentity identity, SqlConnectionString connectionOptions, SqlCredential credential, Object providerInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString userConnectionOptions, SessionData reconnectSessionData, DbConnectionPool pool, String accessToken, Boolean applyTransientFaultHandling)
-   at System.Data.SqlClient.SqlConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
-   at System.Data.ProviderBase.DbConnectionFactory.CreatePooledConnection(DbConnectionPool pool, DbConnection owningObject, DbConnectionOptions options, DbConnectionPoolKey poolKey, DbConnectionOptions userOptions)
-   at System.Data.ProviderBase.DbConnectionPool.CreateObject(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
-   at System.Data.ProviderBase.DbConnectionPool.UserCreateRequest(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
-   at System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
-   at System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal& connection)
-   at System.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
-   at System.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
-   at System.Data.SqlClient.SqlConnection.TryOpenInner(TaskCompletionSource`1 retry)
-   at System.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry)
-   at System.Data.SqlClient.SqlConnection.Open()
-   at Umbraco.Core.Persistence.FaultHandling.RetryPolicy.<>c__DisplayClass1.<ExecuteAction>b__0()
-   at Umbraco.Core.Persistence.FaultHandling.RetryPolicy.ExecuteAction[TResult](Func`1 func)
-   at Umbraco.Core.Persistence.Database.OpenSharedConnection()
-   at Umbraco.Core.Persistence.Database.<Query>d__1c`1.MoveNext()
-   at System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)
-   at System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
-   at Umbraco.Core.Persistence.Repositories.UserRepository.PerformGet(Int32 id)
-   at Umbraco.Core.Cache.DefaultRepositoryCachePolicy`2.Get(TId id, Func`2 getFromRepo)
-   at Umbraco.Core.Persistence.Repositories.RepositoryBase`2.Get(TId id)
-   at Umbraco.Core.Services.UserService.GetUserById(Int32 id)
-   at Umbraco.Web.Mvc.AdminTokenAuthorizeAttribute.GetAuthHeaderVal(ApplicationContext appContext)
-   at Umbraco.Web.Mvc.AdminTokenAuthorizeAttribute.GetAuthenticationHeaderValue(ApplicationContext appContext)
-   at Umbraco.Web.Scheduling.ScheduledPublishing.<PerformRunAsync>d__5.MoveNext()
-ClientConnectionId:00000000-0000-0000-0000-000000000000
-Error Number:53,State:0,Class:20
- 2016-06-14 23:44:32,895 [P6812/D4/T222] ERROR Umbraco.Web.Scheduling.KeepAlive - Failed (at "http://dev.kundeportal.moment.dk:80/umbraco").
-System.Net.Http.HttpRequestException: An error occurred while sending the request. ---> System.Net.WebException: Unable to connect to the remote server ---> System.Net.Sockets.SocketException: A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.222.77:80
-   at System.Net.Sockets.Socket.EndConnect(IAsyncResult asyncResult)
-   at System.Net.ServicePoint.ConnectSocketInternal(Boolean connectFailure, Socket s4, Socket s6, Socket& socket, IPAddress& address, ConnectSocketState state, IAsyncResult asyncResult, Exception& exception)
-   --- End of inner exception stack trace ---
-   at System.Net.HttpWebRequest.EndGetResponse(IAsyncResult asyncResult)
-   at System.Net.Http.HttpClientHandler.GetResponseCallback(IAsyncResult ar)
-   --- End of inner exception stack trace ---
-   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
-   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
-   at Umbraco.Web.Scheduling.KeepAlive.<PerformRunAsync>d__4.MoveNext()
- 2016-06-14 23:44:40,735 [P6812/D4/T80] ERROR Umbraco.Web.Scheduling.ScheduledPublishing - Failed (at "http://dev.kundeportal.moment.dk:80/umbraco").
-System.Data.SqlClient.SqlException (0x80131904): A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: Named Pipes Provider, error: 40 - Could not open a connection to SQL Server) ---> System.ComponentModel.Win32Exception (0x80004005): The network path was not found
-   at System.Data.SqlClient.SqlInternalConnectionTds..ctor(DbConnectionPoolIdentity identity, SqlConnectionString connectionOptions, SqlCredential credential, Object providerInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString userConnectionOptions, SessionData reconnectSessionData, DbConnectionPool pool, String accessToken, Boolean applyTransientFaultHandling)
-   at System.Data.SqlClient.SqlConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
-   at System.Data.ProviderBase.DbConnectionFactory.CreatePooledConnection(DbConnectionPool pool, DbConnection owningObject, DbConnectionOptions options, DbConnectionPoolKey poolKey, DbConnectionOptions userOptions)
-   at System.Data.ProviderBase.DbConnectionPool.CreateObject(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
-   at System.Data.ProviderBase.DbConnectionPool.UserCreateRequest(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
-   at System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
-   at System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal& connection)
-   at System.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
-   at System.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
-   at System.Data.SqlClient.SqlConnection.TryOpenInner(TaskCompletionSource`1 retry)
-   at System.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry)
-   at System.Data.SqlClient.SqlConnection.Open()
-   at Umbraco.Core.Persistence.FaultHandling.RetryPolicy.<>c__DisplayClass1.<ExecuteAction>b__0()
-   at Umbraco.Core.Persistence.FaultHandling.RetryPolicy.ExecuteAction[TResult](Func`1 func)
-   at Umbraco.Core.Persistence.Database.OpenSharedConnection()
-   at Umbraco.Core.Persistence.Database.<Query>d__1c`1.MoveNext()
-   at System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)
-   at System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
-   at Umbraco.Core.Persistence.Repositories.UserRepository.PerformGet(Int32 id)
-   at Umbraco.Core.Cache.DefaultRepositoryCachePolicy`2.Get(TId id, Func`2 getFromRepo)
-   at Umbraco.Core.Persistence.Repositories.RepositoryBase`2.Get(TId id)
-   at Umbraco.Core.Services.UserService.GetUserById(Int32 id)
-   at Umbraco.Web.Mvc.AdminTokenAuthorizeAttribute.GetAuthHeaderVal(ApplicationContext appContext)
-   at Umbraco.Web.Mvc.AdminTokenAuthorizeAttribute.GetAuthenticationHeaderValue(ApplicationContext appContext)
-   at Umbraco.Web.Scheduling.ScheduledPublishing.<PerformRunAsync>d__5.MoveNext()
-ClientConnectionId:00000000-0000-0000-0000-000000000000
-Error Number:53,State:0,Class:20
- 2016-06-14 23:46:07,781 [P6812/D4/T76] ERROR Umbraco.Web.Scheduling.ScheduledPublishing - Failed (at "http://dev.kundeportal.moment.dk:80/umbraco").
-System.Data.SqlClient.SqlException (0x80131904): A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: Named Pipes Provider, error: 40 - Could not open a connection to SQL Server) ---> System.ComponentModel.Win32Exception (0x80004005): The network path was not found
-   at System.Data.SqlClient.SqlInternalConnectionTds..ctor(DbConnectionPoolIdentity identity, SqlConnectionString connectionOptions, SqlCredential credential, Object providerInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString userConnectionOptions, SessionData reconnectSessionData, DbConnectionPool pool, String accessToken, Boolean applyTransientFaultHandling)
-   at System.Data.SqlClient.SqlConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
-   at System.Data.ProviderBase.DbConnectionFactory.CreatePooledConnection(DbConnectionPool pool, DbConnection owningObject, DbConnectionOptions options, DbConnectionPoolKey poolKey, DbConnectionOptions userOptions)
-   at System.Data.ProviderBase.DbConnectionPool.CreateObject(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
-   at System.Data.ProviderBase.DbConnectionPool.UserCreateRequest(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
-   at System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
-   at System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal& connection)
-   at System.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
-   at System.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
-   at System.Data.SqlClient.SqlConnection.TryOpenInner(TaskCompletionSource`1 retry)
-   at System.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry)
-   at System.Data.SqlClient.SqlConnection.Open()
-   at Umbraco.Core.Persistence.FaultHandling.RetryPolicy.<>c__DisplayClass1.<ExecuteAction>b__0()
-   at Umbraco.Core.Persistence.FaultHandling.RetryPolicy.ExecuteAction[TResult](Func`1 func)
-   at Umbraco.Core.Persistence.Database.OpenSharedConnection()
-   at Umbraco.Core.Persistence.Database.<Query>d__1c`1.MoveNext()
-   at System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)
-   at System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
-   at Umbraco.Core.Persistence.Repositories.UserRepository.PerformGet(Int32 id)
-   at Umbraco.Core.Cache.DefaultRepositoryCachePolicy`2.Get(TId id, Func`2 getFromRepo)
-   at Umbraco.Core.Persistence.Repositories.RepositoryBase`2.Get(TId id)
-   at Umbraco.Core.Services.UserService.GetUserById(Int32 id)
-   at Umbraco.Web.Mvc.AdminTokenAuthorizeAttribute.GetAuthHeaderVal(ApplicationContext appContext)
-   at Umbraco.Web.Mvc.AdminTokenAuthorizeAttribute.GetAuthenticationHeaderValue(ApplicationContext appContext)
-   at Umbraco.Web.Scheduling.ScheduledPublishing.<PerformRunAsync>d__5.MoveNext()
-ClientConnectionId:00000000-0000-0000-0000-000000000000
-Error Number:53,State:0,Class:20
- 2016-06-14 23:47:07,271 [P6812/D4/T82] INFO  Umbraco.Web.Scheduling.BackgroundTaskRunner - [KeepAlive] Terminating
- 2016-06-14 23:47:07,271 [P6812/D4/T82] INFO  Umbraco.Web.Scheduling.BackgroundTaskRunner - [KeepAlive] Waiting for tasks to complete
- 2016-06-14 23:47:07,278 [P6812/D4/T35] INFO  Umbraco.Web.Scheduling.BackgroundTaskRunner - [KeepAlive] Tasks completed, terminated
- 2016-06-14 23:47:07,284 [P6812/D4/T82] INFO  Umbraco.Web.Scheduling.BackgroundTaskRunner - [Umbraco.Web.Scheduling.IBackgroundTask] Terminating
- 2016-06-14 23:47:07,284 [P6812/D4/T82] INFO  Umbraco.Web.Scheduling.BackgroundTaskRunner - [Umbraco.Web.Scheduling.IBackgroundTask] Waiting for tasks to complete
- 2016-06-14 23:47:07,285 [P6812/D4/T82] INFO  Umbraco.Web.Scheduling.BackgroundTaskRunner - [Umbraco.Web.Scheduling.IBackgroundTask] Tasks completed, terminated
- 2016-06-14 23:47:07,285 [P6812/D4/T82] INFO  Umbraco.Web.Scheduling.BackgroundTaskRunner - [LogScrubber] Terminating
- 2016-06-14 23:47:07,285 [P6812/D4/T82] INFO  Umbraco.Web.Scheduling.BackgroundTaskRunner - [LogScrubber] Waiting for tasks to complete
- 2016-06-14 23:47:07,285 [P6812/D4/T82] INFO  Umbraco.Web.Scheduling.BackgroundTaskRunner - [ScheduledPublishing] Terminating
- 2016-06-14 23:47:07,285 [P6812/D4/T82] INFO  Umbraco.Web.Scheduling.BackgroundTaskRunner - [ScheduledPublishing] Waiting for tasks to complete
- 2016-06-14 23:47:07,285 [P6812/D4/T82] INFO  Umbraco.Web.Scheduling.BackgroundTaskRunner - [ScheduledTasks] Terminating
- 2016-06-14 23:47:07,285 [P6812/D4/T82] INFO  Umbraco.Web.Scheduling.BackgroundTaskRunner - [ScheduledTasks] Waiting for tasks to complete
- 2016-06-14 23:47:07,286 [P6812/D4/T22] INFO  Umbraco.Web.Scheduling.BackgroundTaskRunner - [LogScrubber] Tasks completed, terminated
- 2016-06-14 23:47:07,286 [P6812/D4/T161] INFO  Umbraco.Web.Scheduling.BackgroundTaskRunner - [ScheduledPublishing] Tasks completed, terminated
- 2016-06-14 23:47:07,286 [P6812/D4/T79] INFO  Umbraco.Web.Scheduling.BackgroundTaskRunner - [ScheduledTasks] Tasks completed, terminated
- 2016-06-14 23:47:37,819 [P6812/D4/T25] INFO  Umbraco.Core.UmbracoApplicationBase - Application shutdown. Details: HostingEnvironment
+   at System.Web.HttpRuntime.UnloadAppDomain()
+   at Umbraco.Core.Manifest.ManifestWatcher.FswChanged(Object sender, FileSystemEventArgs e)
+   at System.IO.FileSystemWatcher.OnChanged(FileSystemEventArgs e)
+   at System.IO.FileSystemWatcher.CompletionStatusChanged(UInt32 errorCode, UInt32 numBytes, NativeOverlapped* overlappedPointer)
+   at System.Threading._IOCompletionCallback.PerformIOCompletionCallback(UInt32 errorCode, UInt32 numBytes, NativeOverlapped* pOVERLAP)
+ 2016-07-12 10:27:20,164 [P13404/D5/T29] INFO  Umbraco.Web.Scheduling.BackgroundTaskRunner - [ScheduledTasks] Terminating
+ 2016-07-12 10:27:20,164 [P13404/D5/T29] INFO  Umbraco.Web.Scheduling.BackgroundTaskRunner - [ScheduledTasks] Waiting for tasks to complete
+ 2016-07-12 10:27:20,166 [P13404/D5/T29] INFO  Umbraco.Web.Scheduling.BackgroundTaskRunner - [ScheduledTasks] Tasks completed, terminated
+ 2016-07-12 10:27:20,273 [P13404/D5/T29] INFO  Umbraco.Web.Scheduling.BackgroundTaskRunner - [ScheduledPublishing] Terminating
+ 2016-07-12 10:27:20,273 [P13404/D5/T29] INFO  Umbraco.Web.Scheduling.BackgroundTaskRunner - [ScheduledPublishing] Waiting for tasks to complete
+ 2016-07-12 10:27:20,273 [P13404/D5/T29] INFO  Umbraco.Web.Scheduling.BackgroundTaskRunner - [ScheduledPublishing] Tasks completed, terminated
+ 2016-07-12 10:27:20,273 [P13404/D5/T29] INFO  Umbraco.Web.Scheduling.BackgroundTaskRunner - [LogScrubber] Terminating
+ 2016-07-12 10:27:20,273 [P13404/D5/T29] INFO  Umbraco.Web.Scheduling.BackgroundTaskRunner - [LogScrubber] Waiting for tasks to complete
+ 2016-07-12 10:27:20,273 [P13404/D5/T29] INFO  Umbraco.Web.Scheduling.BackgroundTaskRunner - [LogScrubber] Tasks completed, terminated
+ 2016-07-12 10:27:20,273 [P13404/D5/T29] INFO  Umbraco.Web.Scheduling.BackgroundTaskRunner - [Umbraco.Web.Scheduling.IBackgroundTask] Terminating
+ 2016-07-12 10:27:20,274 [P13404/D5/T29] INFO  Umbraco.Web.Scheduling.BackgroundTaskRunner - [Umbraco.Web.Scheduling.IBackgroundTask] Waiting for tasks to complete
+ 2016-07-12 10:27:20,274 [P13404/D5/T29] INFO  Umbraco.Web.Scheduling.BackgroundTaskRunner - [Umbraco.Web.Scheduling.IBackgroundTask] Tasks completed, terminated
+ 2016-07-12 10:27:20,274 [P13404/D5/T29] INFO  Umbraco.Web.Scheduling.BackgroundTaskRunner - [KeepAlive] Terminating
+ 2016-07-12 10:27:20,274 [P13404/D5/T29] INFO  Umbraco.Web.Scheduling.BackgroundTaskRunner - [KeepAlive] Waiting for tasks to complete
+ 2016-07-12 10:27:20,274 [P13404/D5/T29] INFO  Umbraco.Web.Scheduling.BackgroundTaskRunner - [KeepAlive] Tasks completed, terminated
+ 2016-07-12 10:27:50,363 [P13404/D5/T29] INFO  Umbraco.Core.UmbracoApplicationBase - Application shutdown. Details: BinDirChangeOrDirectoryRename
 
-_shutDownMessage=HostingEnvironment initiated shutdown
+_shutDownMessage=Change Notification for critical directories.
+bin dir change or directory rename
+HostingEnvironment initiated shutdown
+Change Notification for critical directories.
+bin dir change or directory rename
+Change Notification for critical directories.
+bin dir change or directory rename
+Change Notification for critical directories.
+bin dir change or directory rename
 HostingEnvironment caused shutdown
 
 _shutDownStack=   at System.Environment.GetStackTrace(Exception e, Boolean needFileInfo)
    at System.Environment.get_StackTrace()
    at System.Web.Hosting.HostingEnvironment.InitiateShutdownInternal()
    at System.Web.Hosting.HostingEnvironment.InitiateShutdownWithoutDemand()
-   at System.Web.Hosting.PipelineRuntime.StopProcessing()
+   at System.Web.HttpRuntime.ShutdownAppDomain(String stackTrace)
+   at System.Web.HttpRuntime.OnCriticalDirectoryChange(Object sender, FileChangeEvent e)
+   at System.Web.FileChangesMonitor.OnCriticaldirChange(Object sender, FileChangeEvent e)
+   at System.Web.DirectoryMonitor.FireNotifications()
+   at System.Web.Util.WorkItem.CallCallbackWithAssert(WorkItemCallback callback)
+   at System.Web.Util.WorkItem.OnQueueUserWorkItemCompletion(Object state)
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state, Boolean preserveSyncCtx)
+   at System.Threading.ExecutionContext.Run(ExecutionContext executionContext, ContextCallback callback, Object state, Boolean preserveSyncCtx)
+   at System.Threading.QueueUserWorkItemCallback.System.Threading.IThreadPoolWorkItem.ExecuteWorkItem()
+   at System.Threading.ThreadPoolWorkQueue.Dispatch()

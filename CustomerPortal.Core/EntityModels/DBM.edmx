@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-    <Schema Namespace="db12054Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+      <Schema Namespace="db12054Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <!--Errors Found During Generation:
 warning 6002: The table/view 'db12054.dbo.invoice' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="invoice">
@@ -364,23 +364,11 @@ warning 6002: The table/view 'db12054.dbo.vTask' does not have a primary key def
             <End Role="contact_person" EntitySet="contact_person" />
           </AssociationSet>
         </EntityContainer>
-      </Schema></edmx:StorageModels>
+      </Schema>
+    </edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="db12054Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
-        <EntityContainer Name="db12054Entities" annotation:LazyLoadingEnabled="true">
-          <EntitySet Name="JobToContactPersons" EntityType="db12054Model.JobToContactPerson" />
-          <EntitySet Name="companies" EntityType="db12054Model.company" />
-          <EntitySet Name="contact_person" EntityType="db12054Model.contact_person" />
-          <EntitySet Name="jobs" EntityType="db12054Model.job" />
-          <EntitySet Name="vReportedHours" EntityType="db12054Model.vReportedHour" />
-          <AssociationSet Name="fk_contact_person" Association="db12054Model.fk_contact_person">
-            <End Role="company" EntitySet="companies" />
-            <End Role="contact_person" EntitySet="contact_person" />
-          </AssociationSet>
-          <EntitySet Name="invoices" EntityType="db12054Model.invoice" />
-          <EntitySet Name="vTasks" EntityType="db12054Model.vTask" />
-        </EntityContainer>
         <EntityType Name="JobToContactPerson">
           <Key>
             <PropertyRef Name="ID" />
@@ -434,7 +422,7 @@ warning 6002: The table/view 'db12054.dbo.vTask' does not have a primary key def
           <Property Name="concern_id" Type="Int32" />
           <Property Name="isupdated" Type="Boolean" />
           <Property Name="import_date" Type="DateTime" Precision="3" />
-          <NavigationProperty Name="contact_person" Relationship="db12054Model.fk_contact_person" FromRole="company" ToRole="contact_person" />
+          <NavigationProperty Name="contact_person" Relationship="Self.fk_contact_person" FromRole="company" ToRole="contact_person" />
         </EntityType>
         <EntityType Name="contact_person">
           <Key>
@@ -464,13 +452,13 @@ warning 6002: The table/view 'db12054.dbo.vTask' does not have a primary key def
           <Property Name="active" Type="Boolean" />
           <Property Name="sales_person_id" Type="Int32" />
           <Property Name="nps_unsubscribe" Type="Boolean" Nullable="false" />
-          <Property Name="guid" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="password" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="guid" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="password" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="nps_subscribe" Type="Boolean" Nullable="false" />
           <Property Name="portal_hours" Type="Boolean" Nullable="false" />
           <Property Name="portal_invoice" Type="Boolean" Nullable="false" />
           <Property Name="portal_planning" Type="Boolean" Nullable="false" />
-          <NavigationProperty Name="company" Relationship="db12054Model.fk_contact_person" FromRole="contact_person" ToRole="company" />
+          <NavigationProperty Name="company" Relationship="Self.fk_contact_person" FromRole="contact_person" ToRole="company" />
         </EntityType>
         <EntityType Name="job">
           <Key>
@@ -578,48 +566,10 @@ warning 6002: The table/view 'db12054.dbo.vTask' does not have a primary key def
           <Property Name="superJobId" Type="Int32" />
           <Property Name="hideInJoblist" Type="Boolean" />
           <Property Name="motivationNeeded" Type="Boolean" />
-          <Property Name="extraInvoiceEmail" Type="String" Nullable="false" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="extraInvoiceEmail" Type="String" MaxLength="250" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="virksomheden" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
           <Property Name="jobcontractid" Type="Int32" />
         </EntityType>
-        <EntityType Name="vReportedHour">
-          <Key>
-            <PropertyRef Name="reported_hours_id" />
-            <PropertyRef Name="jnr" />
-            <PropertyRef Name="student_id" />
-            <PropertyRef Name="SSN" />
-            <PropertyRef Name="worked_date" />
-            <PropertyRef Name="minutes" />
-            <PropertyRef Name="etc_id" />
-            <PropertyRef Name="status" />
-          </Key>
-          <Property Name="reported_hours_id" Type="Int32" Nullable="false" />
-          <Property Name="company_id" Type="Int32" />
-          <Property Name="company" Type="String" MaxLength="120" FixedLength="false" Unicode="true" />
-          <Property Name="jnr" Type="Int32" Nullable="false" />
-          <Property Name="job_name" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
-          <Property Name="student_id" Type="Int32" Nullable="false" />
-          <Property Name="SSN" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
-          <Property Name="worker" Type="String" MaxLength="81" FixedLength="false" Unicode="true" />
-          <Property Name="worked_date" Type="DateTime" Nullable="false" Precision="3" />
-          <Property Name="minutes" Type="Int32" Nullable="false" />
-          <Property Name="period" Type="String" MaxLength="180" FixedLength="false" Unicode="true" />
-          <Property Name="etc_id" Type="Int32" Nullable="false" />
-          <Property Name="status" Type="Int32" Nullable="false" />
-          <Property Name="consultants" Type="String" MaxLength="101" FixedLength="false" Unicode="false" />
-        </EntityType>
-        <Association Name="fk_contact_person">
-          <End Type="db12054Model.company" Role="company" Multiplicity="0..1" />
-          <End Type="db12054Model.contact_person" Role="contact_person" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="company">
-              <PropertyRef Name="company_id" />
-            </Principal>
-            <Dependent Role="contact_person">
-              <PropertyRef Name="company_id" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <EntityType Name="invoice">
           <Key>
             <PropertyRef Name="invoice_id" />
@@ -641,6 +591,32 @@ warning 6002: The table/view 'db12054.dbo.vTask' does not have a primary key def
           <Property Name="student_worked_month" Type="DateTime" Precision="3" />
           <Property Name="remarks" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
           <Property Name="created" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="vReportedHour">
+          <Key>
+            <PropertyRef Name="reported_hours_id" />
+            <PropertyRef Name="jnr" />
+            <PropertyRef Name="student_id" />
+            <PropertyRef Name="SSN" />
+            <PropertyRef Name="worked_date" />
+            <PropertyRef Name="minutes" />
+            <PropertyRef Name="etc_id" />
+            <PropertyRef Name="status" />
+          </Key>
+          <Property Name="reported_hours_id" Type="Int32" Nullable="false" />
+          <Property Name="company_id" Type="Int32" />
+          <Property Name="company" Type="String" MaxLength="120" FixedLength="false" Unicode="true" />
+          <Property Name="jnr" Type="Int32" Nullable="false" />
+          <Property Name="job_name" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="student_id" Type="Int32" Nullable="false" />
+          <Property Name="SSN" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="worker" Type="String" MaxLength="81" FixedLength="false" Unicode="true" />
+          <Property Name="worked_date" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="minutes" Type="Int32" Nullable="false" />
+          <Property Name="period" Type="String" MaxLength="180" FixedLength="false" Unicode="true" />
+          <Property Name="etc_id" Type="Int32" Nullable="false" />
+          <Property Name="status" Type="Int32" Nullable="false" />
+          <Property Name="consultants" Type="String" MaxLength="101" FixedLength="false" Unicode="false" />
         </EntityType>
         <EntityType Name="vTask">
           <Key>
@@ -668,6 +644,31 @@ warning 6002: The table/view 'db12054.dbo.vTask' does not have a primary key def
           <Property Name="job_attribute_id" Type="Int32" Nullable="false" />
           <Property Name="job_id" Type="Int32" Nullable="false" />
         </EntityType>
+        <Association Name="fk_contact_person">
+          <End Role="company" Type="Self.company" Multiplicity="0..1" />
+          <End Role="contact_person" Type="Self.contact_person" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="company">
+              <PropertyRef Name="company_id" />
+            </Principal>
+            <Dependent Role="contact_person">
+              <PropertyRef Name="company_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="db12054Entities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="JobToContactPersons" EntityType="Self.JobToContactPerson" />
+          <EntitySet Name="companies" EntityType="Self.company" />
+          <EntitySet Name="contact_person" EntityType="Self.contact_person" />
+          <EntitySet Name="jobs" EntityType="Self.job" />
+          <EntitySet Name="invoices" EntityType="Self.invoice" />
+          <EntitySet Name="vReportedHours" EntityType="Self.vReportedHour" />
+          <EntitySet Name="vTasks" EntityType="Self.vTask" />
+          <AssociationSet Name="fk_contact_person" Association="Self.fk_contact_person">
+            <End Role="company" EntitySet="companies" />
+            <End Role="contact_person" EntitySet="contact_person" />
+          </AssociationSet>
+        </EntityContainer>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -677,267 +678,267 @@ warning 6002: The table/view 'db12054.dbo.vTask' does not have a primary key def
           <EntitySetMapping Name="JobToContactPersons">
             <EntityTypeMapping TypeName="db12054Model.JobToContactPerson">
               <MappingFragment StoreEntitySet="JobToContactPerson">
-                <ScalarProperty Name="jnr" ColumnName="jnr" />
-                <ScalarProperty Name="contact_person_id" ColumnName="contact_person_id" />
                 <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="contact_person_id" ColumnName="contact_person_id" />
+                <ScalarProperty Name="jnr" ColumnName="jnr" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="companies">
             <EntityTypeMapping TypeName="db12054Model.company">
               <MappingFragment StoreEntitySet="company">
-                <ScalarProperty Name="import_date" ColumnName="import_date" />
-                <ScalarProperty Name="isupdated" ColumnName="isupdated" />
-                <ScalarProperty Name="concern_id" ColumnName="concern_id" />
-                <ScalarProperty Name="agreement_id" ColumnName="agreement_id" />
-                <ScalarProperty Name="ean" ColumnName="ean" />
-                <ScalarProperty Name="ext_hrp_user" ColumnName="ext_hrp_user" />
-                <ScalarProperty Name="offentligt" ColumnName="offentligt" />
-                <ScalarProperty Name="group_initial" ColumnName="group_initial" />
-                <ScalarProperty Name="cmpnTemplateCoverLetterBoth" ColumnName="cmpnTemplateCoverLetterBoth" />
-                <ScalarProperty Name="cmpnTemplateCoverLetterSingle" ColumnName="cmpnTemplateCoverLetterSingle" />
-                <ScalarProperty Name="cmpnTemplateSubstitutionConfirmation" ColumnName="cmpnTemplateSubstitutionConfirmation" />
-                <ScalarProperty Name="parent_id" ColumnName="parent_id" />
-                <ScalarProperty Name="product_partner_guid" ColumnName="product_partner_guid" />
-                <ScalarProperty Name="career_partner_guid" ColumnName="career_partner_guid" />
-                <ScalarProperty Name="reference" ColumnName="reference" />
-                <ScalarProperty Name="marked_as_primary" ColumnName="marked_as_primary" />
-                <ScalarProperty Name="salesforce1_locked" ColumnName="salesforce1_locked" />
-                <ScalarProperty Name="customercategory" ColumnName="customercategory" />
-                <ScalarProperty Name="mother_country2" ColumnName="mother_country2" />
-                <ScalarProperty Name="mother_company2" ColumnName="mother_company2" />
-                <ScalarProperty Name="mother_country" ColumnName="mother_country" />
-                <ScalarProperty Name="mother_company" ColumnName="mother_company" />
-                <ScalarProperty Name="company_type_id" ColumnName="company_type_id" />
-                <ScalarProperty Name="founding_year" ColumnName="founding_year" />
-                <ScalarProperty Name="reg_no" ColumnName="reg_no" />
-                <ScalarProperty Name="jur_se_no" ColumnName="jur_se_no" />
-                <ScalarProperty Name="p_no" ColumnName="p_no" />
-                <ScalarProperty Name="cvr_no" ColumnName="cvr_no" />
-                <ScalarProperty Name="employees_no_code" ColumnName="employees_no_code" />
-                <ScalarProperty Name="employees_no" ColumnName="employees_no" />
-                <ScalarProperty Name="kob_no" ColumnName="kob_no" />
-                <ScalarProperty Name="name_second" ColumnName="name_second" />
-                <ScalarProperty Name="created_date" ColumnName="created_date" />
-                <ScalarProperty Name="company_status" ColumnName="company_status" />
-                <ScalarProperty Name="website" ColumnName="website" />
-                <ScalarProperty Name="email" ColumnName="email" />
-                <ScalarProperty Name="comment" ColumnName="comment" />
-                <ScalarProperty Name="fax" ColumnName="fax" />
-                <ScalarProperty Name="phone" ColumnName="phone" />
-                <ScalarProperty Name="name" ColumnName="name" />
                 <ScalarProperty Name="company_id" ColumnName="company_id" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="phone" ColumnName="phone" />
+                <ScalarProperty Name="fax" ColumnName="fax" />
+                <ScalarProperty Name="comment" ColumnName="comment" />
+                <ScalarProperty Name="email" ColumnName="email" />
+                <ScalarProperty Name="website" ColumnName="website" />
+                <ScalarProperty Name="company_status" ColumnName="company_status" />
+                <ScalarProperty Name="created_date" ColumnName="created_date" />
+                <ScalarProperty Name="name_second" ColumnName="name_second" />
+                <ScalarProperty Name="kob_no" ColumnName="kob_no" />
+                <ScalarProperty Name="employees_no" ColumnName="employees_no" />
+                <ScalarProperty Name="employees_no_code" ColumnName="employees_no_code" />
+                <ScalarProperty Name="cvr_no" ColumnName="cvr_no" />
+                <ScalarProperty Name="p_no" ColumnName="p_no" />
+                <ScalarProperty Name="jur_se_no" ColumnName="jur_se_no" />
+                <ScalarProperty Name="reg_no" ColumnName="reg_no" />
+                <ScalarProperty Name="founding_year" ColumnName="founding_year" />
+                <ScalarProperty Name="company_type_id" ColumnName="company_type_id" />
+                <ScalarProperty Name="mother_company" ColumnName="mother_company" />
+                <ScalarProperty Name="mother_country" ColumnName="mother_country" />
+                <ScalarProperty Name="mother_company2" ColumnName="mother_company2" />
+                <ScalarProperty Name="mother_country2" ColumnName="mother_country2" />
+                <ScalarProperty Name="customercategory" ColumnName="customercategory" />
+                <ScalarProperty Name="salesforce1_locked" ColumnName="salesforce1_locked" />
+                <ScalarProperty Name="marked_as_primary" ColumnName="marked_as_primary" />
+                <ScalarProperty Name="reference" ColumnName="reference" />
+                <ScalarProperty Name="career_partner_guid" ColumnName="career_partner_guid" />
+                <ScalarProperty Name="product_partner_guid" ColumnName="product_partner_guid" />
+                <ScalarProperty Name="parent_id" ColumnName="parent_id" />
+                <ScalarProperty Name="cmpnTemplateSubstitutionConfirmation" ColumnName="cmpnTemplateSubstitutionConfirmation" />
+                <ScalarProperty Name="cmpnTemplateCoverLetterSingle" ColumnName="cmpnTemplateCoverLetterSingle" />
+                <ScalarProperty Name="cmpnTemplateCoverLetterBoth" ColumnName="cmpnTemplateCoverLetterBoth" />
+                <ScalarProperty Name="group_initial" ColumnName="group_initial" />
+                <ScalarProperty Name="offentligt" ColumnName="offentligt" />
+                <ScalarProperty Name="ext_hrp_user" ColumnName="ext_hrp_user" />
+                <ScalarProperty Name="ean" ColumnName="ean" />
+                <ScalarProperty Name="agreement_id" ColumnName="agreement_id" />
+                <ScalarProperty Name="concern_id" ColumnName="concern_id" />
+                <ScalarProperty Name="isupdated" ColumnName="isupdated" />
+                <ScalarProperty Name="import_date" ColumnName="import_date" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="contact_person">
             <EntityTypeMapping TypeName="db12054Model.contact_person">
               <MappingFragment StoreEntitySet="contact_person">
-                <ScalarProperty Name="portal_planning" ColumnName="portal_planning" />
-                <ScalarProperty Name="portal_invoice" ColumnName="portal_invoice" />
-                <ScalarProperty Name="portal_hours" ColumnName="portal_hours" />
-                <ScalarProperty Name="nps_subscribe" ColumnName="nps_subscribe" />
-                <ScalarProperty Name="password" ColumnName="password" />
-                <ScalarProperty Name="guid" ColumnName="guid" />
-                <ScalarProperty Name="nps_unsubscribe" ColumnName="nps_unsubscribe" />
-                <ScalarProperty Name="sales_person_id" ColumnName="sales_person_id" />
-                <ScalarProperty Name="active" ColumnName="active" />
-                <ScalarProperty Name="kmo" ColumnName="kmo" />
-                <ScalarProperty Name="key_account_manager" ColumnName="key_account_manager" />
-                <ScalarProperty Name="karriere_partner_code" ColumnName="karriere_partner_code" />
-                <ScalarProperty Name="our_meeting_booker" ColumnName="our_meeting_booker" />
-                <ScalarProperty Name="createdDate" ColumnName="createdDate" />
-                <ScalarProperty Name="moment_startdato" ColumnName="moment_startdato" />
-                <ScalarProperty Name="moment_abonnement" ColumnName="moment_abonnement" />
-                <ScalarProperty Name="julebrev" ColumnName="julebrev" />
-                <ScalarProperty Name="mobile" ColumnName="mobile" />
-                <ScalarProperty Name="phone" ColumnName="phone" />
-                <ScalarProperty Name="email" ColumnName="email" />
-                <ScalarProperty Name="surname" ColumnName="surname" />
-                <ScalarProperty Name="name" ColumnName="name" />
-                <ScalarProperty Name="our_sales_person" ColumnName="our_sales_person" />
-                <ScalarProperty Name="fundet_vha" ColumnName="fundet_vha" />
-                <ScalarProperty Name="company_id" ColumnName="company_id" />
-                <ScalarProperty Name="person_id_delete" ColumnName="person_id_delete" />
-                <ScalarProperty Name="comment" ColumnName="comment" />
-                <ScalarProperty Name="department" ColumnName="department" />
-                <ScalarProperty Name="title" ColumnName="title" />
                 <ScalarProperty Name="contact_person_id" ColumnName="contact_person_id" />
+                <ScalarProperty Name="title" ColumnName="title" />
+                <ScalarProperty Name="department" ColumnName="department" />
+                <ScalarProperty Name="comment" ColumnName="comment" />
+                <ScalarProperty Name="person_id_delete" ColumnName="person_id_delete" />
+                <ScalarProperty Name="company_id" ColumnName="company_id" />
+                <ScalarProperty Name="fundet_vha" ColumnName="fundet_vha" />
+                <ScalarProperty Name="our_sales_person" ColumnName="our_sales_person" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="surname" ColumnName="surname" />
+                <ScalarProperty Name="email" ColumnName="email" />
+                <ScalarProperty Name="phone" ColumnName="phone" />
+                <ScalarProperty Name="mobile" ColumnName="mobile" />
+                <ScalarProperty Name="julebrev" ColumnName="julebrev" />
+                <ScalarProperty Name="moment_abonnement" ColumnName="moment_abonnement" />
+                <ScalarProperty Name="moment_startdato" ColumnName="moment_startdato" />
+                <ScalarProperty Name="createdDate" ColumnName="createdDate" />
+                <ScalarProperty Name="our_meeting_booker" ColumnName="our_meeting_booker" />
+                <ScalarProperty Name="karriere_partner_code" ColumnName="karriere_partner_code" />
+                <ScalarProperty Name="key_account_manager" ColumnName="key_account_manager" />
+                <ScalarProperty Name="kmo" ColumnName="kmo" />
+                <ScalarProperty Name="active" ColumnName="active" />
+                <ScalarProperty Name="sales_person_id" ColumnName="sales_person_id" />
+                <ScalarProperty Name="nps_unsubscribe" ColumnName="nps_unsubscribe" />
+                <ScalarProperty Name="guid" ColumnName="guid" />
+                <ScalarProperty Name="password" ColumnName="password" />
+                <ScalarProperty Name="nps_subscribe" ColumnName="nps_subscribe" />
+                <ScalarProperty Name="portal_hours" ColumnName="portal_hours" />
+                <ScalarProperty Name="portal_invoice" ColumnName="portal_invoice" />
+                <ScalarProperty Name="portal_planning" ColumnName="portal_planning" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="jobs">
             <EntityTypeMapping TypeName="db12054Model.job">
               <MappingFragment StoreEntitySet="job">
-                <ScalarProperty Name="jobcontractid" ColumnName="jobcontractid" />
-                <ScalarProperty Name="virksomheden" ColumnName="virksomheden" />
-                <ScalarProperty Name="extraInvoiceEmail" ColumnName="extraInvoiceEmail" />
-                <ScalarProperty Name="motivationNeeded" ColumnName="motivationNeeded" />
-                <ScalarProperty Name="hideInJoblist" ColumnName="hideInJoblist" />
-                <ScalarProperty Name="superJobId" ColumnName="superJobId" />
-                <ScalarProperty Name="applicationType" ColumnName="applicationType" />
-                <ScalarProperty Name="midterm_invoice" ColumnName="midterm_invoice" />
-                <ScalarProperty Name="autoBpBreakLength" ColumnName="autoBpBreakLength" />
-                <ScalarProperty Name="autoBpBreakLimit" ColumnName="autoBpBreakLimit" />
-                <ScalarProperty Name="hideInDetailTabOnCostumerPortal" ColumnName="hideInDetailTabOnCostumerPortal" />
-                <ScalarProperty Name="hideInInternalTimeregOverview" ColumnName="hideInInternalTimeregOverview" />
-                <ScalarProperty Name="employeeCount" ColumnName="employeeCount" />
-                <ScalarProperty Name="primaryCategoryId" ColumnName="primaryCategoryId" />
-                <ScalarProperty Name="highlightId" ColumnName="highlightId" />
-                <ScalarProperty Name="workHoursAndSalary" ColumnName="workHoursAndSalary" />
-                <ScalarProperty Name="weOffer3" ColumnName="weOffer3" />
-                <ScalarProperty Name="weOffer2" ColumnName="weOffer2" />
-                <ScalarProperty Name="weOffer1" ColumnName="weOffer1" />
-                <ScalarProperty Name="hirevue_id" ColumnName="hirevue_id" />
-                <ScalarProperty Name="unanonymous_date" ColumnName="unanonymous_date" />
-                <ScalarProperty Name="show_on_jobbanks" ColumnName="show_on_jobbanks" />
-                <ScalarProperty Name="ean" ColumnName="ean" />
-                <ScalarProperty Name="invoice_id" ColumnName="invoice_id" />
-                <ScalarProperty Name="job_category_intern_id" ColumnName="job_category_intern_id" />
-                <ScalarProperty Name="wage_type_id" ColumnName="wage_type_id" />
-                <ScalarProperty Name="product_id" ColumnName="product_id" />
-                <ScalarProperty Name="Reason_id" ColumnName="Reason_id" />
-                <ScalarProperty Name="Repost_Job_Id" ColumnName="Repost_Job_Id" />
-                <ScalarProperty Name="Zip_String" ColumnName="Zip_String" />
-                <ScalarProperty Name="Application_Startdate" ColumnName="Application_Startdate" />
-                <ScalarProperty Name="JobNewsletterResetFrom" ColumnName="JobNewsletterResetFrom" />
-                <ScalarProperty Name="heading" ColumnName="heading" />
-                <ScalarProperty Name="ApplicationEndDate" ColumnName="ApplicationEndDate" />
-                <ScalarProperty Name="EarliestStart" ColumnName="EarliestStart" />
-                <ScalarProperty Name="workPeriod_id" ColumnName="workPeriod_id" />
-                <ScalarProperty Name="jobTemplateCoverLetterBoth" ColumnName="jobTemplateCoverLetterBoth" />
-                <ScalarProperty Name="jobTemplateCoverLetterSingle" ColumnName="jobTemplateCoverLetterSingle" />
-                <ScalarProperty Name="jobTemplateSubstitutionConfirmation" ColumnName="jobTemplateSubstitutionConfirmation" />
-                <ScalarProperty Name="parent_id" ColumnName="parent_id" />
-                <ScalarProperty Name="scanTag" ColumnName="scanTag" />
-                <ScalarProperty Name="ShowInHRP" ColumnName="ShowInHRP" />
-                <ScalarProperty Name="TermsOfSaleSent" ColumnName="TermsOfSaleSent" />
-                <ScalarProperty Name="SpecialInvoice" ColumnName="SpecialInvoice" />
-                <ScalarProperty Name="JobMailSortCategoryID" ColumnName="JobMailSortCategoryID" />
-                <ScalarProperty Name="TeaserText" ColumnName="TeaserText" />
-                <ScalarProperty Name="InvoiceAddress2" ColumnName="InvoiceAddress2" />
-                <ScalarProperty Name="TimeSpecMailSentDate" ColumnName="TimeSpecMailSentDate" />
-                <ScalarProperty Name="LastCheckedDate" ColumnName="LastCheckedDate" />
-                <ScalarProperty Name="ReportingLockedBefore" ColumnName="ReportingLockedBefore" />
-                <ScalarProperty Name="OnKRFrontpage" ColumnName="OnKRFrontpage" />
-                <ScalarProperty Name="MaleFemale" ColumnName="MaleFemale" />
-                <ScalarProperty Name="ExposedOn" ColumnName="ExposedOn" />
-                <ScalarProperty Name="jobCategoryNew" ColumnName="jobCategoryNew" />
-                <ScalarProperty Name="TimeregName" ColumnName="TimeregName" />
-                <ScalarProperty Name="SalaryBase" ColumnName="SalaryBase" />
-                <ScalarProperty Name="InvoiceReference" ColumnName="InvoiceReference" />
-                <ScalarProperty Name="InvoiceAddressZipNumber" ColumnName="InvoiceAddressZipNumber" />
-                <ScalarProperty Name="InvoiceAddress" ColumnName="InvoiceAddress" />
-                <ScalarProperty Name="applicationDeadline" ColumnName="applicationDeadline" />
-                <ScalarProperty Name="keyAccountManagerPercentage" ColumnName="keyAccountManagerPercentage" />
-                <ScalarProperty Name="meetingBookerPercentage" ColumnName="meetingBookerPercentage" />
-                <ScalarProperty Name="secondarySalesPersonPercentage" ColumnName="secondarySalesPersonPercentage" />
-                <ScalarProperty Name="primarySalesPersonPercentage" ColumnName="primarySalesPersonPercentage" />
-                <ScalarProperty Name="keyAccountManager" ColumnName="keyAccountManager" />
-                <ScalarProperty Name="meetingBooker" ColumnName="meetingBooker" />
-                <ScalarProperty Name="secondarySalesPerson" ColumnName="secondarySalesPerson" />
-                <ScalarProperty Name="primarySalesPerson" ColumnName="primarySalesPerson" />
-                <ScalarProperty Name="conditionsSent" ColumnName="conditionsSent" />
-                <ScalarProperty Name="searchCriteria" ColumnName="searchCriteria" />
-                <ScalarProperty Name="recipients" ColumnName="recipients" />
-                <ScalarProperty Name="dNextEvaluation" ColumnName="dNextEvaluation" />
-                <ScalarProperty Name="bNeverEvaluate" ColumnName="bNeverEvaluate" />
-                <ScalarProperty Name="job_category_single_id" ColumnName="job_category_single_id" />
-                <ScalarProperty Name="cc_contact_person_id" ColumnName="cc_contact_person_id" />
-                <ScalarProperty Name="treasury_contact_person_id" ColumnName="treasury_contact_person_id" />
-                <ScalarProperty Name="daily_contact_person_id" ColumnName="daily_contact_person_id" />
-                <ScalarProperty Name="ended_date" ColumnName="ended_date" />
-                <ScalarProperty Name="department" ColumnName="department" />
-                <ScalarProperty Name="our_responsible" ColumnName="our_responsible" />
-                <ScalarProperty Name="our_consultant2" ColumnName="our_consultant2" />
-                <ScalarProperty Name="our_consultant" ColumnName="our_consultant" />
-                <ScalarProperty Name="expected_end_date" ColumnName="expected_end_date" />
-                <ScalarProperty Name="contact_person_id" ColumnName="contact_person_id" />
-                <ScalarProperty Name="show" ColumnName="show" />
-                <ScalarProperty Name="city" ColumnName="city" />
-                <ScalarProperty Name="company_id" ColumnName="company_id" />
-                <ScalarProperty Name="log_of_events" ColumnName="log_of_events" />
-                <ScalarProperty Name="comments" ColumnName="comments" />
-                <ScalarProperty Name="created_date" ColumnName="created_date" />
-                <ScalarProperty Name="job_location" ColumnName="job_location" />
-                <ScalarProperty Name="recruitment_price" ColumnName="recruitment_price" />
-                <ScalarProperty Name="price_group" ColumnName="price_group" />
-                <ScalarProperty Name="negotiated_price" ColumnName="negotiated_price" />
-                <ScalarProperty Name="deadline" ColumnName="deadline" />
-                <ScalarProperty Name="estimated_total_hours" ColumnName="estimated_total_hours" />
-                <ScalarProperty Name="hours_per_week" ColumnName="hours_per_week" />
-                <ScalarProperty Name="active" ColumnName="active" />
-                <ScalarProperty Name="internal_description" ColumnName="internal_description" />
-                <ScalarProperty Name="public_description" ColumnName="public_description" />
-                <ScalarProperty Name="job_status" ColumnName="job_status" />
-                <ScalarProperty Name="name" ColumnName="name" />
-                <ScalarProperty Name="invoice_name" ColumnName="invoice_name" />
-                <ScalarProperty Name="file_number" ColumnName="file_number" />
                 <ScalarProperty Name="job_id" ColumnName="job_id" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="vReportedHours">
-            <EntityTypeMapping TypeName="db12054Model.vReportedHour">
-              <MappingFragment StoreEntitySet="vReportedHours">
-                <ScalarProperty Name="consultants" ColumnName="consultants" />
-                <ScalarProperty Name="status" ColumnName="status" />
-                <ScalarProperty Name="etc_id" ColumnName="etc_id" />
-                <ScalarProperty Name="period" ColumnName="period" />
-                <ScalarProperty Name="minutes" ColumnName="minutes" />
-                <ScalarProperty Name="worked_date" ColumnName="worked_date" />
-                <ScalarProperty Name="worker" ColumnName="worker" />
-                <ScalarProperty Name="SSN" ColumnName="SSN" />
-                <ScalarProperty Name="student_id" ColumnName="student_id" />
-                <ScalarProperty Name="job_name" ColumnName="job_name" />
-                <ScalarProperty Name="jnr" ColumnName="jnr" />
-                <ScalarProperty Name="company" ColumnName="company" />
+                <ScalarProperty Name="file_number" ColumnName="file_number" />
+                <ScalarProperty Name="invoice_name" ColumnName="invoice_name" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="job_status" ColumnName="job_status" />
+                <ScalarProperty Name="public_description" ColumnName="public_description" />
+                <ScalarProperty Name="internal_description" ColumnName="internal_description" />
+                <ScalarProperty Name="active" ColumnName="active" />
+                <ScalarProperty Name="hours_per_week" ColumnName="hours_per_week" />
+                <ScalarProperty Name="estimated_total_hours" ColumnName="estimated_total_hours" />
+                <ScalarProperty Name="deadline" ColumnName="deadline" />
+                <ScalarProperty Name="negotiated_price" ColumnName="negotiated_price" />
+                <ScalarProperty Name="price_group" ColumnName="price_group" />
+                <ScalarProperty Name="recruitment_price" ColumnName="recruitment_price" />
+                <ScalarProperty Name="job_location" ColumnName="job_location" />
+                <ScalarProperty Name="created_date" ColumnName="created_date" />
+                <ScalarProperty Name="comments" ColumnName="comments" />
+                <ScalarProperty Name="log_of_events" ColumnName="log_of_events" />
                 <ScalarProperty Name="company_id" ColumnName="company_id" />
-                <ScalarProperty Name="reported_hours_id" ColumnName="reported_hours_id" />
+                <ScalarProperty Name="city" ColumnName="city" />
+                <ScalarProperty Name="show" ColumnName="show" />
+                <ScalarProperty Name="contact_person_id" ColumnName="contact_person_id" />
+                <ScalarProperty Name="expected_end_date" ColumnName="expected_end_date" />
+                <ScalarProperty Name="our_consultant" ColumnName="our_consultant" />
+                <ScalarProperty Name="our_consultant2" ColumnName="our_consultant2" />
+                <ScalarProperty Name="our_responsible" ColumnName="our_responsible" />
+                <ScalarProperty Name="department" ColumnName="department" />
+                <ScalarProperty Name="ended_date" ColumnName="ended_date" />
+                <ScalarProperty Name="daily_contact_person_id" ColumnName="daily_contact_person_id" />
+                <ScalarProperty Name="treasury_contact_person_id" ColumnName="treasury_contact_person_id" />
+                <ScalarProperty Name="cc_contact_person_id" ColumnName="cc_contact_person_id" />
+                <ScalarProperty Name="job_category_single_id" ColumnName="job_category_single_id" />
+                <ScalarProperty Name="bNeverEvaluate" ColumnName="bNeverEvaluate" />
+                <ScalarProperty Name="dNextEvaluation" ColumnName="dNextEvaluation" />
+                <ScalarProperty Name="recipients" ColumnName="recipients" />
+                <ScalarProperty Name="searchCriteria" ColumnName="searchCriteria" />
+                <ScalarProperty Name="conditionsSent" ColumnName="conditionsSent" />
+                <ScalarProperty Name="primarySalesPerson" ColumnName="primarySalesPerson" />
+                <ScalarProperty Name="secondarySalesPerson" ColumnName="secondarySalesPerson" />
+                <ScalarProperty Name="meetingBooker" ColumnName="meetingBooker" />
+                <ScalarProperty Name="keyAccountManager" ColumnName="keyAccountManager" />
+                <ScalarProperty Name="primarySalesPersonPercentage" ColumnName="primarySalesPersonPercentage" />
+                <ScalarProperty Name="secondarySalesPersonPercentage" ColumnName="secondarySalesPersonPercentage" />
+                <ScalarProperty Name="meetingBookerPercentage" ColumnName="meetingBookerPercentage" />
+                <ScalarProperty Name="keyAccountManagerPercentage" ColumnName="keyAccountManagerPercentage" />
+                <ScalarProperty Name="applicationDeadline" ColumnName="applicationDeadline" />
+                <ScalarProperty Name="InvoiceAddress" ColumnName="InvoiceAddress" />
+                <ScalarProperty Name="InvoiceAddressZipNumber" ColumnName="InvoiceAddressZipNumber" />
+                <ScalarProperty Name="InvoiceReference" ColumnName="InvoiceReference" />
+                <ScalarProperty Name="SalaryBase" ColumnName="SalaryBase" />
+                <ScalarProperty Name="TimeregName" ColumnName="TimeregName" />
+                <ScalarProperty Name="jobCategoryNew" ColumnName="jobCategoryNew" />
+                <ScalarProperty Name="ExposedOn" ColumnName="ExposedOn" />
+                <ScalarProperty Name="MaleFemale" ColumnName="MaleFemale" />
+                <ScalarProperty Name="OnKRFrontpage" ColumnName="OnKRFrontpage" />
+                <ScalarProperty Name="ReportingLockedBefore" ColumnName="ReportingLockedBefore" />
+                <ScalarProperty Name="LastCheckedDate" ColumnName="LastCheckedDate" />
+                <ScalarProperty Name="TimeSpecMailSentDate" ColumnName="TimeSpecMailSentDate" />
+                <ScalarProperty Name="InvoiceAddress2" ColumnName="InvoiceAddress2" />
+                <ScalarProperty Name="TeaserText" ColumnName="TeaserText" />
+                <ScalarProperty Name="JobMailSortCategoryID" ColumnName="JobMailSortCategoryID" />
+                <ScalarProperty Name="SpecialInvoice" ColumnName="SpecialInvoice" />
+                <ScalarProperty Name="TermsOfSaleSent" ColumnName="TermsOfSaleSent" />
+                <ScalarProperty Name="ShowInHRP" ColumnName="ShowInHRP" />
+                <ScalarProperty Name="scanTag" ColumnName="scanTag" />
+                <ScalarProperty Name="parent_id" ColumnName="parent_id" />
+                <ScalarProperty Name="jobTemplateSubstitutionConfirmation" ColumnName="jobTemplateSubstitutionConfirmation" />
+                <ScalarProperty Name="jobTemplateCoverLetterSingle" ColumnName="jobTemplateCoverLetterSingle" />
+                <ScalarProperty Name="jobTemplateCoverLetterBoth" ColumnName="jobTemplateCoverLetterBoth" />
+                <ScalarProperty Name="workPeriod_id" ColumnName="workPeriod_id" />
+                <ScalarProperty Name="EarliestStart" ColumnName="EarliestStart" />
+                <ScalarProperty Name="ApplicationEndDate" ColumnName="ApplicationEndDate" />
+                <ScalarProperty Name="heading" ColumnName="heading" />
+                <ScalarProperty Name="JobNewsletterResetFrom" ColumnName="JobNewsletterResetFrom" />
+                <ScalarProperty Name="Application_Startdate" ColumnName="Application_Startdate" />
+                <ScalarProperty Name="Zip_String" ColumnName="Zip_String" />
+                <ScalarProperty Name="Repost_Job_Id" ColumnName="Repost_Job_Id" />
+                <ScalarProperty Name="Reason_id" ColumnName="Reason_id" />
+                <ScalarProperty Name="product_id" ColumnName="product_id" />
+                <ScalarProperty Name="wage_type_id" ColumnName="wage_type_id" />
+                <ScalarProperty Name="job_category_intern_id" ColumnName="job_category_intern_id" />
+                <ScalarProperty Name="invoice_id" ColumnName="invoice_id" />
+                <ScalarProperty Name="ean" ColumnName="ean" />
+                <ScalarProperty Name="show_on_jobbanks" ColumnName="show_on_jobbanks" />
+                <ScalarProperty Name="unanonymous_date" ColumnName="unanonymous_date" />
+                <ScalarProperty Name="hirevue_id" ColumnName="hirevue_id" />
+                <ScalarProperty Name="weOffer1" ColumnName="weOffer1" />
+                <ScalarProperty Name="weOffer2" ColumnName="weOffer2" />
+                <ScalarProperty Name="weOffer3" ColumnName="weOffer3" />
+                <ScalarProperty Name="workHoursAndSalary" ColumnName="workHoursAndSalary" />
+                <ScalarProperty Name="highlightId" ColumnName="highlightId" />
+                <ScalarProperty Name="primaryCategoryId" ColumnName="primaryCategoryId" />
+                <ScalarProperty Name="employeeCount" ColumnName="employeeCount" />
+                <ScalarProperty Name="hideInInternalTimeregOverview" ColumnName="hideInInternalTimeregOverview" />
+                <ScalarProperty Name="hideInDetailTabOnCostumerPortal" ColumnName="hideInDetailTabOnCostumerPortal" />
+                <ScalarProperty Name="autoBpBreakLimit" ColumnName="autoBpBreakLimit" />
+                <ScalarProperty Name="autoBpBreakLength" ColumnName="autoBpBreakLength" />
+                <ScalarProperty Name="midterm_invoice" ColumnName="midterm_invoice" />
+                <ScalarProperty Name="applicationType" ColumnName="applicationType" />
+                <ScalarProperty Name="superJobId" ColumnName="superJobId" />
+                <ScalarProperty Name="hideInJoblist" ColumnName="hideInJoblist" />
+                <ScalarProperty Name="motivationNeeded" ColumnName="motivationNeeded" />
+                <ScalarProperty Name="extraInvoiceEmail" ColumnName="extraInvoiceEmail" />
+                <ScalarProperty Name="virksomheden" ColumnName="virksomheden" />
+                <ScalarProperty Name="jobcontractid" ColumnName="jobcontractid" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="invoices">
             <EntityTypeMapping TypeName="db12054Model.invoice">
               <MappingFragment StoreEntitySet="invoice">
-                <ScalarProperty Name="created" ColumnName="created" />
-                <ScalarProperty Name="remarks" ColumnName="remarks" />
-                <ScalarProperty Name="student_worked_month" ColumnName="student_worked_month" />
-                <ScalarProperty Name="invoice_month" ColumnName="invoice_month" />
-                <ScalarProperty Name="hrm_count" ColumnName="hrm_count" />
-                <ScalarProperty Name="hrm2" ColumnName="hrm2" />
-                <ScalarProperty Name="hrm" ColumnName="hrm" />
-                <ScalarProperty Name="job_category" ColumnName="job_category" />
-                <ScalarProperty Name="our_sales_person" ColumnName="our_sales_person" />
-                <ScalarProperty Name="diverse" ColumnName="diverse" />
-                <ScalarProperty Name="amount" ColumnName="amount" />
-                <ScalarProperty Name="salary" ColumnName="salary" />
-                <ScalarProperty Name="hours" ColumnName="hours" />
-                <ScalarProperty Name="virksomhed" ColumnName="virksomhed" />
-                <ScalarProperty Name="job" ColumnName="job" />
-                <ScalarProperty Name="file_number" ColumnName="file_number" />
                 <ScalarProperty Name="invoice_id" ColumnName="invoice_id" />
+                <ScalarProperty Name="file_number" ColumnName="file_number" />
+                <ScalarProperty Name="job" ColumnName="job" />
+                <ScalarProperty Name="virksomhed" ColumnName="virksomhed" />
+                <ScalarProperty Name="hours" ColumnName="hours" />
+                <ScalarProperty Name="salary" ColumnName="salary" />
+                <ScalarProperty Name="amount" ColumnName="amount" />
+                <ScalarProperty Name="diverse" ColumnName="diverse" />
+                <ScalarProperty Name="our_sales_person" ColumnName="our_sales_person" />
+                <ScalarProperty Name="job_category" ColumnName="job_category" />
+                <ScalarProperty Name="hrm" ColumnName="hrm" />
+                <ScalarProperty Name="hrm2" ColumnName="hrm2" />
+                <ScalarProperty Name="hrm_count" ColumnName="hrm_count" />
+                <ScalarProperty Name="invoice_month" ColumnName="invoice_month" />
+                <ScalarProperty Name="student_worked_month" ColumnName="student_worked_month" />
+                <ScalarProperty Name="remarks" ColumnName="remarks" />
+                <ScalarProperty Name="created" ColumnName="created" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="vReportedHours">
+            <EntityTypeMapping TypeName="db12054Model.vReportedHour">
+              <MappingFragment StoreEntitySet="vReportedHours">
+                <ScalarProperty Name="reported_hours_id" ColumnName="reported_hours_id" />
+                <ScalarProperty Name="company_id" ColumnName="company_id" />
+                <ScalarProperty Name="company" ColumnName="company" />
+                <ScalarProperty Name="jnr" ColumnName="jnr" />
+                <ScalarProperty Name="job_name" ColumnName="job_name" />
+                <ScalarProperty Name="student_id" ColumnName="student_id" />
+                <ScalarProperty Name="SSN" ColumnName="SSN" />
+                <ScalarProperty Name="worker" ColumnName="worker" />
+                <ScalarProperty Name="worked_date" ColumnName="worked_date" />
+                <ScalarProperty Name="minutes" ColumnName="minutes" />
+                <ScalarProperty Name="period" ColumnName="period" />
+                <ScalarProperty Name="etc_id" ColumnName="etc_id" />
+                <ScalarProperty Name="status" ColumnName="status" />
+                <ScalarProperty Name="consultants" ColumnName="consultants" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="vTasks">
             <EntityTypeMapping TypeName="db12054Model.vTask">
               <MappingFragment StoreEntitySet="vTask">
-                <ScalarProperty Name="job_id" ColumnName="job_id" />
-                <ScalarProperty Name="job_attribute_id" ColumnName="job_attribute_id" />
-                <ScalarProperty Name="CheckedIn" ColumnName="CheckedIn" />
-                <ScalarProperty Name="job_name" ColumnName="job_name" />
-                <ScalarProperty Name="task_id" ColumnName="task_id" />
-                <ScalarProperty Name="mobile" ColumnName="mobile" />
-                <ScalarProperty Name="phone" ColumnName="phone" />
-                <ScalarProperty Name="vagttype" ColumnName="vagttype" />
-                <ScalarProperty Name="oncall" ColumnName="oncall" />
-                <ScalarProperty Name="state" ColumnName="state" />
-                <ScalarProperty Name="end_time" ColumnName="end_time" />
-                <ScalarProperty Name="start_time" ColumnName="start_time" />
-                <ScalarProperty Name="name" ColumnName="name" />
-                <ScalarProperty Name="student_id" ColumnName="student_id" />
                 <ScalarProperty Name="jnr" ColumnName="jnr" />
+                <ScalarProperty Name="student_id" ColumnName="student_id" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="start_time" ColumnName="start_time" />
+                <ScalarProperty Name="end_time" ColumnName="end_time" />
+                <ScalarProperty Name="state" ColumnName="state" />
+                <ScalarProperty Name="oncall" ColumnName="oncall" />
+                <ScalarProperty Name="vagttype" ColumnName="vagttype" />
+                <ScalarProperty Name="phone" ColumnName="phone" />
+                <ScalarProperty Name="mobile" ColumnName="mobile" />
+                <ScalarProperty Name="task_id" ColumnName="task_id" />
+                <ScalarProperty Name="job_name" ColumnName="job_name" />
+                <ScalarProperty Name="CheckedIn" ColumnName="CheckedIn" />
+                <ScalarProperty Name="job_attribute_id" ColumnName="job_attribute_id" />
+                <ScalarProperty Name="job_id" ColumnName="job_id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

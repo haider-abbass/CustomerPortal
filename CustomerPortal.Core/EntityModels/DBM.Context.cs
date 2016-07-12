@@ -29,8 +29,8 @@ namespace CustomerPortal.Core.EntityModels
         public virtual DbSet<company> companies { get; set; }
         public virtual DbSet<contact_person> contact_person { get; set; }
         public virtual DbSet<job> jobs { get; set; }
-        public virtual DbSet<vReportedHour> vReportedHours { get; set; }
         public virtual DbSet<invoice> invoices { get; set; }
+        public virtual DbSet<vReportedHour> vReportedHours { get; set; }
         public virtual DbSet<vTask> vTasks { get; set; }
     }
 }

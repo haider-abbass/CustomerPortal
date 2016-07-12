@@ -1,5 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.Net.Compilers.1.2.2\build\Microsoft.Net.Compilers.props" Condition="Exists('..\packages\Microsoft.Net.Compilers.1.2.2\build\Microsoft.Net.Compilers.props')" />
   <Import Project="..\packages\UmbracoCms.7.4.3\build\UmbracoCms.props" Condition="Exists('..\packages\UmbracoCms.7.4.3\build\UmbracoCms.props')" />
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
@@ -21,8 +22,9 @@
     <IISExpressAnonymousAuthentication />
     <IISExpressWindowsAuthentication />
     <IISExpressUseClassicPipelineMode />
-    <NuGetPackageImportStamp>9bb1c1a3</NuGetPackageImportStamp>
+    <NuGetPackageImportStamp>11c953a6</NuGetPackageImportStamp>
     <UseGlobalApplicationHostFile />
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -92,9 +94,9 @@
     <Reference Include="interfaces">
       <HintPath>..\packages\UmbracoCms.Core.7.4.3\lib\interfaces.dll</HintPath>
     </Reference>
-    <Reference Include="log4net, Version=1.2.15.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
+    <Reference Include="log4net, Version=1.2.11.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\log4net.2.0.5\lib\net45-full\log4net.dll</HintPath>
+      <HintPath>dependencies\log4net.dll</HintPath>
     </Reference>
     <Reference Include="Lucene.Net">
       <HintPath>..\packages\Lucene.Net.2.9.4.1\lib\net40\Lucene.Net.dll</HintPath>
@@ -150,6 +152,15 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\Newtonsoft.Json.6.0.8\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
+    <Reference Include="Ninject">
+      <HintPath>..\packages\Ninject.3.2.0.0\lib\net45-full\Ninject.dll</HintPath>
+    </Reference>
+    <Reference Include="Ninject.Web.Common">
+      <HintPath>..\packages\Ninject.Web.Common.3.2.0.0\lib\net45-full\Ninject.Web.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Ninject.Web.Mvc">
+      <HintPath>..\packages\Ninject.MVC5.3.2.1.0\lib\net45-full\Ninject.Web.Mvc.dll</HintPath>
+    </Reference>
     <Reference Include="Semver">
       <HintPath>..\packages\semver.1.1.2\lib\net45\Semver.dll</HintPath>
     </Reference>
@@ -162,6 +173,7 @@
       <HintPath>..\packages\System.Collections.Immutable.1.1.36\lib\portable-net45+win8+wp8+wpa81\System.Collections.Immutable.dll</HintPath>
     </Reference>
     <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Data.SqlServerCe, Version=4.0.0.1, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\UmbracoCms.Core.7.4.3\lib\System.Data.SqlServerCe.dll</HintPath>
@@ -182,8 +194,7 @@
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
-    <Reference Include="System.Core" />
-    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
     <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.Helpers.dll</HintPath>
@@ -216,9 +227,7 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
     </Reference>
-    <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Web" />
-    <Reference Include="System.Web.Extensions" />
     <Reference Include="System.Web.Abstractions" />
     <Reference Include="System.Web.Routing" />
     <Reference Include="System.Xml" />
@@ -236,6 +245,7 @@
     <Reference Include="System.Web.Optimization">
       <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
     </Reference>
+    <Reference Include="System.Xml.Linq" />
     <Reference Include="TidyNet">
       <HintPath>..\packages\UmbracoCms.Core.7.4.3\lib\TidyNet.dll</HintPath>
     </Reference>
@@ -272,6 +282,9 @@
     <Reference Include="UrlRewritingNet.UrlRewriter">
       <HintPath>..\packages\UrlRewritingNet.2.0.7\lib\UrlRewritingNet.UrlRewriter.dll</HintPath>
     </Reference>
+    <Reference Include="WebActivatorEx">
+      <HintPath>..\packages\WebActivatorEx.2.0\lib\net40\WebActivatorEx.dll</HintPath>
+    </Reference>
     <Reference Include="WebGrease">
       <Private>True</Private>
       <HintPath>..\packages\WebGrease.1.5.2\lib\WebGrease.dll</HintPath>
@@ -306,6 +319,7 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\IdentityConfig.cs" />
+    <Compile Include="App_Start\NinjectWebCommon.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
@@ -319,13 +333,10 @@
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Startup.cs" />
+    <Compile Include="Util\DependencyInjection.cs" />
     <Compile Include="Util\SessionUtil.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="App_Data\TEMP\ClientDependency\HAIDER-ABBAS-267f6424c97d86fa41f21c5361c79b25-map.xml" />
-    <Content Include="App_Data\TEMP\DistCache\HAIDER-ABBAS\LMW3SVC4ROOT-lastsynced.txt" />
-    <Content Include="App_Data\TEMP\DistCache\HAIDER-ABBAS\LMW3SVC7ROOT-lastsynced.txt" />
     <Content Include="App_Plugins\DocTypeMixins\Images\docTypeMixin.png" />
     <Content Include="App_Plugins\DocTypeMixins\Images\docTypeMixinApply.png" />
     <Content Include="App_Plugins\DocTypeMixins\Images\docTypeMixinMaster.png" />
@@ -382,12 +393,174 @@
     <Content Include="Config\Lang\ru-RU.user.xml" />
     <Content Include="Config\Lang\sv-SE.user.xml" />
     <Content Include="Config\Lang\zh-CN.user.xml" />
-    <Content Include="Content\bootstrap.css" />
-    <Content Include="Content\bootstrap.min.css" />
-    <Content Include="Content\font-awesome.css" />
-    <Content Include="Content\font-awesome.min.css" />
-    <Content Include="Content\responsive.min.css" />
-    <Content Include="Content\responsive.css" />
+    <Content Include="Content\css\animate.min.css" />
+    <Content Include="Content\css\bootstrap.css" />
+    <Content Include="Content\css\bootstrap.min.css" />
+    <Content Include="Content\css\common.css" />
+    <Content Include="Content\css\common.min.css" />
+    <Content Include="Content\css\font-awesome.css" />
+    <Content Include="Content\css\font-awesome.min.css" />
+    <Content Include="Content\css\prettyPhoto.css" />
+    <Content Include="Content\css\responsive.css" />
+    <Content Include="Content\css\responsive.min.css" />
+    <Content Include="Content\css\login.css" />
+    <Content Include="Content\fonts\fontawesome-webfont.svg" />
+    <Content Include="Content\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Content\images\accordion1.png" />
+    <Content Include="Content\images\ads\ad1.png" />
+    <Content Include="Content\images\ads\ad2.png" />
+    <Content Include="Content\images\ads\ad3.png" />
+    <Content Include="Content\images\ads\ad4.png" />
+    <Content Include="Content\images\background\background.jpg" />
+    <Content Include="Content\images\background\page_is_under_construction.jpg" />
+    <Content Include="Content\images\blog\avatar.jpg" />
+    <Content Include="Content\images\blog\avatar1.png" />
+    <Content Include="Content\images\blog\avatar2.png" />
+    <Content Include="Content\images\blog\avatar3.png" />
+    <Content Include="Content\images\blog\blog1.jpg" />
+    <Content Include="Content\images\blog\blog2.jpg" />
+    <Content Include="Content\images\blog\boy.png" />
+    <Content Include="Content\images\blog\boy2.png" />
+    <Content Include="Content\images\blog\boy3.png" />
+    <Content Include="Content\images\blog\comments_bg.png" />
+    <Content Include="Content\images\blog\gallery1.png" />
+    <Content Include="Content\images\blog\gallery2.png" />
+    <Content Include="Content\images\blog\gallery3.png" />
+    <Content Include="Content\images\blog\gallery4.png" />
+    <Content Include="Content\images\blog\gallery5.png" />
+    <Content Include="Content\images\blog\gallery6.png" />
+    <Content Include="Content\images\blog\girl.png" />
+    <Content Include="Content\images\blog\thumb1.jpg" />
+    <Content Include="Content\images\blog\thumb2.jpg" />
+    <Content Include="Content\images\blog\thumb3.jpg" />
+    <Content Include="Content\images\client1.png" />
+    <Content Include="Content\images\client2.png" />
+    <Content Include="Content\images\client3.png" />
+    <Content Include="Content\images\contact.png" />
+    <Content Include="Content\images\gallery\gallery1.jpg" />
+    <Content Include="Content\images\gallery\gallery2.jpg" />
+    <Content Include="Content\images\gallery\gallery3.jpg" />
+    <Content Include="Content\images\gallery\gallery4.jpg" />
+    <Content Include="Content\images\gallery\gallery5.jpg" />
+    <Content Include="Content\images\gallery\gallery6.jpg" />
+    <Content Include="Content\images\ico\favicon-students.png" />
+    <Content Include="Content\images\image_bg.png" />
+    <Content Include="Content\images\logo_transparent.png" />
+    <Content Include="Content\images\man1.jpg" />
+    <Content Include="Content\images\man2.jpg" />
+    <Content Include="Content\images\man3.jpg" />
+    <Content Include="Content\images\man4.jpg" />
+    <Content Include="Content\images\map.jpg" />
+    <Content Include="Content\images\partners\partner1.png" />
+    <Content Include="Content\images\partners\partner2.png" />
+    <Content Include="Content\images\partners\partner3.png" />
+    <Content Include="Content\images\partners\partner4.png" />
+    <Content Include="Content\images\partners\partner5.png" />
+    <Content Include="Content\images\partners\partner_bg.png" />
+    <Content Include="Content\images\portfolio\full\item1.png" />
+    <Content Include="Content\images\portfolio\full\item10.png" />
+    <Content Include="Content\images\portfolio\full\item11.png" />
+    <Content Include="Content\images\portfolio\full\item12.png" />
+    <Content Include="Content\images\portfolio\full\item2.png" />
+    <Content Include="Content\images\portfolio\full\item3.png" />
+    <Content Include="Content\images\portfolio\full\item4.png" />
+    <Content Include="Content\images\portfolio\full\item5.png" />
+    <Content Include="Content\images\portfolio\full\item6.png" />
+    <Content Include="Content\images\portfolio\full\item7.png" />
+    <Content Include="Content\images\portfolio\full\item8.png" />
+    <Content Include="Content\images\portfolio\full\item9.png" />
+    <Content Include="Content\images\portfolio\recent\item1.png" />
+    <Content Include="Content\images\portfolio\recent\item10.png" />
+    <Content Include="Content\images\portfolio\recent\item11.png" />
+    <Content Include="Content\images\portfolio\recent\item12.png" />
+    <Content Include="Content\images\portfolio\recent\item2.png" />
+    <Content Include="Content\images\portfolio\recent\item3.png" />
+    <Content Include="Content\images\portfolio\recent\item4.png" />
+    <Content Include="Content\images\portfolio\recent\item5.png" />
+    <Content Include="Content\images\portfolio\recent\item6.png" />
+    <Content Include="Content\images\portfolio\recent\item7.png" />
+    <Content Include="Content\images\portfolio\recent\item8.png" />
+    <Content Include="Content\images\portfolio\recent\item9.png" />
+    <Content Include="Content\images\prettyPhoto\dark_rounded\btnNext.png" />
+    <Content Include="Content\images\prettyPhoto\dark_rounded\btnPrevious.png" />
+    <Content Include="Content\images\prettyPhoto\dark_rounded\contentPattern.png" />
+    <Content Include="Content\images\prettyPhoto\dark_rounded\default_thumbnail.gif" />
+    <Content Include="Content\images\prettyPhoto\dark_rounded\loader.gif" />
+    <Content Include="Content\images\prettyPhoto\dark_rounded\sprite.png" />
+    <Content Include="Content\images\prettyPhoto\dark_square\btnNext.png" />
+    <Content Include="Content\images\prettyPhoto\dark_square\btnPrevious.png" />
+    <Content Include="Content\images\prettyPhoto\dark_square\contentPattern.png" />
+    <Content Include="Content\images\prettyPhoto\dark_square\default_thumbnail.gif" />
+    <Content Include="Content\images\prettyPhoto\dark_square\loader.gif" />
+    <Content Include="Content\images\prettyPhoto\dark_square\sprite.png" />
+    <Content Include="Content\images\prettyPhoto\default\default_thumb.png" />
+    <Content Include="Content\images\prettyPhoto\default\loader.gif" />
+    <Content Include="Content\images\prettyPhoto\default\sprite.png" />
+    <Content Include="Content\images\prettyPhoto\default\sprite_next.png" />
+    <Content Include="Content\images\prettyPhoto\default\sprite_prev.png" />
+    <Content Include="Content\images\prettyPhoto\default\sprite_x.png" />
+    <Content Include="Content\images\prettyPhoto\default\sprite_y.png" />
+    <Content Include="Content\images\prettyPhoto\facebook\btnNext.png" />
+    <Content Include="Content\images\prettyPhoto\facebook\btnPrevious.png" />
+    <Content Include="Content\images\prettyPhoto\facebook\contentPatternBottom.png" />
+    <Content Include="Content\images\prettyPhoto\facebook\contentPatternLeft.png" />
+    <Content Include="Content\images\prettyPhoto\facebook\contentPatternRight.png" />
+    <Content Include="Content\images\prettyPhoto\facebook\contentPatternTop.png" />
+    <Content Include="Content\images\prettyPhoto\facebook\default_thumbnail.gif" />
+    <Content Include="Content\images\prettyPhoto\facebook\loader.gif" />
+    <Content Include="Content\images\prettyPhoto\facebook\sprite.png" />
+    <Content Include="Content\images\prettyPhoto\light_rounded\btnNext.png" />
+    <Content Include="Content\images\prettyPhoto\light_rounded\btnPrevious.png" />
+    <Content Include="Content\images\prettyPhoto\light_rounded\default_thumbnail.gif" />
+    <Content Include="Content\images\prettyPhoto\light_rounded\loader.gif" />
+    <Content Include="Content\images\prettyPhoto\light_rounded\sprite.png" />
+    <Content Include="Content\images\prettyPhoto\light_square\btnNext.png" />
+    <Content Include="Content\images\prettyPhoto\light_square\btnPrevious.png" />
+    <Content Include="Content\images\prettyPhoto\light_square\default_thumbnail.gif" />
+    <Content Include="Content\images\prettyPhoto\light_square\loader.gif" />
+    <Content Include="Content\images\prettyPhoto\light_square\sprite.png" />
+    <Content Include="Content\images\ribon_one.png" />
+    <Content Include="Content\images\ribon_two.png" />
+    <Content Include="Content\images\search_icon.png" />
+    <Content Include="Content\images\services\bg_services.jpg" />
+    <Content Include="Content\images\services\bg_services.png" />
+    <Content Include="Content\images\services\services1.png" />
+    <Content Include="Content\images\services\services2.png" />
+    <Content Include="Content\images\services\services3.png" />
+    <Content Include="Content\images\services\services4.png" />
+    <Content Include="Content\images\services\services5.png" />
+    <Content Include="Content\images\services\services6.png" />
+    <Content Include="Content\images\services\slider-bg.png" />
+    <Content Include="Content\images\service\client1.png" />
+    <Content Include="Content\images\service\client2.png" />
+    <Content Include="Content\images\service\client3.png" />
+    <Content Include="Content\images\service\image_bg.png" />
+    <Content Include="Content\images\service\logo.png" />
+    <Content Include="Content\images\slider\1.jpg" />
+    <Content Include="Content\images\slider\10.jpg" />
+    <Content Include="Content\images\slider\2.jpg" />
+    <Content Include="Content\images\slider\3.jpg" />
+    <Content Include="Content\images\slider\4.jpg" />
+    <Content Include="Content\images\slider\5.jpg" />
+    <Content Include="Content\images\slider\6.jpg" />
+    <Content Include="Content\images\slider\7.jpg" />
+    <Content Include="Content\images\slider\8.jpg" />
+    <Content Include="Content\images\slider\9.jpg" />
+    <Content Include="Content\images\slider\bg1.jpg" />
+    <Content Include="Content\images\slider\bg2.jpg" />
+    <Content Include="Content\images\slider\bg3.jpg" />
+    <Content Include="Content\images\slider\img1.png" />
+    <Content Include="Content\images\slider\img2.png" />
+    <Content Include="Content\images\slider\img3.png" />
+    <Content Include="Content\images\slider_one.jpg" />
+    <Content Include="Content\images\spinner\ellipsis.gif" />
+    <Content Include="Content\images\spinner\facebook.gif" />
+    <Content Include="Content\images\spinner\ring.gif" />
+    <Content Include="Content\images\spinner\ripple.gif" />
+    <Content Include="Content\images\tab1.png" />
+    <Content Include="Content\images\tab2.png" />
+    <Content Include="Content\images\team-member.jpg" />
+    <Content Include="Content\images\testimonials1.png" />
     <Content Include="Content\kendo\2016.2.504-source\gulpfile.js" />
     <Content Include="Content\kendo\2016.2.504-source\mobile\images\back.png" />
     <Content Include="Content\kendo\2016.2.504-source\mobile\images\kendoui.svg" />
@@ -1022,13 +1195,23 @@
     <Content Include="Content\kendo\2016.2.504\Uniform\sprite_2x.png" />
     <Content Include="Content\kendo\2016.2.504\Uniform\sprite_kpi.png" />
     <Content Include="Content\kendo\2016.2.504\Uniform\sprite_kpi_2x.png" />
-    <Content Include="Content\common.min.css" />
     <Content Include="default.aspx" />
-    <Content Include="favicon.ico" />
+    <Content Include="dependencies\log4net.dll" />
     <Content Include="fonts\fontawesome-webfont.svg" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
-    <Content Include="Content\common.css" />
+    <Content Include="Scripts\Authentication\bundle.js" />
+    <Content Include="Scripts\Authentication\bundle.min.js">
+      <DependentUpon>bundle.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\Authentication\controller.min.js">
+      <DependentUpon>controller.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\Authentication\model.js" />
+    <Content Include="Scripts\Authentication\controller.js" />
+    <Content Include="Scripts\Authentication\model.min.js">
+      <DependentUpon>model.js</DependentUpon>
+    </Content>
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="App_Plugins\ModelsBuilder\package.manifest" />
@@ -1050,14 +1233,6 @@
     <Content Include="Config\applications.config" />
     <Content Include="Config\404handlers.config" />
     <Content Include="App_Data\umbraco.config" />
-    <Content Include="App_Data\TEMP\ExamineIndexes\HAIDER-ABBAS\External\Index\segments.gen" />
-    <Content Include="App_Data\TEMP\ExamineIndexes\HAIDER-ABBAS\External\Index\segments_3" />
-    <Content Include="App_Data\TEMP\ExamineIndexes\HAIDER-ABBAS\InternalMember\Index\segments.gen" />
-    <Content Include="App_Data\TEMP\ExamineIndexes\HAIDER-ABBAS\InternalMember\Index\segments_3" />
-    <Content Include="App_Data\TEMP\ExamineIndexes\HAIDER-ABBAS\Internal\Index\segments.gen" />
-    <Content Include="App_Data\TEMP\ExamineIndexes\HAIDER-ABBAS\Internal\Index\segments_3" />
-    <Content Include="App_Data\TEMP\PluginCache\umbraco-plugins.HAIDER-ABBAS.hash" />
-    <Content Include="App_Data\TEMP\PluginCache\umbraco-plugins.HAIDER-ABBAS.list" />
     <Content Include="App_Data\packages\installed\installedPackages.config" />
     <Content Include="Content\kendo\2016.2.504-source\web\type-office365.less" />
     <Content Include="Content\kendo\2016.2.504-source\web\type-nova.less" />
@@ -1482,10 +1657,31 @@
     <Content Include="fonts\fontawesome-webfont.eot" />
     <Content Include="fonts\FontAwesome.otf" />
     <Content Include="App_Plugins\u7dtg\package.manifest" />
+    <Content Include="Content\fonts\fontawesome-webfont.eot" />
+    <Content Include="Content\fonts\fontawesome-webfont.ttf" />
+    <Content Include="Content\fonts\fontawesome-webfont.woff" />
+    <Content Include="Content\fonts\FontAwesome.otf" />
+    <Content Include="Content\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Content\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="Content\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="Content\images\404.xcf" />
+    <Content Include="Content\fonts\fontawesome-webfont.woff2" />
+    <Content Include="Scripts\common-methods.min.js.map">
+      <DependentUpon>common-methods.min.js</DependentUpon>
+    </Content>
+    <None Include="bundleconfig.json" />
+    <None Include="Properties\PublishProfiles\kp-staging-filesystem.pubxml" />
+    <None Include="Properties\PublishProfiles\kp-staging.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="Scripts\common-methods.min.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.backstretch.js" />
+    <Content Include="Scripts\jquery.backstretch.min.js" />
+    <Content Include="Scripts\jquery.isotope.min.js" />
+    <Content Include="Scripts\jquery.prettyPhoto.js" />
+    <Content Include="Scripts\jquery.validate-messages_da-DK.js" />
     <Content Include="Scripts\jquery.validate.js" />
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
@@ -2048,9 +2244,12 @@
     <Content Include="Scripts\kendo\2016.2.504\messages\kendo.messages.zh-CN.min.js" />
     <Content Include="Scripts\kendo\2016.2.504\messages\kendo.messages.zh-HK.min.js" />
     <Content Include="Scripts\kendo\2016.2.504\messages\kendo.messages.zh-TW.min.js" />
+    <Content Include="Scripts\common-methods.js" />
+    <Content Include="Scripts\knockout-3.4.0.debug.js" />
+    <Content Include="Scripts\knockout-3.4.0.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
-    <Content Include="Scripts\respond.js" />
-    <Content Include="Scripts\respond.min.js" />
+    <Content Include="Scripts\spinner.js" />
+    <Content Include="Scripts\wow.min.js" />
     <Content Include="Scripts\_references.js" />
     <Content Include="Umbraco\Actions\delete.aspx" />
     <Content Include="Umbraco\Actions\editContent.aspx" />
@@ -4495,7 +4694,16 @@
     <Content Include="Umbraco_Client\Ui\ui-lightness\images\ui-icons_ffd27a_256x240.png" />
     <Content Include="Umbraco_Client\Ui\ui-lightness\images\ui-icons_ffffff_256x240.png" />
     <Content Include="Umbraco_Client\Ui\ui-lightness\jquery-ui.custom.css" />
-    <Content Include="Views\Web.config" />
+    <None Include="Web.config">
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <None Include="Views\Web.config" />
     <Content Include="Views\Error.cshtml" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
     <Content Include="Views\Account\_ExternalLoginsListPartial.cshtml" />
@@ -4540,7 +4748,7 @@
     <Content Include="Umbraco\assets\less\shadow.less" />
     <Content Include="Umbraco\assets\less\slider.less" />
     <Content Include="Umbraco\Install\Views\Index.cshtml" />
-    <Content Include="Umbraco\Install\Views\Web.config" />
+    <None Include="Umbraco\Install\Views\Web.config" />
     <Content Include="Umbraco\lib\angular-dynamic-locale\tmhDynamicLocale.min.js.map" />
     <Content Include="Umbraco\lib\bootstrap-tabdrop\README.md" />
     <Content Include="Umbraco\lib\bootstrap\less\accordion.less" />
@@ -4641,7 +4849,7 @@
     <Content Include="Umbraco\Webservices\TagsAutoCompleteHandler.ashx" />
     <Content Include="Umbraco\Webservices\TreeDataService.ashx" />
     <Content Include="Umbraco\Webservices\UltimatePickerAutoCompleteHandler.ashx" />
-    <Content Include="Umbraco\Xslt\Web.config" />
+    <None Include="Umbraco\Xslt\Web.config" />
     <Content Include="Scripts\kendo\2016.2.504\messages\kendo.messages.zh-TW.min.js.map" />
     <Content Include="Scripts\kendo\2016.2.504\messages\kendo.messages.zh-HK.min.js.map" />
     <Content Include="Scripts\kendo\2016.2.504\messages\kendo.messages.zh-CN.min.js.map" />
@@ -5199,18 +5407,19 @@
     <Content Include="Views\Partials\_Footer.cshtml" />
     <Content Include="Views\Partials\_Head.cshtml" />
     <Content Include="Views\KpHome.cshtml" />
-    <Content Include="Web.config" />
-    <None Include="Web.Debug.config">
-      <DependentUpon>Web.config</DependentUpon>
-    </None>
-    <None Include="Web.Release.config">
-      <DependentUpon>Web.config</DependentUpon>
-    </None>
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Partials\_Login.cshtml" />
+    <Content Include="Views\Partials\_Header.cshtml" />
+    <Content Include="Views\Partials\_Spinner.cshtml" />
+    <Content Include="Views\General.cshtml" />
+    <Content Include="Views\UnderConstruction.cshtml" />
+    <Content Include="Views\About.cshtml" />
+    <Content Include="Views\Contact.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\Logs\" />
     <Folder Include="App_Data\packages\created\" />
-    <Folder Include="App_Data\TEMP\Install\" />
     <Folder Include="Views\Authentication\" />
     <Folder Include="Views\Base\" />
   </ItemGroup>
@@ -5219,7 +5428,6 @@
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="packages.config" />
-    <None Include="Project_Readme.html" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\CustomerPortal.Core\CustomerPortal.Core.csproj">
@@ -5261,6 +5469,7 @@
     </PropertyGroup>
     <Error Condition="!Exists('..\packages\UmbracoCms.7.4.3\build\UmbracoCms.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\UmbracoCms.7.4.3\build\UmbracoCms.props'))" />
     <Error Condition="!Exists('..\packages\UmbracoCms.7.4.3\build\UmbracoCms.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\UmbracoCms.7.4.3\build\UmbracoCms.targets'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.Net.Compilers.1.2.2\build\Microsoft.Net.Compilers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Net.Compilers.1.2.2\build\Microsoft.Net.Compilers.props'))" />
   </Target>
   <Import Project="..\packages\UmbracoCms.7.4.3\build\UmbracoCms.targets" Condition="Exists('..\packages\UmbracoCms.7.4.3\build\UmbracoCms.targets')" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.

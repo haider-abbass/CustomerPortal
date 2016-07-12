@@ -83,13 +83,17 @@ jQuery(function ($) {
 $(document).ajaxError(function (xhr, textStatus) {
     debugger;
     if (xhr.status == "401") {
-        $("#modal-login").modal("show");
+        showLoginPopup();
     }
 });
 
+function showLoginPopup() {
+    $("#modal-login").modal("show");
+}
+
 //Hide Login Button and show Logout Button
 function LoggedIn() {
-    $("#nav-Login").addClass("hidden");
+    $("#nav-Login").addClass("hidden").removeClass("active");
     $("#nav-Logout").removeClass("hidden");
     $("#modal-login").modal("hide");
 }

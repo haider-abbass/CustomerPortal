@@ -3,7 +3,7 @@
 $(document).ready(function() {
     ko.applyBindings(ViewModel);
     //focus first element
-    $("#password").focus();
+    $("#userName").focus();
 });
 
     

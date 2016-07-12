@@ -14,7 +14,6 @@ namespace CustomerPortal.Core.EntityModels
     
     public partial class job
     {
-       
         public int job_id { get; set; }
         public int file_number { get; set; }
         public string invoice_name { get; set; }

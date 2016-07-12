@@ -35,12 +35,12 @@ namespace CustomerPortal.Web
             #endregion
 
             #region Bootstrap
-            bundles.Add(new ScriptBundle("~/scripts/bootstrap").Include(
-                      "~/scripts/bootstrap.js",
-                      "~/scripts/respond.js"));
+            //bundles.Add(new ScriptBundle("~/scripts/bootstrap").Include(
+            //          "~/scripts/bootstrap.js",
+            //          "~/scripts/respond.js"));
 
-            bundles.Add(new StyleBundle("~/styles/css").Include(
-                      "~/content/bootstrap.css"));
+            //bundles.Add(new StyleBundle("~/styles/css").Include(
+            //          "~/content/bootstrap.css"));
             #endregion
 
             #region Font Awesome

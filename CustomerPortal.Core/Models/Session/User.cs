@@ -1,5 +1,5 @@
 ﻿using System.Collections.Generic;
-using CustomerPortal.Core.Models.Util;
+using CustomerPortal.Core.Util;
 
 namespace CustomerPortal.Core.Models.Session
 {
@@ -11,10 +11,16 @@ namespace CustomerPortal.Core.Models.Session
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public string UserGuid { get; set; }
+        public int CompanyId { get; set; }
         public string WorksFor { get; set; }
         public List<UserAuthorization> UserAuthorizations { get; set; } 
         public List<UserJobs> JobNumbers { get; set; }
-        public Enums.Department UserDepartment { get; set; }
+
+        public User()
+        {
+            UserAuthorizations = new List<UserAuthorization>();
+            JobNumbers = new List<UserJobs>();
+        }
     }
 
     public class UserJobs
@@ -26,7 +32,14 @@ namespace CustomerPortal.Core.Models.Session
     public class UserAuthorization
     {
         public bool IsAuthorized { get; set; }
-        public Enums.UserRoles Role { get; set; }
+        public Enums.UserRole Role { get; set; }
+        public AuthorizationType AuthorizationType { get; set; }
+    }
+
+    public class AuthorizationType
+    {
+        public Enums.AuthorizationLevel AuthorizationLevel { get; set; } //= Enums.AuthorizationLevel.Executive;
+
     }
 
 }
