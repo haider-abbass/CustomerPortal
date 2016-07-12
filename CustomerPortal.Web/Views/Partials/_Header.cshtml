@@ -1,0 +1,63 @@
+﻿@using CustomerPortal.Core.Resources
+<header id="header">
+    <div class="top-bar">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-6 col-xs-4">
+                    <div class="top-number">
+                        <p>
+                            <i class="fa fa-phone-square"></i> 70 20 18 35
+                        </p>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-xs-8">
+                    <div class="social">
+                        <ul class="social-share">
+                            <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                            <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                            <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                            <li><a href="#"><i class="fa fa-dribbble"></i></a></li>
+                            <li><a href="#"><i class="fa fa-skype"></i></a></li>
+                        </ul>
+                        <div class="search">
+                            <form role="form">
+                                <input type="text" class="search-form" autocomplete="off" placeholder="search">
+                                <i class="fa fa-search"></i>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <nav class="navbar navbar-inverse" role="banner">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" ><img src="~/content/images/logo_transparent.png" alt="logo"></a>
+            </div>
+
+            <div class="collapse navbar-collapse navbar-right">
+                <ul class="nav navbar-nav">
+                    <li><a href="index.html">Forside</a></li>
+                    <li><a href="about-us.html">Bright Planning</a></li>
+                    <li><a href="services.html">Timeoversigt</a></li>
+                    <li><a href="portfolio.html">Faktura</a></li>
+                    <li><a href="portfolio.html">Kontakt</a></li>
+                    <li><a href="portfolio.html">Forretningsbetingelser</a></li>
+                    <li class="active">
+                        <a href="" class="launch-modal" data-modal-id="modal-login" id="nav-Login">@Resources.LabelLogin</a>
+                    </li>
+                    <li>
+                        <a href="/umbraco/surface/authentication/logoutuser/" id="nav-Logout" class="hidden">@Resources.LabelLogout</a>
+                    </li>                  
+                </ul>
+            </div>
+        </div>
+    </nav>
+</header>
